@@ -6,7 +6,7 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/23 15:45:10 by wahasni           #+#    #+#             */
-/*   Updated: 2019/06/13 00:20:57 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/06/13 00:50:26 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int		ws_conv(t_printf *pf, wchar_t *str)
 	int		min;
 
 	len = 0;
-	//len = str ? ft_wstrlen(str) : 6;
+	len = str ? ft_wstrlen(str) : 6;
 	if (pf->precision && pf->precision != -1)
 		len = len > pf->precision ? pf->precision : len;
 	else if (pf->precision == -1)
@@ -107,18 +107,15 @@ int		s_arg(t_printf *pf)
 	char	*str;
 	wchar_t *wstr;
 
-	// if ((pf->flags & S_LONG) || (pf->conv == 'S'))
-	// {
-	// 	wstr = va_arg(pf->ap, wchar_t*);
-	// 	ws_conv(pf, wstr);
-	// }
-	// else
-	// {
-	// 	str = va_arg(pf->ap, char*);
-	// 	s_conv(pf, str);
-	// }
-	(void)pf;
-	(void)str;
-	(void)wstr;
+	if ((pf->flags & S_LONG) || (pf->conv == 'S'))
+	{
+		wstr = va_arg(pf->ap, wchar_t*);
+		ws_conv(pf, wstr);
+	}
+	else
+	{
+		str = va_arg(pf->ap, char*);
+		s_conv(pf, str);
+	}
 	return (1);
 }
