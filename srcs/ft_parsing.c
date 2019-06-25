@@ -6,7 +6,7 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/20 21:53:34 by wahasni           #+#    #+#             */
-/*   Updated: 2019/06/25 06:18:44 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/06/25 06:24:35 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,6 @@ int	ft_parsing(t_var *var)
 	// Si pas assez de donnee afficher ERROR
 	// ! Stocker x, y des salles
 	// ! Stocker nom des salles
-	
+	// ! Stocker depart / arriver
 	return (0);
 }
