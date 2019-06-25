@@ -1,37 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lem_in.h                                           :+:      :+:    :+:   */
+/*   lem_in.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/13 06:09:54 by wahasni           #+#    #+#             */
-/*   Updated: 2019/06/25 02:43:45 by wahasni          ###   ########.fr       */
+/*   Created: 2019/06/13 00:55:47 by wahasni           #+#    #+#             */
+/*   Updated: 2019/06/20 21:53:15 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LEM_IN_H
-# define LEM_IN_H
+#include "lem_in.h"
 
-#include "../libft/includes/libft.h"
-
-typedef struct		s_queue
+int	main(int ac, char **av)
 {
-	int				*p;
-	struct s_queue	next; 
-}					t_queue;
+	t_var *var;
 
-typedef struct		s_bfs
-{
-	t_queue			*queue;
-	int				*output;
-}					t_bfs;
-
-typedef struct 		s_var
-{
-	size_t			nbr_vertex;
-	size_t			nbr_ant;
-	char			**matrix;
-}					t_var;
-
-#endif
+	if (ft_parsing(var))
+		return (1);
+	return (0);
+}
