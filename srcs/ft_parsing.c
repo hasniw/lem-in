@@ -6,17 +6,26 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/20 21:53:34 by wahasni           #+#    #+#             */
-/*   Updated: 2019/06/25 06:24:35 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/06/26 03:25:48 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/lem_in.h"
 
-int	ft_parsing(t_var *var)
+int			ft_parsing(t_var *var)
 {
-	// Check commande
-	// Check commantaire
-	// Check nbr de fourmi
+	if (ft_ants(var))
+		return (1);
+	if (ft_room(var))
+		return (1);
+	if (ft_edges(var))
+		return (1);
+	return (0);
+}
+
+	// Check commande              ]
+	// Check commantaire           ]
+	// Check nbr de fourmi         ]
 	// Check salles
 	// Check tubes
 	// ==> C'est une erreur
@@ -27,5 +36,3 @@ int	ft_parsing(t_var *var)
 	// ! Stocker x, y des salles
 	// ! Stocker nom des salles
 	// ! Stocker depart / arriver
-	return (0);
-}

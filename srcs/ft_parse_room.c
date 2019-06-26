@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isnumber.c                                      :+:      :+:    :+:   */
+/*   ft_parse_room.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/13 16:55:07 by wahasni           #+#    #+#             */
-/*   Updated: 2019/06/26 01:46:19 by wahasni          ###   ########.fr       */
+/*   Created: 2019/06/25 18:40:31 by wahasni           #+#    #+#             */
+/*   Updated: 2019/06/26 03:25:44 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../include/lem_in.h"
 
-int			ft_isnumber(char *s)
+int	is_room(var, line)
 {
-	size_t	i;
-
-	i = 0;
-	while (s[i])
+	if (check_room(var, line))
 	{
-		if (s[0] == '-')
-			i++;
-		if (!ft_isdigit(s[i]))
-			break ;
-		i++;
+	{
+		ft_assign_room(var_line);
+		ft_strdel(&line);
 	}
-	return (i == ft_strlen(s));
+	else
+		ft_strdel(&line); // MESSAGE ERREUR
 }
