@@ -1,19 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free.c                                          :+:      :+:    :+:   */
+/*   ft_count_word.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/26 03:16:46 by wahasni           #+#    #+#             */
-/*   Updated: 2019/06/26 07:31:42 by wahasni          ###   ########.fr       */
+/*   Created: 2019/05/15 23:21:48 by wahasni           #+#    #+#             */
+/*   Updated: 2019/06/26 07:31:38 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/lem_in.h"
+#include "libft.h"
 
-int		free_line(char **line, int i)
+int	ft_count_word(char *str, char c)
 {
-	ft_strdel(line);
-	return (i);
+	int	i;
+	int	w;
+
+	i = 0;
+	w = 0;
+	while (str[i])
+	{
+		if (str[i] == c)
+			w++;
+		i++;
+	}
+	return (w);
 }

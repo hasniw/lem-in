@@ -6,7 +6,7 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/07 16:20:26 by wahasni           #+#    #+#             */
-/*   Updated: 2019/06/12 21:50:31 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/06/26 07:23:48 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -159,5 +159,6 @@ intmax_t				ft_atoi(char *s);
 size_t					ft_wordcount(const char *s, char c);
 size_t					ft_wordlen(const char *s, char c);
 int						ft_isspace(int c);
+int						ft_count_word(char *str, char c);
 
 #endif

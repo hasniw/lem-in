@@ -6,7 +6,7 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/20 21:53:34 by wahasni           #+#    #+#             */
-/*   Updated: 2019/06/26 04:51:23 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/06/26 07:31:35 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,4 @@ int			ft_parsing(t_var *var)
 	// ! Stocker depart / arriver
 	// Un vertex identique a lui meme ne peux pas avoir de edges
 	// Verifier edge start et end
-	// 
+	// !!!!!! =====> CREER LISTE POUR LES EDGES ET VERTEX

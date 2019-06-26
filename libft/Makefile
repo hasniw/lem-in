@@ -6,7 +6,7 @@
 #    By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/13 19:43:10 by wahasni           #+#    #+#              #
-#    Updated: 2019/06/12 21:25:26 by wahasni          ###   ########.fr        #
+#    Updated: 2019/06/26 06:18:37 by wahasni          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,6 +38,7 @@ SRC_NAME 	=	ft_atoi_base.c										\
 				ft_atoll.c											\
 				ft_bzero.c											\
 				ft_cntdigit.c										\
+				ft_count_word.c                                     \
 				ft_convert_base.c									\
 				ft_isalnum.c										\
 				ft_isalpha.c										\
