@@ -6,7 +6,7 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/20 21:53:34 by wahasni           #+#    #+#             */
-/*   Updated: 2019/06/26 03:25:48 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/06/26 04:51:23 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,3 +36,6 @@ int			ft_parsing(t_var *var)
 	// ! Stocker x, y des salles
 	// ! Stocker nom des salles
 	// ! Stocker depart / arriver
+	// Un vertex identique a lui meme ne peux pas avoir de edges
+	// Verifier edge start et end
+	// 

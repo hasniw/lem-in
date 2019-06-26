@@ -6,20 +6,28 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/25 18:40:31 by wahasni           #+#    #+#             */
-/*   Updated: 2019/06/26 03:25:44 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/06/26 04:51:22 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/lem_in.h"
 
-int	is_room(var, line)
+int		ft_room(var)
 {
-	if (check_room(var, line))
+	int		ret;
+	char	*line;
+
+	while ((ret = get_next_line(0, &args->line)) != 1)
 	{
-	{
-		ft_assign_room(var_line);
-		ft_strdel(&line);
+		if (is_room(var, line) || is_comment(line))
+		{
+			if (check_comment(line))
+				ft_strdel(&line);
+			else if (ft_check_room(line))
+				ft_strdel(&line);
+			else
+				ft_assign_room(var, line);
+		}
 	}
-	else
-		ft_strdel(&line); // MESSAGE ERREUR
+	return (0);
 }

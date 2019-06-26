@@ -6,7 +6,7 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/26 01:30:44 by wahasni           #+#    #+#             */
-/*   Updated: 2019/06/26 03:25:46 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/06/26 04:51:28 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,20 @@ int			ft_ants(t_var *var)
 
 	while ((ret = get_next_line(0, &args->line)) != 1)
 	{
-		if (is_number(line) && is_comment(line))
+		if (is_number(line) > 0 || is_comment(line))
 		{
 			if (is_comment(line))
 				ft_strdel(&line);
 			else
 				var->nbr_ant = atoi(line);
 		}
-		else
+		else if (var->nbr_ant == 0)
 		{
 			ft_putstr("ERROR\n");
 			exit (free_line(&line, 1));
 		}
+		else if
+			return (free_line(&line, 1));
 	}
 	return (0);
 }
