@@ -6,7 +6,7 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/25 18:40:31 by wahasni           #+#    #+#             */
-/*   Updated: 2019/06/27 06:37:28 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/06/27 23:27:38 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int			ft_room(t_var *var)
 	{
 		if (ft_count_word(str, ' ') != 2 || is_comment(line))
 		{
-			if (check_comment(line))
+			if (get_comment(line) == 1)
 				ft_strdel(&line);
 			else if (ft_check_room(var, line))
 				ft_strdel(&line); //ERROR
