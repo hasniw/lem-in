@@ -6,7 +6,7 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 06:09:54 by wahasni           #+#    #+#             */
-/*   Updated: 2019/06/26 07:23:51 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/06/27 06:36:56 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define LEM_IN_H
 
 #include "../libft/includes/libft.h"
+
+# define MAX 4096
 
 typedef enum		e_bool
 {
@@ -28,10 +30,17 @@ typedef enum		e_type
 	end
 }					t_type;
 
+typedef struct		s_vertex
+{
+	char			*name;
+	t_type			type;
+	struct s_vertex	*next;
+}					t_vertex;
+
 typedef struct		s_queue
 {
 	int				*p;
-	struct s_queue	next; 
+	struct s_queue	*next; 
 }					t_queue;
 
 typedef struct		s_bfs
@@ -44,25 +53,31 @@ typedef struct 		s_var
 {
 	size_t			nbr_vertex;
 	size_t			nbr_ant;
+	char			buffer[MAX];
 	int				start;
-	int				end;
+	//int				end;
 	char			**matrix;
+	t_vertex		*vertex;
 }					t_var;
 
 /*
 ** PARSING
 */
 
-/*
-** PARSE-ANT
-*/
-
+int					ft_parsing(t_var *var);
 int					ft_ants(t_var *var);
+int					ft_room(t_var *var);
 
 /*
 ** FREE
 */
 
 int					free_line(char **line, int i);
+
+/*
+** COMMENT
+*/
+
+int					is_comment(char *str);
 
 #endif

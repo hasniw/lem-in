@@ -6,7 +6,7 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/25 12:34:13 by wahasni           #+#    #+#             */
-/*   Updated: 2019/05/08 14:51:10 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/06/27 04:18:08 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	reset_struct(t_printf *pf)
 	pf->last_up = 0;
 }
 
-int		end(t_printf *pf, int i)
+int		endd(t_printf *pf, int i)
 {
 	va_end(pf->ap);
 	if (i == 1)

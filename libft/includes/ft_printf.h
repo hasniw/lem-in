@@ -6,7 +6,7 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/23 11:50:32 by wahasni           #+#    #+#             */
-/*   Updated: 2019/06/25 18:56:59 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/06/27 04:17:38 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -170,7 +170,7 @@ int				man_arg(t_printf *pf);
 void			reset_struct(t_printf *pf);
 void			reset(t_printf *pf);
 void			check_buff(t_printf *pf);
-int				end(t_printf *pf, int i);
+int				endd(t_printf *pf, int i);
 int				handle_buff(t_printf *pf, char *str, int i, int n);
 
 /*

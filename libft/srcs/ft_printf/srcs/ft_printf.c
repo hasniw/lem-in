@@ -6,7 +6,7 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/23 11:56:38 by wahasni           #+#    #+#             */
-/*   Updated: 2019/05/08 14:50:42 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/06/27 04:18:39 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int		ft_printf(const char *format, ...)
 		else
 			check_color(&pf);
 	}
-	return (end(&pf, 1));
+	return (endd(&pf, 1));
 }
 
 int		ft_dprintf(int fd, const char *format, ...)
@@ -72,5 +72,5 @@ int		ft_dprintf(int fd, const char *format, ...)
 		else
 			check_color(&pf);
 	}
-	return (end(&pf, 1));
+	return (endd(&pf, 1));
 }
