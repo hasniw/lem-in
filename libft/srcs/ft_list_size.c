@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free.c                                          :+:      :+:    :+:   */
+/*   ft_list_size.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/26 03:16:46 by wahasni           #+#    #+#             */
-/*   Updated: 2019/06/29 04:25:23 by wahasni          ###   ########.fr       */
+/*   Created: 2018/11/28 14:59:25 by wahasni           #+#    #+#             */
+/*   Updated: 2019/06/28 04:58:16 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/lem_in.h"
 
-int		free_tab(char **tab, int ret)
+int			ft_list_size(t_list *begin_list)
 {
-	int	i;
+	t_list	*list;
+	int		i;
 
 	i = 0;
-	while (tab[i])
-		free(tab[i++]);
-	free(tab);
-	return (ret);
-}
-
-int		free_line(char **line, int i)
-{
-	ft_strdel(line);
+	list = begin_list;
+	while (list)
+	{
+		i++;
+		list = list->next;
+	}
 	return (i);
 }

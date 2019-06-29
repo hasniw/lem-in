@@ -6,7 +6,7 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 06:09:54 by wahasni           #+#    #+#             */
-/*   Updated: 2019/06/27 23:39:11 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/06/29 04:25:14 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,13 @@ typedef enum		e_type
 typedef struct		s_vertex
 {
 	char			*name;
-	t_type			type;
 	struct s_vertex	*next;
 }					t_vertex;
 
 typedef struct		s_queue
 {
 	int				*p;
-	struct s_queue	*next; 
+	struct s_queue	*next;
 }					t_queue;
 
 typedef struct		s_bfs
@@ -53,9 +52,8 @@ typedef struct 		s_var
 {
 	size_t			nbr_vertex;
 	size_t			nbr_ant;
+	t_type			type;
 	char			buffer[MAX];
-	int				start;
-	//int				end;
 	char			**matrix;
 	t_vertex		*vertex;
 }					t_var;
@@ -73,11 +71,20 @@ int					ft_room(t_var *var);
 */
 
 int					free_line(char **line, int i);
+int					free_tab(char **tab, int ret);
 
 /*
 ** COMMENT
 */
 
 int					is_comment(char *str);
+
+/*
+** UTILS-LIST-VERTEX
+*/
+
+void				ft_list_push_front(t_vertex **begin_list, void *data);
+void				ft_list_push_back(t_vertex **begin_list, void *data);
+t_vertex			*ft_create_elem(void *data);
 
 #endif

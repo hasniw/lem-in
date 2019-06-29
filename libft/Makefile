@@ -6,7 +6,7 @@
 #    By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/13 19:43:10 by wahasni           #+#    #+#              #
-#    Updated: 2019/06/26 06:18:37 by wahasni          ###   ########.fr        #
+#    Updated: 2019/06/28 06:24:37 by wahasni          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,6 +61,8 @@ SRC_NAME 	=	ft_atoi_base.c										\
 				ft_lstiter.c										\
 				ft_lstmap.c											\
 				ft_lstnew.c											\
+				ft_list_push_back.c									\
+				ft_list_push_front.c								\
 				ft_memalloc.c										\
 				ft_memccpy.c										\
 				ft_memchr.c											\

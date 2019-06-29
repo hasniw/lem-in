@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free.c                                          :+:      :+:    :+:   */
+/*   ft_list_push_back.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/26 03:16:46 by wahasni           #+#    #+#             */
-/*   Updated: 2019/06/29 04:25:23 by wahasni          ###   ########.fr       */
+/*   Created: 2013/08/27 18:20:52 by wahasni           #+#    #+#             */
+/*   Updated: 2019/06/29 01:49:20 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/lem_in.h"
-
-int		free_tab(char **tab, int ret)
+void	ft_list_push_back(t_list **begin_list, void *data)
 {
-	int	i;
+	t_list	*list;
 
-	i = 0;
-	while (tab[i])
-		free(tab[i++]);
-	free(tab);
-	return (ret);
-}
-
-int		free_line(char **line, int i)
-{
-	ft_strdel(line);
-	return (i);
+	list = *begin_list;
+	if (list)
+	{
+		while (list->next)
+			list = list->next;
+		list->next = ft_create_elem(data);
+	}
+	else
+		*begin_list = ft_create_elem(data);
 }

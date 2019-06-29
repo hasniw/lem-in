@@ -6,7 +6,7 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/07 16:20:26 by wahasni           #+#    #+#             */
-/*   Updated: 2019/06/26 07:23:48 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/06/29 01:34:48 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,6 +122,10 @@ void					ft_lstdelone(t_list **alst,
 void					ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list					*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 t_list					*ft_lstnew(void const *content, size_t content_size);
+int						ft_list_size(t_list *begin_list);
+void					ft_list_push_front(t_list **begin_list, void *data);
+void					ft_list_push_back(t_list **begin_list, void *data);
+t_list					*ft_create_elem(void *data);
 void					ft_bzero(void *s, size_t n);
 void					ft_memdel(void **ap);
 void					*ft_memalloc(size_t size);

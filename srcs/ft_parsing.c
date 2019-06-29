@@ -6,7 +6,7 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/20 21:53:34 by wahasni           #+#    #+#             */
-/*   Updated: 2019/06/27 20:04:41 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/06/29 05:07:16 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int			ft_parsing(t_var *var)
 	ft_printf("NBR DE FOURMI : %d\n", (int)var->nbr_ant);
 	// if (ft_room(var))
 	// 	return (1);
+	// ft_matrix(var);
 	// if (ft_edges(var))
 	// 	return (1);
 	return (0);
@@ -33,3 +34,4 @@ int			ft_parsing(t_var *var)
 	// ! =====> CREER LISTE POUR LES EDGES ET VERTEX
 	// Gestion buffer pour l'affichage / Maybe liste chainee buffer
 	// Tableau de struct pour les vertex et liste chainees dedant pour les link
+	// Verifier que apres ##start et ##end y'a bien la room 
