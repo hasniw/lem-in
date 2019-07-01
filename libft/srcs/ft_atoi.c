@@ -6,11 +6,22 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/08 14:41:26 by wahasni           #+#    #+#             */
-/*   Updated: 2019/05/08 14:56:00 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/06/30 19:24:28 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+int			is_number(char *str)
+{
+	while (*str)
+	{
+		if (*str >= 48 && *str <= 57)
+			return (1);
+		str++;
+	}
+	return (0);
+}
 
 int			ft_isdigit(int c)
 {

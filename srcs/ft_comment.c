@@ -6,7 +6,7 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/26 00:34:20 by wahasni           #+#    #+#             */
-/*   Updated: 2019/06/28 00:50:07 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/07/01 00:34:18 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,13 @@ int	is_comment(char *str)
 
 int	get_comment(t_var *var, char *str)
 {
-	if (is_comment(str) == 1)
+	if (is_comment(str) == 1 || (var->type == start || var->type == end)) // Si avant ##START ou ##END 
 		return (1);
 	if (!is_comment(str))
-		var->vertex.type = other;
+		var->type = other;
 	else if (is_comment(str) == 2)
-		var->vertex.type = start;
+		var->type = start;
 	else if (is_comment(str) == 3)
-		var->vertex.type = end;
+		var->type = end;
 	return (0);
 }

@@ -6,7 +6,7 @@
 #    By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/13 01:37:54 by wahasni           #+#    #+#              #
-#    Updated: 2019/06/27 04:29:32 by wahasni          ###   ########.fr        #
+#    Updated: 2019/06/30 18:56:01 by wahasni          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,6 +35,8 @@ SRC_NAME 	=	lem_in.c\
 				ft_ants.c\
 				ft_comment.c\
 				ft_free.c\
+				ft_parse_room.c\
+				ft_list_vertex.c\
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
 

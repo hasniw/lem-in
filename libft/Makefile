@@ -6,7 +6,7 @@
 #    By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/13 19:43:10 by wahasni           #+#    #+#              #
-#    Updated: 2019/06/28 06:24:37 by wahasni          ###   ########.fr        #
+#    Updated: 2019/06/30 22:13:32 by wahasni          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,9 +60,6 @@ SRC_NAME 	=	ft_atoi_base.c										\
 				ft_lstdelone.c										\
 				ft_lstiter.c										\
 				ft_lstmap.c											\
-				ft_lstnew.c											\
-				ft_list_push_back.c									\
-				ft_list_push_front.c								\
 				ft_memalloc.c										\
 				ft_memccpy.c										\
 				ft_memchr.c											\
@@ -114,6 +111,8 @@ SRC_NAME 	=	ft_atoi_base.c										\
 				ft_strsplit.c										\
 				ft_strstr.c											\
 				ft_strsub.c											\
+				ft_wordcount.c										\
+				ft_wordlen.c										\
 				ft_strtrim.c										\
 				ft_str_toupper.c									\
 				ft_tolower.c										\

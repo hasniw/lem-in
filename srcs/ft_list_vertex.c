@@ -6,13 +6,28 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/29 01:47:10 by wahasni           #+#    #+#             */
-/*   Updated: 2019/06/29 02:08:26 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/07/01 03:39:19 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/lem_in.h"
 
-t_vertex	*ft_create_elem(void *data)
+int				ft_list_size(t_vertex *begin_list)
+{
+	t_vertex	*list;
+	int			i;
+
+	i = 0;
+	list = begin_list;
+	while (list)
+	{
+		i++;
+		list = list->next;
+	}
+	return (i);
+}
+
+t_vertex		*ft_create_elem(void *name)
 {
 	t_vertex	*list;
 
@@ -20,13 +35,13 @@ t_vertex	*ft_create_elem(void *data)
 	list = malloc(sizeof(t_vertex));
 	if (list)
 	{
-		list->data = data;
+		list->name = name;
 		list->next = NULL;
 	}
 	return (list);
 }
 
-void	ft_list_push_back(t_vertex **begin_list, void *data)
+void			ft_list_push_back(t_vertex **begin_list, void *name)
 {
 	t_vertex	*list;
 
@@ -35,22 +50,22 @@ void	ft_list_push_back(t_vertex **begin_list, void *data)
 	{
 		while (list->next)
 			list = list->next;
-		list->next = ft_create_elem(data);
+		list->next = ft_create_elem(name);
 	}
 	else
-		*begin_list = ft_create_elem(data);
+		*begin_list = ft_create_elem(name);
 }
 
-void	ft_list_push_front(t_vertex **begin_list, void *data)
+void			ft_list_push_front(t_vertex **begin_list, void *name)
 {
 	t_vertex	*list;
 
 	if (*begin_list)
 	{
-		list = ft_create_elem(data);
+		list = ft_create_elem(name);
 		list->next = *begin_list;
 		*begin_list = list;
 	}
 	else
-		*begin_list = ft_create_elem(data);
+		*begin_list = ft_create_elem(name);
 }
