@@ -6,7 +6,7 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/25 18:40:31 by wahasni           #+#    #+#             */
-/*   Updated: 2019/07/01 03:39:18 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/07/02 04:19:32 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ int			ft_room(t_var *var)
 
 	while ((ret = get_next_line(0, &line)) > 0)
 	{
+		ft_printf("{black}ROOM LINE : %s{reset}\n", line);
 		if (ft_count_word(line, ' ') == 2 || is_comment(line) != 1)
 		{
 			if (get_comment(var, line) != 1)
@@ -87,9 +88,10 @@ int			ft_room(t_var *var)
 				ft_assign_room(var, line);
 		}
 		else if (ft_room_exist(var))
-			return (free_line(&line, 0));
+			return (free_line(&line, 1));
 		else
-			return (free_line(&line, 1)); // 401
+			return (free_line(&line, 0)); // LINE A GERER DANS ft_parse_links
+		ft_printf("{red}<---ROOM LINE SUIVANTE--->{reset}\n");
 	}
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/26 00:34:20 by wahasni           #+#    #+#             */
-/*   Updated: 2019/07/01 00:34:18 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/07/02 04:07:24 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	is_comment(char *str)
 	{
 		if (!ft_strcmp("start", str + 2))
 			return (2);
-		else if (!ft_strcmp("finish", str + 2))
+		else if (!ft_strcmp("end", str + 2))
 			return (3);
 	}
 	return (0);

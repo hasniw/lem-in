@@ -6,7 +6,7 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/20 21:53:34 by wahasni           #+#    #+#             */
-/*   Updated: 2019/07/01 02:59:33 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/07/02 04:08:00 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void		ft_print_room(t_var *var)
 {
-	int i = 0;
+	int i = 1;
 
-	while (var->vertex->next)
+	while (var->vertex)
 	{
 		ft_printf("ROOM%d : %s\n", i, var->vertex->name);
 		i++;
