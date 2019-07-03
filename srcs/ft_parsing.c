@@ -6,7 +6,7 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/20 21:53:34 by wahasni           #+#    #+#             */
-/*   Updated: 2019/07/02 18:44:35 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/07/03 03:42:39 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ void		ft_print_room(t_var *var)
 
 int			ft_parsing(t_var *var)
 {
+	int		ret;
+	char	*line;
 
 	if (ft_ants(var))
 	{
@@ -44,7 +46,15 @@ int			ft_parsing(t_var *var)
 	ft_print_room(var);
 	ft_printf("YOLO : %d\n", var->pos_vertex_start);
 	// ft_matrix(var);
-	// if (ft_edges(var))
+	if (var->line)
+		ft_edges(var, var->line); //free line
+	while ((ret = get_next_line(0, &line)) > 0)
+	{
+		if (ft_edges(var))
+		{
+			
+		}
+	}
 	// 	return (1);
 	return (0);
 }

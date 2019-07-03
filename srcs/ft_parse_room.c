@@ -6,7 +6,7 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/25 18:40:31 by wahasni           #+#    #+#             */
-/*   Updated: 2019/07/02 21:13:31 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/07/03 03:51:28 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,10 @@ int			ft_room(t_var *var)
 		else if (ft_room_exist(var))
 			return (free_line(&line, 1));
 		else
+		{
+			var->line = ft_strdup(line);
 			return (free_line(&line, 0)); // LINE A GERER DANS ft_parse_links
+		}
 		ft_printf("{red}<---ROOM LINE SUIVANTE--->{reset}\n");
 	}
 	return (0);

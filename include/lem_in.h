@@ -6,7 +6,7 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 06:09:54 by wahasni           #+#    #+#             */
-/*   Updated: 2019/07/02 18:42:55 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/07/02 21:18:22 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ typedef struct 		s_var
 	size_t			nbr_ant;
 	t_type			type;
 	int				pos_vertex_start;
+	char			*line;
 	char			buffer[MAX];
 	char			**matrix;
 	t_vertex		*vertex;
