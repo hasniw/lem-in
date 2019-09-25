@@ -6,7 +6,7 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 06:09:54 by wahasni           #+#    #+#             */
-/*   Updated: 2019/07/06 01:15:39 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/09/25 15:19:06 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,12 @@ typedef struct		s_vertex
 	struct s_vertex	*next;
 }					t_vertex;
 
+typedef struct		s_link
+{
+	t_vertex		*vertex;
+	struct s_link	*next;
+}					t_link;
+
 typedef struct		s_queue
 {
 	int				*p;
@@ -45,7 +51,7 @@ typedef struct		s_queue
 typedef struct		s_bfs
 {
 	t_queue			*queue;
-	int				*output;
+	int				*path;
 }					t_bfs;
 
 typedef struct 		s_var
@@ -56,7 +62,9 @@ typedef struct 		s_var
 	int				pos_vertex_start;
 	char			*line;
 	char			buffer[MAX];
-	char			**matrix;
+	char			**matrix_name; // Pour matrice
+	int				*matrix; // Pour matrice
+	int				fd;
 	t_vertex		*vertex;
 }					t_var;
 
@@ -67,6 +75,7 @@ typedef struct 		s_var
 int					ft_parsing(t_var *var);
 int					ft_ants(t_var *var);
 int					ft_room(t_var *var);
+int					ft_edge(t_var *var, char *line);
 
 /*
 ** FREE

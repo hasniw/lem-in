@@ -6,7 +6,7 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/20 21:53:34 by wahasni           #+#    #+#             */
-/*   Updated: 2019/09/16 11:04:21 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/09/25 15:18:16 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int			ft_parsing(t_var *var)
 	int		ret;
 	char	*line;
 
+	printf("begin parser\n");
 	if (ft_ants(var))
 	{
 		ft_printf("ERREUR ENTREE PARSING NBR FOURMI");
@@ -54,7 +55,7 @@ int			ft_parsing(t_var *var)
 			free_line(&var->line, 1);
 		}
 	}
-	while ((ret = get_next_line(0, &line)) > 0)
+	while ((ret = get_next_line(var->fd, &line)) > 0)
 	{
 		if (ft_edges(var, line))
 		{
@@ -62,6 +63,6 @@ int			ft_parsing(t_var *var)
 			free_line(&line, 1);
 		}
 	}
-	// 	return (1);
+		return (1);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/26 01:30:44 by wahasni           #+#    #+#             */
-/*   Updated: 2019/07/10 23:40:45 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/09/25 14:58:13 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int			ft_ants(t_var *var)
 	int		ret;
 	char	*line;
 
-	while ((ret = get_next_line(0, &line)) > 0)
+	while ((ret = get_next_line(var->fd, &line)) > 0)
 	{
 		// Peut on avoir plusieurs nombre de fourmis ?
 		ft_printf("LINE : %s\n", line);
@@ -33,7 +33,7 @@ int			ft_ants(t_var *var)
 		{
 			ft_printf("nbr ant : %d\n", (int)var->nbr_ant);
 			ft_putstr("ERROR\n");
-			exit (free_line(&line, 1));
+			return (free_line(&line, 1));
 		}
 		else
 			return (0);

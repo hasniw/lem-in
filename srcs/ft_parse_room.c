@@ -6,7 +6,7 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/25 18:40:31 by wahasni           #+#    #+#             */
-/*   Updated: 2019/09/16 11:04:39 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/09/25 15:04:37 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ int			ft_room(t_var *var)
 	int		ret;
 	char	*line;
 
-	while ((ret = get_next_line(0, &line)) > 0)
+	while ((ret = get_next_line(var->fd, &line)) > 0)
 	{
 		ft_printf("{black}ROOM LINE : %s{reset}\n", line);
 		if (ft_count_word(line, ' ') == 2 || is_comment(line) != 1)
