@@ -6,7 +6,7 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 06:09:54 by wahasni           #+#    #+#             */
-/*   Updated: 2019/09/25 15:19:06 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/09/25 17:44:41 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ typedef struct 		s_var
 	size_t			nbr_vertex;
 	size_t			nbr_ant;
 	t_type			type;
+	int				have_start : 1;
 	int				pos_vertex_start;
 	char			*line;
 	char			buffer[MAX];
@@ -96,6 +97,7 @@ int					get_comment(t_var *var, char *str);
 */
 
 void				ft_list_push_front(t_vertex **begin_list, void *name);
+void				ft_list_push_second(t_vertex **begin_list, void *name);
 void				ft_list_push_back(t_vertex **begin_list, void *name);
 t_vertex			*ft_create_elem(void *name);
 int					ft_list_size(t_vertex *begin_list);

@@ -6,7 +6,7 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/29 01:47:10 by wahasni           #+#    #+#             */
-/*   Updated: 2019/07/02 18:08:41 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/09/25 18:20:29 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,22 @@ t_vertex		*ft_create_elem(void *name)
 		list->next = NULL;
 	}
 	return (list);
+}
+
+void			ft_list_push_second(t_vertex **begin_list, void *name)
+{
+	t_vertex	*list;
+
+	list = *begin_list;
+	list = list->next;
+	if (list)
+	{
+		while (list->next)
+			list = list->next;
+		list->next = ft_create_elem(name);
+	}
+	else
+		*begin_list = ft_create_elem(name);
 }
 
 void			ft_list_push_back(t_vertex **begin_list, void *name)

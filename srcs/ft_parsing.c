@@ -6,7 +6,7 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/20 21:53:34 by wahasni           #+#    #+#             */
-/*   Updated: 2019/09/25 15:18:16 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/09/25 18:14:59 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ void		ft_print_room(t_var *var)
 
 int			ft_parsing(t_var *var)
 {
-	int		ret;
-	char	*line;
+	// int		ret;
+	// char	*line;
 
 	printf("begin parser\n");
 	if (ft_ants(var))
@@ -47,22 +47,22 @@ int			ft_parsing(t_var *var)
 	ft_print_room(var);
 	ft_printf("YOLO : %d\n", var->pos_vertex_start);
 	// ft_matrix(var);
-	if (var->line)
-	{
-		if (ft_edges(var, var->line))
-		{
-			ft_printf("ERREUR FIRST LINE EDGES\n");
-			free_line(&var->line, 1);
-		}
-	}
-	while ((ret = get_next_line(var->fd, &line)) > 0)
-	{
-		if (ft_edges(var, line))
-		{
-			ft_printf("ERREUR EDGES");
-			free_line(&line, 1);
-		}
-	}
-		return (1);
+	// if (var->line)
+	// {
+	// 	if (ft_edges(var, var->line))
+	// 	{
+	// 		ft_printf("ERREUR FIRST LINE EDGES\n");
+	// 		free_line(&var->line, 1);
+	// 	}
+	// }
+	// while ((ret = get_next_line(var->fd, &line)) > 0)
+	// {
+	// 	if (ft_edges(var, line))
+	// 	{
+	// 		ft_printf("ERREUR EDGES");
+	// 		free_line(&line, 1);
+	// 	}
+	// }
+	// 	return (1);
 	return (0);
 }
