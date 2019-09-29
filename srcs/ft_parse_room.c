@@ -6,7 +6,7 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/25 18:40:31 by wahasni           #+#    #+#             */
-/*   Updated: 2019/09/25 18:18:34 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/09/29 15:17:25 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,12 @@ static void	ft_assign_room(t_var *var, char *str)
 	i = 0;
 	tab = ft_strsplit(str, ' ');
 	ft_printf("TAB[0] : %s\n", tab[0]);
-	if (var->type == other && !var->have_start)
+	if (var->type == other && var->have_start == 0)
+	{
+		printf("IN NOT HAVE START : %s\n", tab[0]);
 		ft_list_push_front(&var->vertex, (void *)tab[0]);
-	else if (var->type == other && var->have_start)
+	}
+	else if (var->type == other && var->have_start == 1)
 	{
 		printf("IN HAVE START : %s\n", tab[0]);
 		ft_list_push_second(&var->vertex, (void *)tab[0]);
@@ -38,13 +41,16 @@ static void	ft_assign_room(t_var *var, char *str)
 	else if (var->type == start)
 	{
 		// var->pos_vertex_start = 1;
-		var->have_start = start;
+		printf("value of have_start with mat : %d\n", var->have_start);
+		var->have_start = 1;
+		printf("value of have_start : %d\n", var->have_start);
 		ft_list_push_front(&var->vertex, (void *)tab[0]);
 	}
 	else if (var->type == end)
 		ft_list_push_back(&var->vertex, (void *)tab[0]);
 	// if (var->pos_vertex_start > 0 && var->type != start)
 	// 	var->pos_vertex_start++;
+	printf("value of have_start : %d\n", var->have_start);
 	var->type = other;
 	var->nbr_vertex++;
 	while (tab[i])
