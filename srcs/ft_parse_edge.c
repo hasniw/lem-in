@@ -6,7 +6,7 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/02 23:35:32 by wahasni           #+#    #+#             */
-/*   Updated: 2019/09/29 19:31:07 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/09/29 19:46:12 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,8 @@ int			ft_edge(t_var *var, char *line)
 		if (!is_comment(line) || ft_check_edge(var, line))
 			free_line(&line, 1); // FREE LINKED LIST
 	}
-	else if (linked_start && linked_end)
-		free_line(&line, 1); // FREE LINKED LIST
-	else // Line qu'on ne veut pas mais on traite quand meme car tous ce qu'on a avnt nous suffit
+	// else if (linked_start && linked_end)
+	// 	free_line(&line, 1); // FREE LINKED LIST
+	// else // Line qu'on ne veut pas mais on traite quand meme car tous ce qu'on a avnt nous suffit
 	return (0);
 }
