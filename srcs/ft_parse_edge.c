@@ -6,23 +6,11 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/02 23:35:32 by wahasni           #+#    #+#             */
-/*   Updated: 2019/09/29 19:46:12 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/10/01 15:17:51 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/lem_in.h"
-
-// static int	ft_roomislinked(t_var *var) // FOR START AND END
-// {
-
-// 	return (1);
-// } 
-
-// Set value when i linked start or end
-// Set value when i linked start or end
-// Set value when i linked start or end
-// Set value when i linked start or end
-// Set value when i linked start or end
 
 static t_vertex	*ft_room_exist(t_var *var, char *str)
 {
@@ -38,7 +26,7 @@ static t_vertex	*ft_room_exist(t_var *var, char *str)
 	return ((void *)0);
 }
 
-static int	ft_check_edges(t_var *var, char *line)
+static int		ft_check_edges(t_var *var, char *line)
 {
 	char		**tab;
 	t_vertex	*room1;
@@ -47,26 +35,43 @@ static int	ft_check_edges(t_var *var, char *line)
 	if (ft_count_word(line, '-') == 1)
 		return (1);
 	tab = ft_strsplit(line, '-');
-	if (!(room1 = ft_room_exist(var, tab[0])) || !(room2 = ft_room_exist(var, tab[1])))
+	if (!(room1 = ft_room_exist(var, tab[0])))
 		free_line(&line, 1);
-	// room1->links->vertex = room2; // push dans link last
-	// room2->links->vertex = room1; // push dans la fin de la list links (cree fonction maybe)
-	// if (room = room_start)
-	// 	linked_start = 1; 			// Pour etre sur d'avoir au moins 
-	// else if (room = room_end)	// une liaison start and end
-	// 	linked_end = 1;
+	if (!(room2 = ft_room_exist(var, tab[1])))
+		free_line(&line, 1);
+	ft_list_push_back_link(&room1->links, room2); // push dans link last
+	ft_list_push_back_link(&room2->links, room1); // push dans la fin de la list links (cree fonction maybe)
+	if (!ft_strcmp(room1->name, var->room_start->name) || !ft_strcmp(room2->name, var->room_start->name))
+	{
+		printf("SET LINKED_START TO TRUE\n");
+		var->linked_start = true; 			// Pour etre sur d'avoir au moins 
+	}
+	else if (!ft_strcmp(room1->name, var->room_end->name) || !ft_strcmp(room2->name, var->room_end->name))	// une liaison start and end
+	{
+		printf("SET LINKED_END TO TRUE\n");
+		var->linked_end = true;
+	}
 	return (0);
 }
 
-int			ft_edge(t_var *var, char *line)
+// Maybe try to know if the room1 and room2 are star or end 
+
+int				ft_edge(t_var *var, char *line)
 {
-	if (ft_count_word(line, '-') || !is_comment(line))
+	var->linked_start = false;
+	var->linked_end = false;
+	printf("test strcmp : %d\n", ft_strcmp("yo", "yo"));
+	if (is_comment(line))
+		return (free_line(&line, 0));
+	else if (ft_count_word(line, '-'))
 	{
-		if (!is_comment(line) || ft_check_edge(var, line))
-			free_line(&line, 1); // FREE LINKED LIST
+		if (ft_check_edges(var, line))
+			return (free_line(&line, 1)); // FREE LINKED LIST
 	}
-	// else if (linked_start && linked_end)
-	// 	free_line(&line, 1); // FREE LINKED LIST
-	// else // Line qu'on ne veut pas mais on traite quand meme car tous ce qu'on a avnt nous suffit
+	else if (var->linked_start == false || var->linked_end == false)
+	{
+		printf("You don't linked start or end\n");
+		return (free_line(&line, 1)); // FREE LINKED LIST
+	}
 	return (0);
 }

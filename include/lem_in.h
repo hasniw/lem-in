@@ -6,7 +6,7 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 06:09:54 by wahasni           #+#    #+#             */
-/*   Updated: 2019/09/25 17:44:41 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/09/30 18:46:38 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,16 @@ typedef enum		e_type
 typedef struct		s_vertex
 {
 	char			*name;
+	struct s_links	*links;
 	struct s_vertex	*next;
 }					t_vertex;
 
-typedef struct		s_link
+typedef struct		s_links
 {
 	t_vertex		*vertex;
-	struct s_link	*next;
-}					t_link;
+	struct s_links	*next;
+}					t_links;
+
 
 typedef struct		s_queue
 {
@@ -59,13 +61,17 @@ typedef struct 		s_var
 	size_t			nbr_vertex;
 	size_t			nbr_ant;
 	t_type			type;
-	int				have_start : 1;
+	int				have_start : 2; // t_bool plus interessant
+	t_bool			linked_start;
+	t_bool			linked_end;
 	int				pos_vertex_start;
 	char			*line;
 	char			buffer[MAX];
 	char			**matrix_name; // Pour matrice
 	int				*matrix; // Pour matrice
 	int				fd;
+	t_vertex		*room_start;
+	t_vertex		*room_end;
 	t_vertex		*vertex;
 }					t_var;
 
@@ -93,7 +99,7 @@ int					is_comment(char *str);
 int					get_comment(t_var *var, char *str);
 
 /*
-** UTILS-LIST-VERTEX
+** LIST-VERTEX
 */
 
 void				ft_list_push_front(t_vertex **begin_list, void *name);
@@ -101,6 +107,12 @@ void				ft_list_push_second(t_vertex **begin_list, void *name);
 void				ft_list_push_back(t_vertex **begin_list, void *name);
 t_vertex			*ft_create_elem(void *name);
 int					ft_list_size(t_vertex *begin_list);
+
+/*
+** LIST-LINK
+*/
+
+void				ft_list_push_back_link(t_links **begin_list, t_vertex *vertex);
 
 /*
 ** PRINT

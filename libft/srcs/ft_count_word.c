@@ -6,7 +6,7 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/15 23:21:48 by wahasni           #+#    #+#             */
-/*   Updated: 2019/06/26 07:31:38 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/10/01 13:41:45 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int	ft_count_word(char *str, char c)
 
 	i = 0;
 	w = 0;
+	if (!str)
+		return (0);
 	while (str[i])
 	{
 		if (str[i] == c)

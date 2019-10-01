@@ -6,7 +6,7 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/25 18:40:31 by wahasni           #+#    #+#             */
-/*   Updated: 2019/09/29 15:17:25 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/10/01 12:45:22 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,25 +29,20 @@ static void	ft_assign_room(t_var *var, char *str)
 	tab = ft_strsplit(str, ' ');
 	ft_printf("TAB[0] : %s\n", tab[0]);
 	if (var->type == other && var->have_start == 0)
-	{
-		printf("IN NOT HAVE START : %s\n", tab[0]);
 		ft_list_push_front(&var->vertex, (void *)tab[0]);
-	}
 	else if (var->type == other && var->have_start == 1)
-	{
-		printf("IN HAVE START : %s\n", tab[0]);
 		ft_list_push_second(&var->vertex, (void *)tab[0]);
-	}
 	else if (var->type == start)
 	{
-		// var->pos_vertex_start = 1;
-		printf("value of have_start with mat : %d\n", var->have_start);
-		var->have_start = 1;
-		printf("value of have_start : %d\n", var->have_start);
+		var->have_start = 1; // Pour savoir a partir de quel moment mettre les vertex en 2e pos
 		ft_list_push_front(&var->vertex, (void *)tab[0]);
+		var->room_start = ft_create_elem((void *)tab[0]);
 	}
 	else if (var->type == end)
+	{
 		ft_list_push_back(&var->vertex, (void *)tab[0]);
+		var->room_end = ft_create_elem((void *)tab[0]);
+	}
 	// if (var->pos_vertex_start > 0 && var->type != start)
 	// 	var->pos_vertex_start++;
 	printf("value of have_start : %d\n", var->have_start);
@@ -77,10 +72,13 @@ static int	ft_check_room(t_var *var, char *str)
 
 int			ft_room(t_var *var)
 {
-	int		ret;
 	char	*line;
+	int		ret;
 
 	var->have_start = 0;
+	printf("INSIDELOLOLO\n");
+	get_next_line(var->fd, &line);
+	printf("pye\n");
 	while ((ret = get_next_line(var->fd, &line)) > 0)
 	{
 		ft_printf("{black}ROOM LINE : %s{reset}\n", line);

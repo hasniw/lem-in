@@ -6,28 +6,29 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/29 19:32:46 by wahasni           #+#    #+#             */
-/*   Updated: 2019/09/29 19:45:04 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/09/30 18:17:44 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/lem_in.h"
 
-t_links		*ft_create_elem(void *name)
+t_links	*ft_create_elem_link(t_vertex *vertex)
 {
 	t_links	*list;
 
 	list = NULL;
-	list = malloc(sizeof(t_links));
+	if (!(list = malloc(sizeof(t_links))))
+		return (NULL);
 	if (list)
 	{
-		if (!(list->name = ft_strdup(name)))
+		if (!(list->vertex = vertex))
 			return (NULL);
 		list->next = NULL;
 	}
 	return (list);
 }
 
-void			ft_list_push_back(t_links **begin_list, void *name)
+void	ft_list_push_back_link(t_links **begin_list, t_vertex *vertex) // Met un vertex a la fin d'une liste
 {
 	t_links	*list;
 
@@ -36,8 +37,8 @@ void			ft_list_push_back(t_links **begin_list, void *name)
 	{
 		while (list->next)
 			list = list->next;
-		list->next = ft_create_elem(name);
+		list->next = ft_create_elem_link(vertex);
 	}
 	else
-		*begin_list = ft_create_elem(name);
+		*begin_list = ft_create_elem_link(vertex);
 }

@@ -6,7 +6,7 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/29 01:47:10 by wahasni           #+#    #+#             */
-/*   Updated: 2019/09/29 13:42:33 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/09/30 17:33:57 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ t_vertex		*ft_create_elem(void *name)
 	t_vertex	*list;
 
 	list = NULL;
-	list = malloc(sizeof(t_vertex));
+	if (!(list = malloc(sizeof(t_vertex))))
+		return (NULL);
 	if (list)
 	{
 		if (!(list->name = ft_strdup(name)))
