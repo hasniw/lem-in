@@ -6,7 +6,7 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/25 18:40:31 by wahasni           #+#    #+#             */
-/*   Updated: 2019/10/01 12:45:22 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/10/01 17:55:54 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ static void	ft_assign_room(t_var *var, char *str)
 {
 	char	**tab;
 	int		i;
+	t_links *link;
 
 	i = 0;
 	tab = ft_strsplit(str, ' ');
@@ -46,6 +47,12 @@ static void	ft_assign_room(t_var *var, char *str)
 	// if (var->pos_vertex_start > 0 && var->type != start)
 	// 	var->pos_vertex_start++;
 	printf("value of have_start : %d\n", var->have_start);
+	if (!(var->vertex->links = malloc(sizeof(t_links))))
+		return ;
+	if (!(link = malloc(sizeof(t_links))))
+		return ;
+	link->vertex = var->vertex;
+	link->next = NULL;
 	var->type = other;
 	var->nbr_vertex++;
 	while (tab[i])

@@ -6,7 +6,7 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/20 21:53:34 by wahasni           #+#    #+#             */
-/*   Updated: 2019/10/01 15:16:06 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/10/01 15:24:23 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ int			ft_parsing(t_var *var)
 	ft_print_room(var);
 	// ft_matrix(var);
 	printf("BEGIN PARSE-EDGES\n");
+	printf("ROOM START : %s\n", var->room_start->name);
+	printf("ROOM   END : %s\n", var->room_end->name);
 	if (var->line)
 	{
 		printf("Parse first line of edges : %s\n", var->line);

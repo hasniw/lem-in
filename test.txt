@@ -14,6 +14,7 @@ DEBUT 10 3
 #pololo
 ##aziz
 2-4
+#pol
 DEBUT-2
 2-jerem
 jerem-END
