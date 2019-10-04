@@ -6,7 +6,7 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/29 01:47:10 by wahasni           #+#    #+#             */
-/*   Updated: 2019/09/30 17:33:57 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/10/04 16:56:17 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ t_vertex		*ft_create_elem(void *name)
 		if (!(list->name = ft_strdup(name)))
 			return (NULL);
 		list->next = NULL;
+		list->links = ft_memalloc(sizeof(t_links *));
 	}
 	return (list);
 }
@@ -48,12 +49,12 @@ void			ft_list_push_second(t_vertex **begin_list, void *name)
 	t_vertex	*list;
 
 	list = *begin_list;
+	list = list->next;
 	if (list)
 	{
-		list = list->next;
-		while (list->next)
-			list = list->next;
-		list->next = ft_create_elem(name);
+		list = ft_create_elem(name);
+		list->next = *begin_list;
+		*begin_list = list;
 	}
 	else
 		*begin_list = ft_create_elem(name);

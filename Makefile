@@ -6,7 +6,7 @@
 #    By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/13 01:37:54 by wahasni           #+#    #+#              #
-#    Updated: 2019/09/30 18:33:52 by wahasni          ###   ########.fr        #
+#    Updated: 2019/10/03 13:28:03 by wahasni          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,6 +39,7 @@ SRC_NAME 	=	lem_in.c\
 				ft_parse_edge.c\
 				ft_list_vertex.c\
 				ft_list_links.c\
+				ft_matrix.c\
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
 

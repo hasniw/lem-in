@@ -6,7 +6,7 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 06:09:54 by wahasni           #+#    #+#             */
-/*   Updated: 2019/09/30 18:46:38 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/10/04 18:24:50 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,9 +66,8 @@ typedef struct 		s_var
 	t_bool			linked_end;
 	int				pos_vertex_start;
 	char			*line;
-	char			buffer[MAX];
 	char			**matrix_name; // Pour matrice
-	int				*matrix; // Pour matrice
+	int				*matrix; // Pour matrice : y * nbr de ant + x
 	int				fd;
 	t_vertex		*room_start;
 	t_vertex		*room_end;
@@ -115,10 +114,17 @@ int					ft_list_size(t_vertex *begin_list);
 void				ft_list_push_back_link(t_links **begin_list, t_vertex *vertex);
 
 /*
+** MATRIX
+*/
+
+void				ft_matrix(t_var *var);
+
+/*
 ** PRINT
 */
 
 void				ft_print_room(t_var *var);
+void				ft_print_link(t_var *var);
 
 
 #endif

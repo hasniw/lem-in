@@ -6,7 +6,7 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/25 18:40:31 by wahasni           #+#    #+#             */
-/*   Updated: 2019/10/01 17:55:54 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/10/04 18:38:33 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,9 @@ static void	ft_assign_room(t_var *var, char *str)
 {
 	char	**tab;
 	int		i;
-	t_links *link;
 
 	i = 0;
 	tab = ft_strsplit(str, ' ');
-	ft_printf("TAB[0] : %s\n", tab[0]);
 	if (var->type == other && var->have_start == 0)
 		ft_list_push_front(&var->vertex, (void *)tab[0]);
 	else if (var->type == other && var->have_start == 1)
@@ -46,13 +44,6 @@ static void	ft_assign_room(t_var *var, char *str)
 	}
 	// if (var->pos_vertex_start > 0 && var->type != start)
 	// 	var->pos_vertex_start++;
-	printf("value of have_start : %d\n", var->have_start);
-	if (!(var->vertex->links = malloc(sizeof(t_links))))
-		return ;
-	if (!(link = malloc(sizeof(t_links))))
-		return ;
-	link->vertex = var->vertex;
-	link->next = NULL;
 	var->type = other;
 	var->nbr_vertex++;
 	while (tab[i])
@@ -83,12 +74,9 @@ int			ft_room(t_var *var)
 	int		ret;
 
 	var->have_start = 0;
-	printf("INSIDELOLOLO\n");
 	get_next_line(var->fd, &line);
-	printf("pye\n");
 	while ((ret = get_next_line(var->fd, &line)) > 0)
 	{
-		ft_printf("{black}ROOM LINE : %s{reset}\n", line);
 		if (ft_count_word(line, ' ') == 2 || is_comment(line) != 1)
 		{
 			if (get_comment(var, line) != 1)
@@ -105,7 +93,6 @@ int			ft_room(t_var *var)
 			var->line = ft_strdup(line);
 			return (free_line(&line, 0)); // LINE A GERER DANS ft_parse_links
 		}
-		ft_printf("{red}<---ROOM LINE SUIVANTE--->{reset}\n");
 	}
 	return (0);
 }

@@ -6,26 +6,26 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/02 04:41:16 by wahasni           #+#    #+#             */
-/*   Updated: 2019/09/19 16:54:01 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/10/04 18:28:58 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/lem_in.h"
 
-void			ft_print_name_matrix(t_var *var)
-{
-	int i = -1;
+// void			ft_print_name_matrix(t_var *var)
+// {
+// 	int i = -1;
 
-	while (i < var->nbr_vertex)
-	{
-		if 
-	}
-}
+// 	while (i < var->nbr_vertex)
+// 	{
+// 		if 
+// 	}
+// }
 
 void		ft_create_matrix(t_var *var)
 {
-	int i;
-	t_vertex *vertex;
+	size_t		i;
+	t_vertex	*vertex;
 
 	vertex = (t_vertex *)var->vertex;
 	i = -1;
@@ -41,5 +41,9 @@ void		ft_create_matrix(t_var *var)
 
 void		ft_matrix(t_var *var)
 {
+	// int i = -1;
+
 	ft_create_matrix(var);
+	// while (var->matrix_name[++i])
+	// 	printf("matrix_name[%d] : %s\n", i, var->matrix_name[i]);
 }

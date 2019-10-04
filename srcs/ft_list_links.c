@@ -6,7 +6,7 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/29 19:32:46 by wahasni           #+#    #+#             */
-/*   Updated: 2019/10/01 18:00:27 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/10/04 16:55:58 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ t_links	*ft_create_elem_link(t_vertex *vertex)
 		return (NULL);
 	if (list)
 	{
-		printf("Helin vertex : %s\n", vertex->name);
 		if (!(list->vertex = vertex))
 			return (NULL);
 		list->next = NULL;
@@ -34,16 +33,10 @@ void	ft_list_push_back_link(t_links **begin_list, t_vertex *vertex) // Met un ve
 	t_links	*list;
 
 	list = *begin_list;
-	printf("adresse de NULL : %p\n", NULL);
-	printf("adresse : %p\n", list);
-	printf("adresse vertex : %p\n", list->vertex);
 	if (list->vertex)
 	{
-		printf("lololfsdol\n");
-		printf("list->nxt : %s\n", (char *)list);
 		while (list->next)
 			list = list->next;
-		printf("PArcours de liste finish\n");
 		list->next = ft_create_elem_link(vertex);
 	}
 	else

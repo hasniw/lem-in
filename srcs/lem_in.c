@@ -6,7 +6,7 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 00:55:47 by wahasni           #+#    #+#             */
-/*   Updated: 2019/10/01 12:38:14 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/10/04 18:29:05 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,12 @@ int	main(int ac, char **av)
 		return (ft_printf("Opening file failed.\n"));
 	if (ft_parsing(var))
 		return (1);
+	ft_printf("{yellow}<----------------------------->{reset}\n");
+	ft_print_room(var);
+	ft_printf("{yellow}<----------------------------->{reset}\n");
+	ft_matrix(var);
+	ft_print_link(var);
+	exit (1);
 	ft_printf("PARSING BON\n");
 	return (0);
 }
