@@ -6,7 +6,7 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/26 01:30:44 by wahasni           #+#    #+#             */
-/*   Updated: 2019/10/01 18:24:06 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/10/06 19:16:17 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ int			ft_ants(t_var *var)
 
 	while ((ret = get_next_line(var->fd, &line)) > 0)
 	{
-		ft_printf("LINE : %s\n", line);
-		ft_printf("NUMBER COMMENT : %d\n", is_comment(line));
 		if ((ft_atoi(line) > 0 && is_number(line)) || !is_comment(line))
 		{
 			if (!is_comment(line))
@@ -30,7 +28,6 @@ int			ft_ants(t_var *var)
 		}
 		else if (var->nbr_ant == 0)
 		{
-			ft_printf("nbr ant : %d\n", (int)var->nbr_ant);
 			ft_putstr("ERROR\n");
 			return (free_line(&line, 1));
 		}
@@ -38,7 +35,6 @@ int			ft_ants(t_var *var)
 			return (0);
 		if (var->nbr_ant)
 			return (0);
-		printf("<---LINE SUIVANTE--->\n");
 	}
 	return (0);
 }

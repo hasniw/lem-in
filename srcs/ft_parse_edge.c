@@ -6,7 +6,7 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/02 23:35:32 by wahasni           #+#    #+#             */
-/*   Updated: 2019/10/04 16:58:09 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/10/06 19:16:28 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ int				ft_edge(t_var *var, char *line)
 {
 	var->linked_start = false;
 	var->linked_end = false;
-	ft_printf("{red}IN EDGE : %s{reset}\n", line);
 	if (!is_comment(line))
 		return (free_line(&line, 0));
 	else if (ft_count_word(line, '-') > 0)
