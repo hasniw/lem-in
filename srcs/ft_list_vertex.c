@@ -6,7 +6,7 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/29 01:47:10 by wahasni           #+#    #+#             */
-/*   Updated: 2019/10/04 16:56:17 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/10/06 19:07:55 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,18 +46,18 @@ t_vertex		*ft_create_elem(void *name)
 
 void			ft_list_push_second(t_vertex **begin_list, void *name)
 {
-	t_vertex	*list;
+	t_vertex *new;
+	t_vertex *list;
 
-	list = *begin_list;
-	list = list->next;
-	if (list)
-	{
-		list = ft_create_elem(name);
-		list->next = *begin_list;
-		*begin_list = list;
-	}
+	new = ft_create_elem(name);
+	list = (t_vertex *)*begin_list;
+	if (!list->next)
+		list->next = new;
 	else
-		*begin_list = ft_create_elem(name);
+	{
+		new->next = list->next;
+		list->next = new;
+	}
 }
 
 void			ft_list_push_back(t_vertex **begin_list, void *name)
