@@ -6,7 +6,7 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 00:55:47 by wahasni           #+#    #+#             */
-/*   Updated: 2019/10/04 18:29:05 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/10/07 17:25:03 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ int	main(int ac, char **av)
 	ft_printf("{yellow}<----------------------------->{reset}\n");
 	ft_print_room(var);
 	ft_printf("{yellow}<----------------------------->{reset}\n");
-	ft_matrix(var);
 	ft_print_link(var);
+	ft_matrix(var);
 	exit (1);
 	ft_printf("PARSING BON\n");
 	return (0);
