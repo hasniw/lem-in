@@ -6,7 +6,7 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/02 23:35:32 by wahasni           #+#    #+#             */
-/*   Updated: 2019/10/06 19:16:28 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/10/09 13:28:10 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static int		ft_check_edges(t_var *var, char *line)
 
 	if (ft_count_word(line, '-') != 1)
 		return (1);
-	tab = ft_strsplit(line, '-');
+	tab = ft_strsplit(line, '-'); // FREE TAB
 	if (!(room1 = ft_room_exist(var, tab[0])))
 		free_line(&line, 1);
 	if (!(room2 = ft_room_exist(var, tab[1])))
@@ -42,7 +42,7 @@ static int		ft_check_edges(t_var *var, char *line)
 	ft_list_push_back_link(&room2->links, room1); // push dans la fin de la list links (cree fonction maybe)
 	ft_list_push_back_link(&room1->links, room2); // push dans link last
 	if (!ft_strcmp(room1->name, var->room_start->name) || !ft_strcmp(room2->name, var->room_start->name))
-		var->linked_start = true; 			// Pour etre sur d'avoir au moins 
+		var->linked_start = true;			// Pour etre sur d'avoir au moins 
 	else if (!ft_strcmp(room1->name, var->room_end->name) || !ft_strcmp(room2->name, var->room_end->name))	// une liaison start and end
 		var->linked_end = true;
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/25 18:40:31 by wahasni           #+#    #+#             */
-/*   Updated: 2019/10/04 18:38:33 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/10/09 13:42:05 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static void	ft_assign_room(t_var *var, char *str)
 	int		i;
 
 	i = 0;
-	tab = ft_strsplit(str, ' ');
+	tab = ft_strsplit(str, ' '); // FREE TAB
 	if (var->type == other && var->have_start == 0)
 		ft_list_push_front(&var->vertex, (void *)tab[0]);
 	else if (var->type == other && var->have_start == 1)
@@ -74,7 +74,6 @@ int			ft_room(t_var *var)
 	int		ret;
 
 	var->have_start = 0;
-	get_next_line(var->fd, &line);
 	while ((ret = get_next_line(var->fd, &line)) > 0)
 	{
 		if (ft_count_word(line, ' ') == 2 || is_comment(line) != 1)

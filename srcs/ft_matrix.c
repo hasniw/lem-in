@@ -6,7 +6,7 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/02 04:41:16 by wahasni           #+#    #+#             */
-/*   Updated: 2019/10/07 18:51:42 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/10/08 17:59:35 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,13 @@
 
 static void		ft_print_matrix(t_var *var)
 {
-	size_t	i = 0;
 	size_t	j = 0;
-	while (i < var->nbr_vertex)
+	while (j < var->nbr_vertex * var->nbr_vertex)
 	{
-		while (j < var->nbr_vertex)
+		if (var->matrix[j] == 1)
+			ft_printf("{blue}[%d]{reset}", (int)j++);
+		else
 			ft_printf("{blue}[%d]{reset}", var->matrix[j++]);
-		j = 0;
-		i++;
 	}
 	ft_printf("\n");
 }
@@ -33,42 +32,31 @@ static void		assign_matrix(t_vertex *vertex, char **name, t_var *var, int x)
 
 	i = 0;
 	room = (t_vertex *)vertex;
-	while (vertex->links)
+	while (room->links)
 	{
-		while (ft_strequ(vertex->links->vertex->name, name[i]) != 1)
+		while (ft_strequ(room->links->vertex->name, name[i]) != 1)
 			i++;
-		if (ft_strequ(vertex->links->vertex->name, name[i]))
+		if (ft_strequ(room->links->vertex->name, name[i]))
 		{
-			printf("POPO : 1er : %d | 2eme : %d\n", (int)(x + i * var->nbr_vertex), (int)(i + x * var->nbr_vertex));
 			var->matrix[x + i * var->nbr_vertex] = 1;
 			var->matrix[i + x * var->nbr_vertex] = 1;
 			i = 0;
-			vertex->links = vertex->links->next;
+			room->links = room->links->next;
 		}
 	}
 }
 
 static void		ft_set_matrix(t_var *var)
 {
-	size_t		y;
-	size_t		x;
+	size_t		i;
 	t_vertex	*room;
 
 	room = (t_vertex *)var->vertex;
-	y = 0;
-	while (y < var->nbr_vertex)
+	i = 0;
+	while (i < var->nbr_vertex)
 	{
-		x = 0;
-		while (x < var->nbr_vertex)
-		{
-			ft_printf("{green}Value of x : %d & y : {reset}%d\n", (int)x, (int)y);
-			ft_printf("{red}before assign_matrix{reset}\n");
-			assign_matrix(room, var->matrix_name, var, x);
-			ft_printf("{red}after assign_matrix{reset}\n");
-			room = room->next;
-			x++;
-		}
-		y++;
+		assign_matrix(room, var->matrix_name, var, i++);
+		room = room->next;
 	}
 }
 
@@ -90,15 +78,10 @@ void		ft_create_matrix(t_var *var)
 
 void		ft_matrix(t_var *var)
 {
-	// int i = 0;   
-
-	printf("YTSDGDFGDSFG : %d\n", ft_strequ("aA", "aA"));
+	ft_printf("{yellow}<----------------------------->{reset}\n");
+	ft_printf("{yellow}Set matrix{reset}\n");
 	ft_create_matrix(var);
 	ft_print_matrix(var);
 	ft_set_matrix(var);
-	// while (var->matrix_name[i])
-	// {
-	// 	printf("matrix_name[%d] : %s\n", i, var->matrix_name[i]);
-	// 	i++;
-	// }
+	ft_print_matrix(var);
 }
