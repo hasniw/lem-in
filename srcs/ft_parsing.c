@@ -6,7 +6,7 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/20 21:53:34 by wahasni           #+#    #+#             */
-/*   Updated: 2019/10/09 13:27:17 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/10/11 17:19:59 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,9 @@ void		ft_print_link(t_var *var)
 	t_vertex *tmp = (t_vertex *)var->vertex;
 	t_links	*tmp_links;
 	
+	// (void)tmp;
+	// (void)tmp_links;
+	// (void)i;
 	int i = 1;
 	while (tmp)
 	{
@@ -25,6 +28,8 @@ void		ft_print_link(t_var *var)
 		tmp_links = tmp->links;
 		while (tmp_links)
 		{
+			if (!tmp->links->vertex)
+				return ;
 			ft_printf("{black}ROOM[%d] : %s{reset}\n", i, tmp_links->vertex->name);
 			tmp_links = tmp_links->next;
 			i++;
@@ -56,19 +61,14 @@ int			ft_parsing(t_var *var)
 	if (ft_ants(var))
 		return (1);
 	if (ft_room(var))
-	{
-		ft_print_room(var);
 		return (1);
-	}
 	if (var->line)
-	{
 		if (ft_edge(var, var->line))
-			return (free_line(&var->line, 1));
-	}
+			return (1);
 	while ((ret = get_next_line(var->fd, &line)) > 0)
-	{
 		if (ft_edge(var, line))
-			return (free_line(&line, 1));
-	}
+			return (1);
+	if (var->linked_start == false || var->linked_end == false)
+		return (1);
 	return (0);
 }

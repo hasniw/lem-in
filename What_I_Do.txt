@@ -1,0 +1,3 @@
+5-9-15-25-26-30-33 -> affichage
+Gerer cas d'erreur et message d'erreur
+Gerer leaks

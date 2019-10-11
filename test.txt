@@ -3,11 +3,11 @@
 42
 #commentaire
 4 16 3
+##start
+START 1 1
 ##end
 END 5 4
 jerem 12 01
-##start
-DEBUT 10 3
 2 14 2
 55 55 55
 #test
@@ -15,9 +15,9 @@ DEBUT 10 3
 ##aziz
 2-4
 #pol
-DEBUT-2
 2-jerem
 jerem-END
 4-END
 END-55
+START-2
 #lama

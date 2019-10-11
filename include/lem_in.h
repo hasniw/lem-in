@@ -6,7 +6,7 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 06:09:54 by wahasni           #+#    #+#             */
-/*   Updated: 2019/10/04 18:24:50 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/10/11 15:21:02 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ typedef struct 		s_var
 	size_t			nbr_ant;
 	t_type			type;
 	int				have_start : 2; // t_bool plus interessant
+	int				have_end;
 	t_bool			linked_start;
 	t_bool			linked_end;
 	int				pos_vertex_start;

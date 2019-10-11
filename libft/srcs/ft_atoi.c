@@ -6,7 +6,7 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/08 14:41:26 by wahasni           #+#    #+#             */
-/*   Updated: 2019/06/30 19:24:28 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/10/11 17:38:12 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int			is_number(char *str)
 {
 	while (*str)
 	{
-		if (*str >= 48 && *str <= 57)
+		if (*str < 48 || *str > 57)
 			return (1);
 		str++;
 	}

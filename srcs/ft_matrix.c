@@ -6,7 +6,7 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/02 04:41:16 by wahasni           #+#    #+#             */
-/*   Updated: 2019/10/08 17:59:35 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/10/10 17:47:45 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ static void		assign_matrix(t_vertex *vertex, char **name, t_var *var, int x)
 	room = (t_vertex *)vertex;
 	while (room->links)
 	{
+		if (!room->links->vertex)
+			return ;
 		while (ft_strequ(room->links->vertex->name, name[i]) != 1)
 			i++;
 		if (ft_strequ(room->links->vertex->name, name[i]))
