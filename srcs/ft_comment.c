@@ -6,15 +6,18 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/26 00:34:20 by wahasni           #+#    #+#             */
-/*   Updated: 2019/09/25 15:51:35 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/10/12 13:28:32 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/lem_in.h"
 
-int	is_comment(char *str)
+int	is_comment(char *str, t_var *var)
 {
 	if (str[0] != '#')
+		return (1);
+	if ((!ft_strcmp("##start", str) && var->have_start == 1)
+		|| (!ft_strcmp("##end", str) && var->have_end == 1))
 		return (1);
 	if (str[1] == '#')
 	{
@@ -28,13 +31,13 @@ int	is_comment(char *str)
 
 int	get_comment(t_var *var, char *str)
 {
-	if (is_comment(str) == 1 || (var->type == start || var->type == end)) // Si avant ##START ou ##END 
+	if (is_comment(str, var) == 1 || (var->type == start || var->type == end)) // Si avant ##START ou ##END 
 		return (1);
-	if (!is_comment(str))
+	if (!is_comment(str, var))
 		var->type = other;
-	else if (is_comment(str) == 2)
+	else if (is_comment(str, var) == 2)
 		var->type = start;
-	else if (is_comment(str) == 3)
+	else if (is_comment(str, var) == 3)
 		var->type = end;
 	return (0);
 }

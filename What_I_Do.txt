@@ -1,3 +1,5 @@
-5-9-15-25-26-30-33 -> affichage
+map4-33 -> affichage : link between same room & x-y more than int
+INT DEPASSER MAIS NO CRASH => x et y pas enregistre
+VOIR SI END PEUT ETRE LIE
 Gerer cas d'erreur et message d'erreur
 Gerer leaks

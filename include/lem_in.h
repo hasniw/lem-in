@@ -6,7 +6,7 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 06:09:54 by wahasni           #+#    #+#             */
-/*   Updated: 2019/10/11 15:21:02 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/10/12 13:28:46 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ int					free_tab(char **tab, int ret);
 ** COMMENT
 */
 
-int					is_comment(char *str);
+int					is_comment(char *str, t_var *var);
 int					get_comment(t_var *var, char *str);
 
 /*

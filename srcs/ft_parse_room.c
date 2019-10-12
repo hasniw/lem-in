@@ -6,7 +6,7 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/25 18:40:31 by wahasni           #+#    #+#             */
-/*   Updated: 2019/10/11 17:46:08 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/10/12 13:29:38 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,10 +56,8 @@ static int	ft_check_room(t_var *var, char *str)
 	tab = ft_strsplit(str, ' ');
 	if (!tab[1] || !tab[2])
 		return (0);
-	if (!is_number(tab[1]) && !is_number(tab[2]))
+	if (!is_number(tab[1]) && !is_number(tab[2]) && tab[0][0] != 'L')
 		return (free_tab(tab, 1));
-	if (tab[0][0])
-		return (free_tab(tab, 0));
 	// while (var->vertex->next)
 	// {
 	// 	if (ft_strcmp(var->vertex->name, tab[0]))
@@ -78,7 +76,7 @@ int			ft_room(t_var *var)
 	var->have_end = 0;
 	while ((ret = get_next_line(var->fd, &line)) > 0)
 	{
-		if (ft_count_word(line, ' ') == 2 || is_comment(line) != 1)
+		if (ft_count_word(line, ' ') == 2 || is_comment(line, var) != 1)
 		{
 			if (get_comment(var, line) != 1)
 				ft_strdel(&line);
