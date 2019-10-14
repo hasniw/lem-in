@@ -6,7 +6,7 @@
 #    By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/13 01:37:54 by wahasni           #+#    #+#              #
-#    Updated: 2019/10/03 13:28:03 by wahasni          ###   ########.fr        #
+#    Updated: 2019/10/14 15:10:17 by wahasni          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 NAME	=	lem-in
 
 # Compilation
-CC			=	@cc -g -fsanitize=address
+CC			=	@cc
 CFLAGS		=	-O3 -Wall -Wextra -Werror
 CPPFLAGS	=	-Iinclude
 

@@ -6,7 +6,7 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 00:55:47 by wahasni           #+#    #+#             */
-/*   Updated: 2019/10/11 13:16:21 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/10/14 19:29:05 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ static void	ft_init(t_var	*var)
 {
 	var->linked_start = false;
 	var->linked_end = false;
+	var->have_start = 0;
+	var->have_end = 0;
 }
 
 int	main(int ac, char **av)
@@ -36,11 +38,13 @@ int	main(int ac, char **av)
 	ft_init(var);
 	if (ft_parsing(var))
 		return (1);
+	ft_printf("{yellow}<-------------NBR FOURMI  : %d --------------->{reset}\n", (int)var->nbr_ant);	
 	ft_printf("{yellow}<----------------------------->{reset}\n");
 	ft_print_room(var);
 	ft_printf("{yellow}<----------------------------->{reset}\n");
 	ft_print_link(var);
 	ft_matrix(var);
 	ft_printf("{yellow}<----------------------------->{reset}\n");
+	free_all(var);
 	return (0);
 }

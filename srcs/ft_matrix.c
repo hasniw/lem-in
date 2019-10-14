@@ -6,7 +6,7 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/02 04:41:16 by wahasni           #+#    #+#             */
-/*   Updated: 2019/10/10 17:47:45 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/10/14 19:27:09 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,22 +28,22 @@ static void		ft_print_matrix(t_var *var)
 static void		assign_matrix(t_vertex *vertex, char **name, t_var *var, int x)
 {
 	int			i;
-	t_vertex	*room;
+	t_links		*links;
 
 	i = 0;
-	room = (t_vertex *)vertex;
-	while (room->links)
+	links = (t_links *)vertex->links;
+	while (links)
 	{
-		if (!room->links->vertex)
+		if (!links->vertex)
 			return ;
-		while (ft_strequ(room->links->vertex->name, name[i]) != 1)
+		while (ft_strequ(links->vertex->name, name[i]) != 1)
 			i++;
-		if (ft_strequ(room->links->vertex->name, name[i]))
+		if (ft_strequ(links->vertex->name, name[i]))
 		{
 			var->matrix[x + i * var->nbr_vertex] = 1;
 			var->matrix[i + x * var->nbr_vertex] = 1;
 			i = 0;
-			room->links = room->links->next;
+			links = links->next;
 		}
 	}
 }

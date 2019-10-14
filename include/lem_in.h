@@ -6,7 +6,7 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 06:09:54 by wahasni           #+#    #+#             */
-/*   Updated: 2019/10/12 13:28:46 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/10/14 18:11:42 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,8 @@ int					ft_edge(t_var *var, char *line);
 
 int					free_line(char **line, int i);
 int					free_tab(char **tab, int ret);
+void				free_all(t_var *var);
+void				free_matrix(t_var *var);
 
 /*
 ** COMMENT

@@ -6,7 +6,7 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/20 21:53:34 by wahasni           #+#    #+#             */
-/*   Updated: 2019/10/12 14:11:37 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/10/12 14:47:15 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int			ft_parsing(t_var *var)
 		return (1);
 	if (var->line)
 		if (ft_edge(var, var->line))
-			return (1);
+			return (free_line(&var->line, 1));
 	while ((ret = get_next_line(var->fd, &line)) > 0)
 		if (ft_edge(var, line))
 			return (1);
