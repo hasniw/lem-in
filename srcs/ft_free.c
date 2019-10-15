@@ -6,7 +6,7 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/26 03:16:46 by wahasni           #+#    #+#             */
-/*   Updated: 2019/10/14 19:05:59 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/10/15 17:30:35 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,21 @@ void	free_matrix(t_var *var)
 	free(var->matrix);
 }
 
+void	free_start_end(t_var *var)
+{
+	t_vertex	*tmp_vertex;
+	t_links		*tmp_link;
+
+	tmp_vertex = (t_vertex *)var->vertex;
+	tmp_link = (t_links *)tmp_vertex->links;
+	free(var->room_start->links);
+	free(var->room_end->links);
+	free(var->room_start->name);
+	free(var->room_end->name);
+	free(var->room_start);
+	free(var->room_end);
+}
+
 void	free_all(t_var *var)
 {
 	t_vertex	*current;
@@ -32,30 +47,31 @@ void	free_all(t_var *var)
 
 	current = var->vertex;
 	ft_printf("{red}MASSUD : %s\n{reset}\n", var->vertex->name);
-	ft_print_link(var);
 	while (current)
 	{
 	        next = current->next;
 			current_links = current->links;
+			printf("NAME : %s\n", current->name);
 			while (current_links)
 			{
 				current_links_next = current_links->next;
-				current_links_next = current->links->next;
-				free(current->links);
+				printf("msandana BEFORE\n");
+				// free(current_links->vertex->name);
+				free(current_links);
+				printf("msandana AFTER\n");
 				current_links = current_links_next;
 			}
+			printf("RAJ1\n");
+			// printf("RAJ3\n");
 			free(current->name);
-			free(current->links);
 			free(current);
+			// printf("RAJ4\n");
 	        current = next;
+			// printf("RAJ5\n");
 	}
 	var->vertex = (t_vertex *)0;
-	free(var->room_start->links);     	// FREE LIST VAR->END/START
-	free(var->room_end->links);	      	// FREE LIST VAR->END/START
-	free(var->room_start->name);      	// FREE LIST VAR->END/START
-	free(var->room_end->name);        	// FREE LIST VAR->END/START
-	free(var->room_start);         		// FREE LIST VAR->END/START
-	free(var->room_end);          		// FREE LIST VAR->END/START
+	// printf("POULOIFDFS : %s\n", var->vertex->name);
+	printf("RAJ\n");
 	free_matrix(var);
 	free(var);
 	var = (t_var *)0;
