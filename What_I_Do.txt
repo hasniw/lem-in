@@ -5,4 +5,5 @@ Proteger free_tab
 Gerer cas d'erreur
 Gerer standart input
 Gerer leaks
+GNL -> 0
 Valgrind --> -fsanitze=address
