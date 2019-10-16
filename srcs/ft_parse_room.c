@@ -32,19 +32,17 @@ static void	ft_assign_room(t_var *var, char *str)
 	{
 		var->have_start = 1;
 		ft_list_push_front(&var->vertex, (void *)tab[0]);
-		var->room_start = ft_create_elem((void *)tab[0]);
+		var->room_start = ft_strdup(tab[0]);
 	}
 	else if (var->type == end)
 	{
 		var->have_end = 1;
 		ft_list_push_back(&var->vertex, (void *)tab[0]);
-		var->room_end = ft_create_elem((void *)tab[0]);
+		var->room_end = ft_strdup(tab[0]);
 	}
 	var->type = other;
 	var->nbr_vertex++;
-	while (tab[i])
-		free(tab[i++]);
-	free(tab);
+	free_tab(tab, 0);
 }
 
 static int	ft_check_room(t_var *var, char *str)

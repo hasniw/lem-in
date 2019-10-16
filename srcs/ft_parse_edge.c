@@ -45,11 +45,11 @@ static int		ft_check_edges(t_var *var, char *line)
 	free_tab(tab, 0);
 	ft_list_push_back_link(&room2->links, room1);
 	ft_list_push_back_link(&room1->links, room2);
-	if (!ft_strcmp(room1->name, var->room_start->name)
-		|| !ft_strcmp(room2->name, var->room_start->name))
+	if (!ft_strcmp(room1->name, var->room_start)
+		|| !ft_strcmp(room2->name, var->room_start))
 		var->linked_start = true;
-	if (!ft_strcmp(room1->name, var->room_end->name)
-		|| !ft_strcmp(room2->name, var->room_end->name))
+	if (!ft_strcmp(room1->name, var->room_end)
+		|| !ft_strcmp(room2->name, var->room_end))
 		var->linked_end = true;
 	return (0);
 }

@@ -23,20 +23,33 @@ void	free_matrix(t_var *var)
 	free(var->matrix);
 }
 
-void	free_start_end(t_var *var)
-{
-	t_vertex	*tmp_vertex;
-	t_links		*tmp_link;
+// void	free_start_end(t_var *var)
+// {
+// 	t_vertex	*current;
+// 	t_links		*current_links;
+// 	t_links		*current_links_next;
 
-	tmp_vertex = (t_vertex *)var->vertex;
-	tmp_link = (t_links *)tmp_vertex->links;
-	free(var->room_start->links);
-	free(var->room_end->links);
-	free(var->room_start->name);
-	free(var->room_end->name);
-	free(var->room_start);
-	free(var->room_end);
-}
+// 	current = var->room_start;
+// 	current_links = current->links;
+// 	while (current_links)
+// 	{
+// 		current_links_next = current_links->next;
+// 		free(current_links);
+// 		current_links = current_links_next;
+// 	}
+// 	free(current->name);
+// 	free(current);
+// 	current = var->room_end;
+// 	current_links = current->links;
+// 	while (current_links)
+// 	{
+// 		current_links_next = current_links->next;
+// 		free(current_links);
+// 		current_links = current_links_next;
+// 	}
+// 	free(current->name);
+// 	free(current);
+// }
 
 void	free_all(t_var *var)
 {
@@ -46,66 +59,27 @@ void	free_all(t_var *var)
 	t_links		*current_links_next;
 
 	current = var->vertex;
-	ft_printf("{red}MASSUD : %s\n{reset}\n", var->vertex->name);
 	while (current)
 	{
-	        next = current->next;
-			current_links = current->links;
-			printf("NAME : %s\n", current->name);
-			while (current_links)
-			{
-				current_links_next = current_links->next;
-				printf("msandana BEFORE\n");
-				// free(current_links->vertex->name);
-				free(current_links);
-				printf("msandana AFTER\n");
-				current_links = current_links_next;
-			}
-			printf("RAJ1\n");
-			// printf("RAJ3\n");
-			free(current->name);
-			free(current);
-			// printf("RAJ4\n");
-	        current = next;
-			// printf("RAJ5\n");
+	    next = current->next;
+		current_links = current->links;
+		while (current_links)
+		{
+			current_links_next = current_links->next;
+			free(current_links);
+			current_links = current_links_next;
+		}
+		free(current->name);
+		free(current);
+	    current = next;
 	}
 	var->vertex = (t_vertex *)0;
-	// printf("POULOIFDFS : %s\n", var->vertex->name);
-	printf("RAJ\n");
+	free(var->room_end);
+	free(var->room_start);
 	free_matrix(var);
 	free(var);
 	var = (t_var *)0;
 }
-
-// void	free_all(t_var *var)
-// {
-// 	t_vertex	*tmp;
-// 	t_vertex	*tmp_next;
-// 	t_links		*tmp_links;
-// 	t_links		*tmp_links_next;
-
-// 	tmp = (t_vertex *)var->vertex;
-// 	while (tmp)
-// 	{
-// 		tmp_links = tmp->links;
-// 		while (tmp_links)
-// 		{
-// 			if (!tmp->links->vertex)
-// 				return ;
-// 			tmp_links_next = tmp->links->next;
-// 			free(tmp->links);
-// 			tmp_links = tmp_links_next;
-// 		}
-// 		tmp_next = tmp->next;
-// 		free(tmp);
-// 		tmp = tmp_next;
-// 	}
-// 	var->vertex->links = (t_links *)0;
-// 	var->vertex = (t_vertex *)0;
-// 	free(var);
-// 	// FREE_ROOM->LINKED (all lien)
-// 	// FREE_ROOM
-// }
 
 int		free_tab(char **tab, int ret)
 {

@@ -70,8 +70,8 @@ typedef struct 		s_var
 	char			**matrix_name; // Pour matrice
 	int				*matrix; // Pour matrice : y * nbr de ant + x
 	int				fd;
-	t_vertex		*room_start;
-	t_vertex		*room_end;
+	char			*room_start;
+	char			*room_end;
 	t_vertex		*vertex;
 }					t_var;
 
