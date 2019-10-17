@@ -6,7 +6,7 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 06:09:54 by wahasni           #+#    #+#             */
-/*   Updated: 2019/10/14 18:11:42 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/10/17 16:42:42 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,21 @@
 
 #include "../libft/includes/libft.h"
 
-# define MAX 4096
+# define QUEUE_MAX_LEN 10000
+# define END_OF_QUEUE -1
 
 typedef enum		e_bool
 {
     false,
     true
 }					t_bool;
+
+typedef	enum		e_status
+{
+	NO_LINK,
+	LINK,
+	USED_LINK
+}					t_status;
 
 typedef enum		e_type
 {
@@ -55,6 +63,19 @@ typedef struct		s_bfs
 	t_queue			*queue;
 	int				*path;
 }					t_bfs;
+
+typedef struct		s_data
+{
+	int				prev_move;
+	int				nbr_paths;
+	int				*save;
+	int				*actual;
+	int				first;
+	int				curr_node;
+	int				child_node;
+	int				*path;
+	int				queue[QUEUE_MAX_LEN];
+}					t_data;
 
 typedef struct 		s_var
 {
@@ -129,5 +150,12 @@ void				ft_matrix(t_var *var);
 void				ft_print_room(t_var *var);
 void				ft_print_link(t_var *var);
 
+/*
+** QUEUE
+*/
+
+void				setQueue(int queue[], int node);
+void				enqueue(int queue[], int node);
+void				dequeue(int queue[]);
 
 #endif

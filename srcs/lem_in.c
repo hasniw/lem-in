@@ -6,7 +6,7 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 00:55:47 by wahasni           #+#    #+#             */
-/*   Updated: 2019/10/14 19:29:05 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/10/17 16:49:35 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,26 @@ int	main(int ac, char **av)
 	ft_matrix(var);
 	ft_printf("{yellow}<----------------------------->{reset}\n");
 	free_all(var);
+	// int further;
+    // int nbr_nodes = 6;
+    // int matrix[6 * 6] =
+    //     {0, 1, 0, 1, 0, 0,
+    //     1, 0, 1, 0, 0, 0,
+    //     0, 1, 0, 0, 0, 1,
+    //     1, 0, 0, 0, 1, 0,
+    //     0, 0, 0, 1, 0, 1,
+    //     0, 0, 1, 0, 1, 0};
+    // t_data data = setData(nbr_nodes);
+
+    // further = 0;
+    // while (further < 5)
+    // {
+    //     if (bfs(data, matrix, nbr_nodes) == - 1)
+    //         break;
+    //     storeNewPath(data, nbr_nodes);
+    //     further = (!countMove(data, nbr_nodes)) ? further + 1 : 0;
+    // }
+    // //data->save;
+    // print_moves();
 	return (0);
 }

@@ -1,0 +1,32 @@
+#ifndef LEM_IN_H
+    #define LEM_IN_H
+​
+
+    #include <stdio.h>
+    #define FALSE 0
+    #define TRUE 1
+​
+    #define NO_LINK 0
+    #define LINK 1
+    #define USED_LINK 2
+​
+    #define QUEUE_MAX_LEN 10000
+    #define END_OF_QUEUE -1
+​
+    typedef struct     s_data
+    {
+        int             prev_move;
+        int             nbr_paths;
+        int             *save;
+        int             *actual;
+        int             first;
+        int             curr_node;
+        int             child_node;
+        int             *path;
+        int             queue[QUEUE_MAX_LEN];
+    }                   t_data;
+​
+    void    setQueue(int queue[], int node);
+    void    enqueue(int queue[], int node);
+    void    dequeue(int queue[]);
+#endif
