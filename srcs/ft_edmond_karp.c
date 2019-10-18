@@ -6,7 +6,7 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/06 04:27:34 by wahasni           #+#    #+#             */
-/*   Updated: 2019/10/17 16:53:41 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/10/18 18:59:20 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,4 +62,22 @@ int bfs(t_data *data, int matrix[], int nbr_nodes)
         data->curr_node = data->queue[0];
     }
     return (getLastNode(data->path, nbr_nodes - 1, nbr_nodes));
+}
+
+int	ft_algo(t_var *var)
+{
+	int		further;
+	t_data	*data;
+
+	t_data data = setData(var->nbr_vertex);
+    further = 0;
+    while (further < 5)
+    {
+        if (bfs(data, var->matrix, var->nbr_vertex) == - 1)
+            break;
+        storeNewPath(data, var->nbr_vertex);
+        further = (!countMove(data, var->nbr_vertex)) ? further + 1 : 0;
+    }
+    //data->save;
+    print_moves();
 }

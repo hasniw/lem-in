@@ -6,7 +6,7 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 06:09:54 by wahasni           #+#    #+#             */
-/*   Updated: 2019/10/17 16:42:42 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/10/18 18:16:13 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -157,5 +157,12 @@ void				ft_print_link(t_var *var);
 void				setQueue(int queue[], int node);
 void				enqueue(int queue[], int node);
 void				dequeue(int queue[]);
+
+/*
+** INIT
+*/
+
+void				ft_init(t_var *var);
+t_data				*setData(int nbr_nodes);
 
 #endif

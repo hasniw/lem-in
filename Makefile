@@ -6,7 +6,7 @@
 #    By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/13 01:37:54 by wahasni           #+#    #+#              #
-#    Updated: 2019/10/17 16:54:22 by wahasni          ###   ########.fr        #
+#    Updated: 2019/10/18 19:01:02 by wahasni          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,6 +41,7 @@ SRC_NAME 	=	lem_in.c\
 				ft_list_links.c\
 				ft_matrix.c\
 				queue.c\
+				init.c\
 				# ft_edmond_karp.c\
 
 OBJ_NAME = $(SRC_NAME:.c=.o)

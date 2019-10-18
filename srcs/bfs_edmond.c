@@ -12,30 +12,6 @@
 
 #include "lem_in.h"
 
-t_data	*setData(int nbr_nodes)
-{
-    t_data  *data;
-    int     i;
-    int     nodes_sqrt;
-
-    i = 0;
-    nodes_sqrt = nbr_nodes * nbr_nodes;
-    if (!(data = malloc(sizeof(t_data))))
-        exit(EXIT_FAILURE);
-    data->prev_move = -1;
-    data->nbr_move = 0;
-    if (!(data->save = malloc(sizeof(int) * nodes_sqrt)
-    || !(data->actual = malloc(sizeof(int) * nodes_sqrt))
-    || !(data->path = malloc(sizeof(int) * nodes_sqrt)))
-        exit(EXIT_FAILURE);
-    while (i < nodes_sqrt)
-    {
-        data->save[i] = 0;
-        data->actual[i] = 0;
-    }
-    return (data);
-}
-
 int		getIndex(int from, int to, int nbr_nodes)
 {
     return (nbr_nodes * from + to);
