@@ -28,13 +28,13 @@ void	ft_init(t_var	*var)
 
 //     i = 0;
 //     nodes_sqrt = nbr_nodes * nbr_nodes;
-//     if (!(data = malloc(sizeof(t_data))))
+//     if (!(data = memalloc(sizeof(t_data))))
 //         exit(EXIT_FAILURE);
 //     data->prev_move = -1;
 //     data->nbr_move = 0;
-//     if (!(data->save = malloc(sizeof(int) * nodes_sqrt)
-//     || !(data->actual = malloc(sizeof(int) * nodes_sqrt))
-//     || !(data->path = malloc(sizeof(int) * nodes_sqrt)))
+//     if (!(data->save = memalloc(sizeof(int) * nodes_sqrt)
+//     || !(data->actual = memalloc(sizeof(int) * nodes_sqrt))
+//     || !(data->path = memalloc(sizeof(int) * nodes_sqrt)))
 //         exit(EXIT_FAILURE);
 //     while (i < nodes_sqrt)
 //     {

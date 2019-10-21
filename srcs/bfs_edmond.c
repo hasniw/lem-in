@@ -17,7 +17,7 @@ int		getIndex(int from, int to, int nbr_nodes)
     return (nbr_nodes * from + to);
 }
 
-int		isBackFlow(int matrix[], int nbr_nodes, int to_node)
+int		isBackFlow(int *matrix, int nbr_nodes, int to_node)
 {
     int i;
     int index;

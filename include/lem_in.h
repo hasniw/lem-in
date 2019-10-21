@@ -17,6 +17,7 @@
 
 # define QUEUE_MAX_LEN 10000
 # define END_OF_QUEUE -1
+# define EXIT_FAILURE 1
 
 typedef enum		e_bool
 {
@@ -24,12 +25,12 @@ typedef enum		e_bool
     true
 }					t_bool;
 
-typedef	enum		e_status
+typedef	enum		e_state
 {
 	NO_LINK,
 	LINK,
 	USED_LINK
-}					t_status;
+}					t_state;
 
 typedef enum		e_type
 {

@@ -12,13 +12,13 @@
 
 #include "lem_in.h"
 
-void    setQueue(int queue[], int node)
+void    setQueue(int *queue, int node)
 {
     queue[0] = node;
     queue[1] = END_OF_QUEUE;
 }
 
-void    enqueue(int queue[], int node)
+void    enqueue(int *queue, int node)
 {
     int i;
 
@@ -29,7 +29,7 @@ void    enqueue(int queue[], int node)
     queue[i + 1] = END_OF_QUEUE;
 }
 
-void    dequeue(int queue[])
+void    dequeue(int *queue)
 {
     int i;
 

@@ -17,10 +17,7 @@ void		ft_print_link(t_var *var)
 	ft_printf("{yellow}ALL LINK{reset}\n");
 	t_vertex *tmp = (t_vertex *)var->vertex;
 	t_links	*tmp_links;
-	
-	// (void)tmp;
-	// (void)tmp_links;
-	// (void)i;
+
 	int i = 1;
 	while (tmp)
 	{

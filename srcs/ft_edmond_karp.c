@@ -12,7 +12,7 @@
 
 #include "../include/lem_in.h"
 
-void    setBfsData(t_data *data, int nbr_nodes)
+void	setBfsData(t_data *data, int nbr_nodes)
 {
     int i;
     int nodes_sqrt;
@@ -27,12 +27,11 @@ void    setBfsData(t_data *data, int nbr_nodes)
     data->child_node = 0;
 }
 
-int bfs(t_data *data, int matrix[], int nbr_nodes)
+int		bfs(t_data *data, int *matrix, int nbr_nodes)
 {
     int i;
     int indexFrom;
     int IndexTo;
-    int
 
     setBfsData(data, nbr_nodes);
     while (data->child_node != nbr_nodes - 1 && data->curr_node != END_OF_QUEUE)
@@ -64,12 +63,12 @@ int bfs(t_data *data, int matrix[], int nbr_nodes)
     return (getLastNode(data->path, nbr_nodes - 1, nbr_nodes));
 }
 
-int	ft_algo(t_var *var)
+int		ft_algo(t_var *var)
 {
 	int		further;
 	t_data	*data;
 
-	t_data data = setData(var->nbr_vertex);
+	data = setData(var->nbr_vertex);
     further = 0;
     while (further < 5)
     {
@@ -79,5 +78,5 @@ int	ft_algo(t_var *var)
         further = (!countMove(data, var->nbr_vertex)) ? further + 1 : 0;
     }
     //data->save;
-    print_moves();
+    // print_moves();
 }
