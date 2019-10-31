@@ -68,14 +68,15 @@ typedef struct		s_bfs
 typedef struct		s_data
 {
 	int				prev_move;
+	int				nbr_move;
 	int				nbr_paths;
-	int				*save;
 	int				*actual;
+	int				*save;
 	int				first;
 	int				curr_node;
 	int				child_node;
-	int				*path;
-	int				queue[QUEUE_MAX_LEN];
+	int				*path;						// Remplacer par une liste
+	int				queue[QUEUE_MAX_LEN];		// Remplacer par une liste
 }					t_data;
 
 typedef struct 		s_var
@@ -150,6 +151,7 @@ void				ft_matrix(t_var *var);
 
 void				ft_print_room(t_var *var);
 void				ft_print_link(t_var *var);
+void				ft_print_matrix(t_var *var);
 
 /*
 ** QUEUE
@@ -165,5 +167,19 @@ void				dequeue(int queue[]);
 
 void				ft_init(t_var *var);
 t_data				*setData(int nbr_nodes);
+
+/*
+** SOLVER
+*/
+
+int					ft_algo(t_var *var);
+int					bfs(t_data *data, int *matrix, int nbr_nodes);
+int					countMove(t_data *data, int nbr_nodes, int nbr_ant);
+int					getLastNode(int *path, int to_node, int nbr_nodes);
+int					neverUsed(t_data *data, int node2, int nbr_nodes);
+int					isBackFlow(int *matrix, int nbr_nodes, int to_node);
+int					getIndex(int from, int to, int nbr_nodes);
+void				storeNewPath(t_data *data, int *matrix, int nbr_nodes);
+void				cpyPaths(t_data *data, int nbr_nodes);
 
 #endif

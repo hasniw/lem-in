@@ -42,7 +42,8 @@ SRC_NAME 	=	lem_in.c\
 				ft_matrix.c\
 				queue.c\
 				init.c\
-				# ft_edmond_karp.c\
+				ft_edmond_karp.c\
+				bfs_edmond.c\
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
 

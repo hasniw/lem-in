@@ -37,8 +37,10 @@ int	main(int ac, char **av)
 	ft_print_link(var);
 	ft_matrix(var);
 	ft_printf("{yellow}<----------------------------->{reset}\n");
+	ft_printf("{yellow}BEGIN ALGO{reset}\n");	
+	ft_algo(var);
+	ft_print_matrix(var);
 	free_all(var);
-	// ft_algo(var);
 	// int further;
     // t_data data = setData(var->nbr_vertex);
 

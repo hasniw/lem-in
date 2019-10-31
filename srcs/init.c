@@ -20,26 +20,27 @@ void	ft_init(t_var	*var)
 	var->have_end = 0;
 }
 
-// t_data	*setData(int nbr_nodes)
-// {
-//     t_data  *data;
-//     int     i;
-//     int     nodes_sqrt;
+t_data	*setData(int nbr_nodes)
+{
+    t_data  *data;
+    int     i;
+    int     nodes_sqrt;
 
-//     i = 0;
-//     nodes_sqrt = nbr_nodes * nbr_nodes;
-//     if (!(data = memalloc(sizeof(t_data))))
-//         exit(EXIT_FAILURE);
-//     data->prev_move = -1;
-//     data->nbr_move = 0;
-//     if (!(data->save = memalloc(sizeof(int) * nodes_sqrt)
-//     || !(data->actual = memalloc(sizeof(int) * nodes_sqrt))
-//     || !(data->path = memalloc(sizeof(int) * nodes_sqrt)))
-//         exit(EXIT_FAILURE);
-//     while (i < nodes_sqrt)
-//     {
-//         data->save[i] = 0;
-//         data->actual[i] = 0;
-//     }
-//     return (data);
-// }
+    i = -1;
+    nodes_sqrt = nbr_nodes * nbr_nodes;
+    if (!(data = ft_memalloc(sizeof(t_data))))
+        exit(EXIT_FAILURE);
+    data->prev_move = -1;
+    data->nbr_move = 0;
+	if (!(data->save = ft_memalloc(sizeof(int) * nodes_sqrt)))
+		exit(EXIT_FAILURE);
+    if (!(data->actual = ft_memalloc(sizeof(int) * nodes_sqrt))
+    || !(data->path = ft_memalloc(sizeof(int) * nodes_sqrt)))
+        exit(EXIT_FAILURE);
+    while (++i < nodes_sqrt)
+    {
+        data->save[i] = 0;
+        data->actual[i] = 0;
+    }
+    return (data);
+}

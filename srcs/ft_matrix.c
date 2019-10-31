@@ -12,7 +12,7 @@
 
 #include "../include/lem_in.h"
 
-static void		ft_print_matrix(t_var *var)
+void			ft_print_matrix(t_var *var)
 {
 	size_t	j = 0;
 	while (j < var->nbr_vertex * var->nbr_vertex)

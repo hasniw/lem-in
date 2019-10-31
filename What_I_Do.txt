@@ -1,3 +1,7 @@
+Tab-int transformer en liste
+Comprendre Code
+countMove
+Tableau d'int definir
 map4-33 -> affichage : link between same room & x-y more than int
 INT DEPASSER MAIS NO CRASH => x et y pas enregistre
 VOIR SI END PEUT ETRE LIE

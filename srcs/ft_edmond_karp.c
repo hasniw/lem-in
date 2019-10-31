@@ -22,7 +22,7 @@ void	setBfsData(t_data *data, int nbr_nodes)
     while (++i < nodes_sqrt)
         data->path[i] = NO_LINK;
     setQueue(data->queue, 0);
-    data->first = TRUE;
+    data->first = true;
     data->curr_node = 0;
     data->child_node = 0;
 }
@@ -37,11 +37,11 @@ int		bfs(t_data *data, int *matrix, int nbr_nodes)
     while (data->child_node != nbr_nodes - 1 && data->curr_node != END_OF_QUEUE)
     {
         if (data->first
-        && (indexTo = isBackFlow(matrix, nbr_nodes, data->curr_node)) != -1)
+        && (IndexTo = isBackFlow(matrix, nbr_nodes, data->curr_node)) != -1)
         {
-            enqueue(data->queue, indexTo);
-            data->path[getIndex(data->curr_node, indexTo, nbr_nodes)] = USED_LINK;
-            data->first = FALSE;
+            enqueue(data->queue, IndexTo);
+            data->path[getIndex(data->curr_node, IndexTo, nbr_nodes)] = USED_LINK;
+            data->first = false;
         }
         else
         {
@@ -52,7 +52,7 @@ int		bfs(t_data *data, int *matrix, int nbr_nodes)
                 if (neverUsed(data, i, nbr_nodes) && matrix[indexFrom] != USED_LINK && matrix[indexFrom] != NO_LINK)
                 {
                     enqueue(data->queue, indexFrom);
-                    data->path[getIndex(data->curr_node, indexTo, nbr_nodes)] = USED_LINK;
+                    data->path[getIndex(data->curr_node, IndexTo, nbr_nodes)] = USED_LINK;
                 }
                 i++;
             }
@@ -60,23 +60,33 @@ int		bfs(t_data *data, int *matrix, int nbr_nodes)
         dequeue(data->queue);
         data->curr_node = data->queue[0];
     }
+	ft_printf("{red}Value : %d{reset}\n", getLastNode(data->path, nbr_nodes - 1, nbr_nodes));
     return (getLastNode(data->path, nbr_nodes - 1, nbr_nodes));
 }
 
 int		ft_algo(t_var *var)
 {
+    int     i = 0;
 	int		further;
 	t_data	*data;
 
+	ft_printf("{yellow}SetData{reset}\n");
 	data = setData(var->nbr_vertex);
-    further = 0;
-    while (further < 5)
-    {
-        if (bfs(data, var->matrix, var->nbr_vertex) == - 1)
-            break;
-        storeNewPath(data, var->nbr_vertex);
-        further = (!countMove(data, var->nbr_vertex)) ? further + 1 : 0;
-    }
-    //data->save;
-    // print_moves();
+	ft_printf("{yellow}Data are set{reset}\n");	
+	further = 0;
+	while (further < 5 || i < 10)
+	{
+	    printf("I : %d\n", i);
+	    if (bfs(data, var->matrix, (int)var->nbr_vertex) == - 1)
+	    {
+			ft_printf("{red}Break because bfs doesn't work{reset}\n");
+			break;
+		}
+		storeNewPath(data, var->matrix, (int)var->nbr_vertex);
+	    further = (!countMove(data, var->nbr_vertex, (int)var->nbr_ant)) ? further + 1 : 0;
+	    i++;
+	}
+	//data->save;
+	// print_moves();
+	return (0);
 }
