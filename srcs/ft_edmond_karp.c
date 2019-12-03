@@ -6,7 +6,7 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/06 04:27:34 by wahasni           #+#    #+#             */
-/*   Updated: 2019/10/18 18:59:20 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/12/03 13:43:57 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ int		bfs(t_data *data, int *matrix, int nbr_nodes)
         dequeue(data->queue);
         data->curr_node = data->queue[0];
     }
+    ft_printf("{red}Child_node : %d || Curr_node : %d{reset}\n", data->child_node, data->curr_node);
 	ft_printf("{red}Value : %d{reset}\n", getLastNode(data->path, nbr_nodes - 1, nbr_nodes));
     return (getLastNode(data->path, nbr_nodes - 1, nbr_nodes));
 }
@@ -71,13 +72,14 @@ int		ft_algo(t_var *var)
 	t_data	*data;
 
 	ft_printf("{yellow}SetData{reset}\n");
-	data = setData(var->nbr_vertex);
+	if (!(data = setData(var->nbr_vertex)))
+        return (1);
 	ft_printf("{yellow}Data are set{reset}\n");	
 	further = 0;
 	while (further < 5 || i < 10)
 	{
 	    printf("I : %d\n", i);
-	    if (bfs(data, var->matrix, (int)var->nbr_vertex) == - 1)
+	    if (bfs(data, var->matrix, (int)var->nbr_vertex) == -1)
 	    {
 			ft_printf("{red}Break because bfs doesn't work{reset}\n");
 			break;

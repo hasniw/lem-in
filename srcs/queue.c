@@ -12,7 +12,7 @@
 
 #include "lem_in.h"
 
-void    setQueue(int *queue, int node)
+void    setQueue(int *queue, int node) // Malloc queu ou en faire une liste
 {
     queue[0] = node;
     queue[1] = END_OF_QUEUE;

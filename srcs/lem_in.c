@@ -6,7 +6,7 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 00:55:47 by wahasni           #+#    #+#             */
-/*   Updated: 2019/10/18 19:00:35 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/12/03 13:37:58 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,18 +41,5 @@ int	main(int ac, char **av)
 	ft_algo(var);
 	ft_print_matrix(var);
 	free_all(var);
-	// int further;
-    // t_data data = setData(var->nbr_vertex);
-
-    // further = 0;
-    // while (further < 5)
-    // {
-    //     if (bfs(data, var->matrix, var->nbr_vertex) == - 1)
-    //         break;
-    //     storeNewPath(data, var->nbr_vertex);
-    //     further = (!countMove(data, var->nbr_vertex)) ? further + 1 : 0;
-    // }
-    // //data->save;
-    // print_moves();
 	return (0);
 }
