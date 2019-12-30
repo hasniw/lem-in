@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_parsing.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
+/*   By: hasni <hasni@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/20 21:53:34 by wahasni           #+#    #+#             */
-/*   Updated: 2019/10/12 14:47:15 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/12/29 23:03:55 by hasni            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,10 @@ void		ft_print_link(t_var *var)
 	ft_printf("{yellow}ALL LINK{reset}\n");
 	t_vertex *tmp = (t_vertex *)var->vertex;
 	t_links	*tmp_links;
-
+	
+	// (void)tmp;
+	// (void)tmp_links;
+	// (void)i;
 	int i = 1;
 	while (tmp)
 	{

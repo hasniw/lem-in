@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+         #
+#    By: hasni <hasni@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/13 19:43:10 by wahasni           #+#    #+#              #
-#    Updated: 2019/10/14 15:10:13 by wahasni          ###   ########.fr        #
+#    Updated: 2019/12/29 18:46:36 by hasni            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -118,6 +118,7 @@ SRC_NAME 	=	ft_atoi_base.c										\
 				ft_tolower.c										\
 				ft_toupper.c										\
 				ft_wchar.c											\
+				ft_min.c											\
 				maths.c												\
 				palloc.c											\
 				print_bits.c										\

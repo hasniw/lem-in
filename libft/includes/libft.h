@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
+/*   By: hasni <hasni@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/07 16:20:26 by wahasni           #+#    #+#             */
-/*   Updated: 2019/06/30 19:25:17 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/12/29 18:45:49 by hasni            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ int						isinf(long double nb);
 int						ft_abs(intmax_t nb);
 int						ft_max(intmax_t a, intmax_t b);
 int						ft_min(intmax_t a, intmax_t b);
+int						ft_minint(int a, int b);
+
 
 int						ft_isalnum(int c);
 int						ft_isalpha(int c);

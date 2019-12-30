@@ -6,7 +6,7 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/26 03:16:46 by wahasni           #+#    #+#             */
-/*   Updated: 2019/10/18 17:34:10 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/10/15 17:30:35 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,7 @@ void	free_matrix(t_var *var)
 	while (var->matrix_name[i])
 		ft_strdel(&var->matrix_name[i++]);
 	free(var->matrix_name);
-	free(var->matrix); 
-
+	free(var->matrix);
 }
 
 // void	free_start_end(t_var *var)
@@ -70,7 +69,7 @@ void	free_all(t_var *var)
 			free(current_links);
 			current_links = current_links_next;
 		}
-		ft_strdel(&current->name);
+		free(current->name);
 		free(current);
 	    current = next;
 	}

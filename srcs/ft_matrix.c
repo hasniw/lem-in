@@ -3,24 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_matrix.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
+/*   By: hasni <hasni@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/02 04:41:16 by wahasni           #+#    #+#             */
-/*   Updated: 2019/10/14 19:27:09 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/12/29 22:51:57 by hasni            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/lem_in.h"
 
-void			ft_print_matrix(t_var *var)
+static void		ft_print_matrix(t_var *var)
 {
 	size_t	j = 0;
 	while (j < var->nbr_vertex * var->nbr_vertex)
 	{
-		if (var->matrix[j] == 1)
+		if (var->matrix[j] == '1')
 			ft_printf("{blue}[%d]{reset}", (int)j++);
 		else
-			ft_printf("{blue}[%d]{reset}", var->matrix[j++]);
+			ft_printf("{blue}[%c]{reset}", var->matrix[j++]);
 	}
 	ft_printf("\n");
 }
@@ -40,8 +40,8 @@ static void		assign_matrix(t_vertex *vertex, char **name, t_var *var, int x)
 			i++;
 		if (ft_strequ(links->vertex->name, name[i]))
 		{
-			var->matrix[x + i * var->nbr_vertex] = 1;
-			var->matrix[i + x * var->nbr_vertex] = 1;
+			var->matrix[x + i * var->nbr_vertex] |= LINK;
+			var->matrix[i + x * var->nbr_vertex] |= LINK;
 			i = 0;
 			links = links->next;
 		}
@@ -75,7 +75,8 @@ void		ft_create_matrix(t_var *var)
 		var->matrix_name[i] = ft_strdup(vertex->name);
 		vertex = vertex->next;
 	}
-	var->matrix = (int *)ft_memalloc(sizeof(int) * (var->nbr_vertex * var->nbr_vertex + 1));
+	var->matrix = ft_strnew(sizeof(char) * (var->nbr_vertex * var->nbr_vertex));
+	ft_memset(var->matrix, '0', var->nbr_vertex * var->nbr_vertex);
 }
 
 void		ft_matrix(t_var *var)

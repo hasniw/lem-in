@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lem_in.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
+/*   By: hasni <hasni@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 06:09:54 by wahasni           #+#    #+#             */
-/*   Updated: 2019/12/03 13:36:47 by wahasni          ###   ########.fr       */
+/*   Updated: 2019/12/30 05:31:02 by hasni            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,17 @@
 
 #include "../libft/includes/libft.h"
 
-# define QUEUE_MAX_LEN 10000
-# define END_OF_QUEUE -1
+# define MAX 4096
+# define QUIET 1 << 0
+# define COLOR 1 << 1
+# define MAP 1 << 2
+# define LINK 1 << 0
 
 typedef enum		e_bool
 {
     false,
     true
 }					t_bool;
-
-typedef	enum		e_state
-{
-	NO_LINK,
-	LINK,
-	USED_LINK
-}					t_state;
 
 typedef enum		e_type
 {
@@ -51,46 +47,71 @@ typedef struct		s_links
 	struct s_links	*next;
 }					t_links;
 
-
-typedef struct		s_queue
+typedef struct				s_path
 {
-	int				*p;
-	struct s_queue	*next;
-}					t_queue;
+	int						vertex;
+	int						ant;
+	struct s_path			*next;
+}							t_path;
 
-typedef struct		s_bfs
+typedef struct				s_flow
 {
-	t_queue			*queue;
-	int				*path;
-}					t_bfs;
+	t_path					*path;
+	int						size;
+	int						ants;
+	struct s_flow			*next;
+}							t_flow;
 
-typedef struct		s_data
+// typedef struct				s_vertex
+// {
+// 	struct s_vertex			*next;
+// 	int						vertex;
+// }							t_vertex;
+
+typedef struct				s_vert
 {
-	int				prev_move;
-	int				nbr_move;
-	int				nbr_paths;
-	int				*actual;
-	int				*save;
-	int				first;
-	int				curr_node;
-	int				child_node;
-	int				*path;						// Remplacer par une liste
-	int				queue[QUEUE_MAX_LEN];		// Remplacer par une liste
-}					t_data;
+	int						u;
+	int						v;
+}							t_vert;
+
+typedef struct				s_queue
+{
+	t_vertex				*front;
+	t_vertex				*rear;
+	int						count;
+}							t_queue;
+
+typedef struct				s_args
+{
+	t_queue					*queue;
+	char					*edges;
+	char					*state;
+	int						*taken;
+	int						nb_vertice;
+	int						max_bfs;
+	int						nb_ant;
+	int						step_number;
+	char					*saved_map;
+	int						*went_back;
+	int						*path;
+}							t_args;
 
 typedef struct 		s_var
 {
+	int				flag;
+	int				i_start;
+	int				i_end;
 	size_t			nbr_vertex;
 	size_t			nbr_ant;
 	t_type			type;
-	int				have_start : 2;
+	int				have_start : 2; // t_bool plus interessant
 	int				have_end;
 	t_bool			linked_start;
 	t_bool			linked_end;
 	int				pos_vertex_start;
 	char			*line;
 	char			**matrix_name; // Pour matrice
-	int				*matrix; // Pour matrice : y * nbr de ant + x
+	char			*matrix; // Pour matrice : y * nbr de ant + x
 	int				fd;
 	char			*room_start;
 	char			*room_end;
@@ -150,35 +171,6 @@ void				ft_matrix(t_var *var);
 
 void				ft_print_room(t_var *var);
 void				ft_print_link(t_var *var);
-void				ft_print_matrix(t_var *var);
 
-/*
-** QUEUE
-*/
-
-void				setQueue(int *queue, int node);
-void				enqueue(int *queue, int node);
-void				dequeue(int *queue);
-
-/*
-** INIT
-*/
-
-void				ft_init(t_var *var);
-t_data				*setData(int nbr_nodes);
-
-/*
-** SOLVER
-*/
-
-int					ft_algo(t_var *var);
-int					bfs(t_data *data, int *matrix, int nbr_nodes);
-int					countMove(t_data *data, int nbr_nodes, int nbr_ant);
-int					getLastNode(int *path, int to_node, int nbr_nodes);
-int					neverUsed(t_data *data, int node2, int nbr_nodes);
-int					isBackFlow(int *matrix, int nbr_nodes, int to_node);
-int					getIndex(int from, int to, int nbr_nodes);
-void				storeNewPath(t_data *data, int *matrix, int nbr_nodes);
-void				cpyPaths(t_data *data, int nbr_nodes);
 
 #endif
