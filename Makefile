@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+         #
+#    By: hasni <hasni@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/13 01:37:54 by wahasni           #+#    #+#              #
-#    Updated: 2019/10/14 15:10:17 by wahasni          ###   ########.fr        #
+#    Updated: 2019/12/30 19:20:55 by hasni            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,6 +40,7 @@ SRC_NAME 	=	lem_in.c\
 				ft_list_vertex.c\
 				ft_list_links.c\
 				ft_matrix.c\
+				popopo.c\
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
 
