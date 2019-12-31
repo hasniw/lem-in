@@ -6,7 +6,7 @@
 /*   By: hasni <hasni@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 00:55:47 by wahasni           #+#    #+#             */
-/*   Updated: 2019/12/30 05:30:22 by hasni            ###   ########.fr       */
+/*   Updated: 2019/12/31 19:25:17 by hasni            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,29 +23,23 @@ static void	ft_init(t_var	*var)
 	var->flag = 0;
 }
 
-// static int	lem_in(t_var *var)
-// {
-// 	int		max_bfs;
-// 	int		size;
+static bool	lem_in(t_var *var)
+{
+	int		max_bfs;
 
-// 	max_bfs = 0;
-// 	if (data->source && data->sink && data->ants && data->edges)
-// 	{
-// 		max_bfs = get_max_bfs(var);
-// 		algo(&var->ft_matrix, (int)var->nbr_vertex, max_bfs, var->nbr_ant);
-// 		if (data->flag & MAP)
-// 			print_map(var->ft_matrix);
-// 		if (!(output(var->ft_matrix, var)))
-// 		{
-// 			ft_strdel(&var->ft_matrix);
-// 			return (0);
-// 		}
-// 		ft_strdel(&var->ft_matrix);
-// 		return (1);
-// 	}
-// 	else
-// 		return (0);
-// }
+	max_bfs = 0;
+	max_bfs = get_max_bfs(var);
+	algo(&var->matrix, (int)var->nbr_vertex, max_bfs, var->nbr_ant);
+	if (var->flag & MAP)
+		print_map(var->matrix);
+	if (!(output(var->matrix, var)))
+	{
+		ft_strdel(&var->matrix);
+		return (0);
+	}
+	ft_strdel(&var->matrix);
+	return (1);
+}
 
 static int	get_flags(t_var *var, char *flag)
 {
@@ -95,8 +89,8 @@ int	main(int ac, char **av)
 	// ft_printf("{yellow}<----------------------------->{reset}\n");
 	// ft_print_link(var);
 	ft_matrix(var);
-	// if (!(lem_in(var)))
-	// 	write(1, "ERROR\n", 6);
+	if (!(lem_in(var)))
+		write(1, "ERROR\n", 6);
 	// ft_printf("{yellow}<----------------------------->{reset}\n");
 	free_all(var);
 	return (0);

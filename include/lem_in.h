@@ -6,7 +6,7 @@
 /*   By: hasni <hasni@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 06:09:54 by wahasni           #+#    #+#             */
-/*   Updated: 2019/12/31 16:40:50 by hasni            ###   ########.fr       */
+/*   Updated: 2019/12/31 18:39:18 by hasni            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -199,6 +199,7 @@ void						reinit_args(t_args *args);
 **  bfs functions
 */
 
+int							get_max_bfs(t_var *var);
 bool						bfs(t_args *args);
 int							check_available(char *state, int vertex);
 void						change_state(char **state, int vertex,

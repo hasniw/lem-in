@@ -6,7 +6,7 @@
 #    By: hasni <hasni@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/13 19:43:10 by wahasni           #+#    #+#              #
-#    Updated: 2019/12/29 18:46:36 by hasni            ###   ########.fr        #
+#    Updated: 2019/12/31 18:48:42 by hasni            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,6 +34,7 @@ LDFLAGS		= -Llibft
 LDLIBS		= -lft
 
 SRC_NAME 	=	ft_atoi_base.c										\
+				ft_insertion_sort.c									\
 				ft_atoi.c											\
 				ft_atoll.c											\
 				ft_bzero.c											\
@@ -45,6 +46,8 @@ SRC_NAME 	=	ft_atoi_base.c										\
 				ft_isascii.c										\
 				ft_isdigit.c										\
 				ft_isprint.c										\
+				ft_sizeofint.c										\
+				ft_isint.c											\
 				ft_islower.c										\
 				ft_isupper.c										\
 				ft_isblank.c										\

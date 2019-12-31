@@ -6,7 +6,7 @@
 /*   By: hasni <hasni@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/07 16:20:26 by wahasni           #+#    #+#             */
-/*   Updated: 2019/12/30 18:55:42 by hasni            ###   ########.fr       */
+/*   Updated: 2019/12/31 18:48:24 by hasni            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,8 @@ int						ft_recursive_factorial(int nb);
 intmax_t				ft_atoll(char *s);
 int						ft_atoi_base(char *str, char *base);
 char					*ft_lltoa_base(uintmax_t n, intmax_t base);
+int						ft_sizeofint(int n);
+int						ft_isint(char *s);
 int						ft_strfind(char *str, char c);
 int						ft_strcmp(const char *s1, const char *s2);
 int						ft_strncmp(const char *s1, const char *s2, size_t n);
@@ -169,5 +171,6 @@ size_t					ft_wordcount(const char *s, char c);
 size_t					ft_wordlen(const char *s, char c);
 int						ft_isspace(int c);
 int						ft_count_word(char *str, char c);
+void					ft_insertion_sort(int *arr, int n);
 
 #endif

@@ -5,14 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hasni <hasni@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/15 19:29:37 by wahasni           #+#    #+#             */
-/*   Updated: 2019/12/29 22:25:01 by hasni            ###   ########.fr       */
+/*   Created: 2019/09/15 19:29:37 by jdescler          #+#    #+#             */
+/*   Updated: 2019/12/31 17:48:36 by hasni            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
-#include "libft.h"
-#include "struct_parsing.h"
 
 void			change_state(char **state, int vertex, int new_state)
 {

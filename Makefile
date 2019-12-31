@@ -6,7 +6,7 @@
 #    By: hasni <hasni@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/13 01:37:54 by wahasni           #+#    #+#              #
-#    Updated: 2019/12/30 19:20:55 by hasni            ###   ########.fr        #
+#    Updated: 2019/12/31 18:51:33 by hasni            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,17 +30,34 @@ LIB			= ./libft/
 LDFLAGS		= -Llibft
 LDLIBS		= -lft
 
-SRC_NAME 	=	lem_in.c\
-				ft_parsing.c\
+SRC_NAME 	=	algo.c\
+				ants.c\
+				bfs.c\
+				check_path.c\
+				find_path.c\
+				free_algo.c\
 				ft_ants.c\
 				ft_comment.c\
+				ft_edmond_karp.c\
+				ft_error.c\
 				ft_free.c\
-				ft_parse_room.c\
-				ft_parse_edge.c\
-				ft_list_vertex.c\
 				ft_list_links.c\
+				ft_list_vertex.c\
 				ft_matrix.c\
-				popopo.c\
+				ft_parse_edge.c\
+				ft_parse_room.c\
+				ft_parsing.c\
+				get_path.c\
+				get_yield.c\
+				lem_in.c\
+				list_flow.c\
+				list_path.c\
+				output.c\
+				path.c\
+				print_map.c\
+				print_output.c\
+				queue.c\
+				reverse.c\
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
 
