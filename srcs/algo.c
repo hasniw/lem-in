@@ -6,7 +6,7 @@
 /*   By: hasni <hasni@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/15 19:29:47 by jdescler          #+#    #+#             */
-/*   Updated: 2019/12/31 16:54:24 by hasni            ###   ########.fr       */
+/*   Updated: 2020/01/06 16:16:07 by hasni            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,12 +48,14 @@ void			reinit_args(t_args *args)
 	ft_bzero(args->queue, sizeof(t_queue));
 }
 
-void			algo(char **edges, int size, int max_bfs, int nb_ant)
+int				algo(char **edges, int size, int max_bfs, int nb_ant)
 {
 	int		count;
 	t_args	*args;
 	int		max;
 
+	if ((*edges)[size - 1] == '1')
+		return (1);
 	max = max_bfs;
 	count = max_bfs;
 	args = init_args(size, edges, max_bfs, nb_ant);
@@ -66,4 +68,5 @@ void			algo(char **edges, int size, int max_bfs, int nb_ant)
 	}
 	ft_memcpy(*edges, args->saved_map, size * size);
 	free_args(args);
+	return (0);
 }

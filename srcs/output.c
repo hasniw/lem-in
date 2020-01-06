@@ -6,11 +6,31 @@
 /*   By: hasni <hasni@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/15 19:28:25 by jdescler          #+#    #+#             */
-/*   Updated: 2019/12/31 19:25:43 by hasni            ###   ########.fr       */
+/*   Updated: 2020/01/06 16:36:46 by hasni            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/lem_in.h"
+
+void		done_single_path(int ants, char *sink)
+{
+	int i;
+	int len;
+
+	len = ft_strlen(sink);
+	i = 1;
+	write(1, "\n", 1);
+	while (i <= ants)
+	{
+		write(1, "L", 1);
+		ft_putnbr(i);
+		write(1, "-", 1);
+		write(1, sink, len);
+		write(1, " ", 1);
+		i++;
+	}
+	write(1, "\n", 1);
+}
 
 size_t		vertices_len(t_vertex *head)
 {

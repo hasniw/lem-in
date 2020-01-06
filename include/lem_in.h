@@ -6,7 +6,7 @@
 /*   By: hasni <hasni@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 06:09:54 by wahasni           #+#    #+#             */
-/*   Updated: 2019/12/31 18:39:18 by hasni            ###   ########.fr       */
+/*   Updated: 2020/01/06 16:27:40 by hasni            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -191,7 +191,7 @@ void				ft_print_link(t_var *var);
 **  algo functions
 */
 
-void						algo(char **edges, int nb_vertices,
+int							algo(char **edges, int nb_vertices,
 								int max_bfs, int nb_ant);
 void						reinit_args(t_args *args);
 
@@ -292,6 +292,8 @@ int							get_ants_per_path(t_flow *flow, int nb_ants,
 void						print_output(char **vertices,
 										t_flow *flow, int color);
 void						print_map(char *s);
+void						done_single_path(int ants, char *sink);
+
 
 /*
 ** free functions

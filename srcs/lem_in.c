@@ -6,7 +6,7 @@
 /*   By: hasni <hasni@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 00:55:47 by wahasni           #+#    #+#             */
-/*   Updated: 2019/12/31 19:25:17 by hasni            ###   ########.fr       */
+/*   Updated: 2020/01/06 16:37:53 by hasni            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,15 @@ static bool	lem_in(t_var *var)
 
 	max_bfs = 0;
 	max_bfs = get_max_bfs(var);
-	algo(&var->matrix, (int)var->nbr_vertex, max_bfs, var->nbr_ant);
-	if (var->flag & MAP)
-		print_map(var->matrix);
+	if (algo(&var->matrix, (int)var->nbr_vertex, max_bfs, var->nbr_ant))
+		done_single_path(var->nbr_ant, var->room_end);
 	if (!(output(var->matrix, var)))
 	{
 		ft_strdel(&var->matrix);
 		return (0);
 	}
+	if (var->flag & MAP)
+		print_map(var->matrix);
 	ft_strdel(&var->matrix);
 	return (1);
 }
