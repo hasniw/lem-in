@@ -6,13 +6,13 @@
 /*   By: hasni <hasni@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/15 19:27:57 by jdescler          #+#    #+#             */
-/*   Updated: 2019/12/31 19:24:39 by hasni            ###   ########.fr       */
+/*   Updated: 2020/01/06 15:15:47 by hasni            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/lem_in.h"
 
-// int g_color = 0;
+int r_color = 0;
 
 static int		formatted_output(char *vertex, int ant)
 {
@@ -32,7 +32,6 @@ static int		formatted_output(char *vertex, int ant)
 	s = ft_strcat(s, vertex);
 	write(1, s, ft_strlen(s));
 	ft_memdel((void**)&s);
-	// ft_memdel((void**)&ant_to_a);
 	return (1);
 }
 
@@ -78,7 +77,6 @@ static void		send_ants_in_path(t_flow *flow, int count, char **vertices)
 	static int	ant_id = 1;
 
 	size = 0;
-	int g_color = 12; // C'etait en variable globale avant
 	tmp = flow->path;
 	while (vertices[size])
 		size++;
@@ -88,10 +86,10 @@ static void		send_ants_in_path(t_flow *flow, int count, char **vertices)
 	{
 		if (tmp->ant)
 		{
-			if (g_color > 0 && tmp->vertex == size - 1)
+			if (r_color > 0 && tmp->vertex == size - 1)
 				write(1, RED, 5);
 			formatted_output(vertices[tmp->vertex], tmp->ant);
-			if (g_color > 0 && tmp->vertex == size - 1)
+			if (r_color > 0 && tmp->vertex == size - 1)
 				write(1, RST, 4);
 			ft_putchar(' ');
 		}
@@ -108,8 +106,7 @@ void			print_output(char **vertices, t_flow *flow, int color)
 	int		nb_path;
 
 	nb_path = nb_used_path(flow);
-	// g_color = color;
-	(void)color;
+	r_color = color;
 	count = 0;
 	while (count < flow->ants + flow->size - 1)
 	{
