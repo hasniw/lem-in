@@ -6,13 +6,13 @@
 /*   By: hasni <hasni@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/15 19:28:57 by jdescler          #+#    #+#             */
-/*   Updated: 2019/12/31 16:54:42 by hasni            ###   ########.fr       */
+/*   Updated: 2020/01/06 17:31:51 by hasni            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/lem_in.h"
 
-static int		path_size(char *map, int vertex, int size)
+int				path_size(char *map, int vertex, int size)
 {
 	int path_size;
 	int i;
@@ -70,7 +70,7 @@ static void		get_lengths(char *map, int map_size, int *arr, int n)
 		{
 			arr[j] = path_size(map, i, map_size);
 			if (arr[j] == 0)
-				arr[j] = 1000;
+				arr[j] = INT_MAX;
 			j++;
 		}
 		i++;
