@@ -6,7 +6,7 @@
 /*   By: hasni <hasni@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/02 04:41:16 by wahasni           #+#    #+#             */
-/*   Updated: 2020/01/08 20:13:48 by hasni            ###   ########.fr       */
+/*   Updated: 2020/01/09 19:52:41 by hasni            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,29 +62,35 @@ static void		ft_set_matrix(t_var *var)
 	}
 }
 
-void		ft_create_matrix(t_var *var)
+static int	ft_create_matrix(t_var *var)
 {
 	size_t		i;
 	t_vertex	*vertex;
 
 	vertex = (t_vertex *)var->vertex;
 	i = -1;
-	var->matrix_name = (char **)ft_memalloc(sizeof(char *) * (var->nbr_vertex + 1));
+	if (!(var->matrix_name = (char **)ft_memalloc(sizeof(char *) * (var->nbr_vertex + 1))))
+		return (0);
 	while (++i < var->nbr_vertex)
 	{
-		var->matrix_name[i] = ft_strdup(vertex->name);
+		if (!(var->matrix_name[i] = ft_strdup(vertex->name)))
+			return (0);
 		vertex = vertex->next;
 	}
-	var->matrix = ft_strnew(sizeof(char) * (var->nbr_vertex * var->nbr_vertex));
+	if (!(var->matrix = ft_strnew(sizeof(char) * (var->nbr_vertex * var->nbr_vertex))))
+		return (0);
 	ft_memset(var->matrix, '0', var->nbr_vertex * var->nbr_vertex);
+	return (1);
 }
 
-void		ft_matrix(t_var *var)
+int			ft_matrix(t_var *var)
 {
 	// ft_printf("{yellow}<----------------------------->{reset}\n");
 	// ft_printf("{yellow}Set matrix{reset}\n");
-	ft_create_matrix(var);
+	if (!ft_create_matrix(var))
+		return (1);
 	// ft_print_matrix(var);
 	ft_set_matrix(var);
 	// ft_print_matrix(var);
+	return (0);
 }

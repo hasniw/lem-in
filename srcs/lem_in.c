@@ -6,7 +6,7 @@
 /*   By: hasni <hasni@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 00:55:47 by wahasni           #+#    #+#             */
-/*   Updated: 2020/01/09 04:27:31 by hasni            ###   ########.fr       */
+/*   Updated: 2020/01/09 19:50:23 by hasni            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,8 @@ int	main(int ac, char **av)
 	write(1, "\n", 1);
 	// ft_printf("{yellow}<-------------NBR FOURMI  : %d --------------->{reset}\n", (int)var->nbr_ant);	
 	// ft_printf("{yellow}<----------------------------->{reset}\n");
-	ft_matrix(var);
+	if (ft_matrix(var))
+		return (free_all(var, 0));
 	// ft_printf("{yellow}<----------------------------->{reset}\n");
 	if (!(lem_in(var)))
 		print_error(-1);

@@ -6,7 +6,7 @@
 /*   By: hasni <hasni@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 06:09:54 by wahasni           #+#    #+#             */
-/*   Updated: 2020/01/08 20:12:17 by hasni            ###   ########.fr       */
+/*   Updated: 2020/01/09 19:49:30 by hasni            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -174,7 +174,7 @@ void				ft_list_push_back_link(t_links **begin_list, t_vertex *vertex);
 ** MATRIX
 */
 
-void				ft_matrix(t_var *var);
+int					ft_matrix(t_var *var);
 
 /*
 ** PRINT
