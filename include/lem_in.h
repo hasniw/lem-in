@@ -6,7 +6,7 @@
 /*   By: hasni <hasni@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 06:09:54 by wahasni           #+#    #+#             */
-/*   Updated: 2020/01/06 16:27:40 by hasni            ###   ########.fr       */
+/*   Updated: 2020/01/08 20:12:17 by hasni            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,8 +142,10 @@ int					ft_edge(t_var *var, char *line);
 
 int					free_line(char **line, int i);
 int					free_tab(char **tab, int ret);
-void				free_all(t_var *var);
+int					free_all(t_var *var, int i);
 void				free_matrix(t_var *var);
+int					free_room(t_var *var, int i);
+int					free_var(t_var *var, int i);
 
 /*
 ** COMMENT

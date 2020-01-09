@@ -6,7 +6,7 @@
 /*   By: hasni <hasni@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/02 04:41:16 by wahasni           #+#    #+#             */
-/*   Updated: 2020/01/07 15:03:45 by hasni            ###   ########.fr       */
+/*   Updated: 2020/01/08 20:13:48 by hasni            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,17 @@ static void		ft_set_matrix(t_var *var)
 
 void		ft_create_matrix(t_var *var)
 {
+	size_t		i;
 	t_vertex	*vertex;
 
 	vertex = (t_vertex *)var->vertex;
+	i = -1;
+	var->matrix_name = (char **)ft_memalloc(sizeof(char *) * (var->nbr_vertex + 1));
+	while (++i < var->nbr_vertex)
+	{
+		var->matrix_name[i] = ft_strdup(vertex->name);
+		vertex = vertex->next;
+	}
 	var->matrix = ft_strnew(sizeof(char) * (var->nbr_vertex * var->nbr_vertex));
 	ft_memset(var->matrix, '0', var->nbr_vertex * var->nbr_vertex);
 }

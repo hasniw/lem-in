@@ -6,12 +6,18 @@
 /*   By: hasni <hasni@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 00:55:47 by wahasni           #+#    #+#             */
-/*   Updated: 2020/01/06 23:21:46 by hasni            ###   ########.fr       */
+/*   Updated: 2020/01/09 04:27:31 by hasni            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 #include <fcntl.h>
+
+static int	print_error(int i)
+{
+	write(1, "ERROR\n", 6);
+	return (i);
+}
 
 static void	ft_init(t_var	*var)
 {
@@ -21,6 +27,8 @@ static void	ft_init(t_var	*var)
 	var->have_end = 0;
 	var->fd = 0;
 	var->flag = 0;
+	var->room_end = NULL;
+	var->room_start = NULL;
 }
 
 static bool	lem_in(t_var *var)
@@ -67,6 +75,7 @@ static int	get_flags(t_var *var, char *flag)
 int	main(int ac, char **av)
 {
 	t_var	*var;
+	char	*line;
 
 	(void)ac;
 	(void)av;
@@ -83,16 +92,24 @@ int	main(int ac, char **av)
 	// ft_printf("{yellow}<--------------BEGIN PARSE--------------->{reset}\n");	
 	ft_init(var);
 	if (ft_parsing(var))
-		return (1);
+	{
+		while (get_next_line(var->fd, &line) > 0)
+		{
+			write(1, line, ft_strlen(line));
+			write(1, "\n", 1);
+			ft_strdel(&line);
+		}
+		// write(1, "\n", 1);
+		return (print_error(-1));
+	}
+	write(1, "\n", 1);
 	// ft_printf("{yellow}<-------------NBR FOURMI  : %d --------------->{reset}\n", (int)var->nbr_ant);	
 	// ft_printf("{yellow}<----------------------------->{reset}\n");
-	// ft_print_room(var);
-	// ft_printf("{yellow}<----------------------------->{reset}\n");
-	// ft_print_link(var);
 	ft_matrix(var);
-	if (!(lem_in(var)))
-		write(1, "ERROR\n", 6);
 	// ft_printf("{yellow}<----------------------------->{reset}\n");
-	free_all(var);
+	if (!(lem_in(var)))
+		print_error(-1);
+	// ft_printf("{yellow}<----------------------------->{reset}\n");
+	free_all(var, 0);
 	return (0);
 }

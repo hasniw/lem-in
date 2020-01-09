@@ -3,25 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_free.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
+/*   By: hasni <hasni@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/26 03:16:46 by wahasni           #+#    #+#             */
-/*   Updated: 2019/10/15 17:30:35 by wahasni          ###   ########.fr       */
+/*   Updated: 2020/01/09 03:21:26 by hasni            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/lem_in.h"
-
-void	free_matrix(t_var *var)
-{
-	int	i;
-
-	i = 0;
-	while (var->matrix_name[i])
-		ft_strdel(&var->matrix_name[i++]);
-	free(var->matrix_name);
-	free(var->matrix);
-}
 
 // void	free_start_end(t_var *var)
 // {
@@ -51,7 +40,33 @@ void	free_matrix(t_var *var)
 // 	free(current);
 // }
 
-void	free_all(t_var *var)
+int		free_var(t_var *var, int i)
+{
+	free(var);
+	return (i);
+}
+
+int		free_room(t_var *var, int i)
+{
+	t_vertex *tmp;
+	t_vertex *next;
+
+	tmp = (t_vertex *)var->vertex;
+	while (tmp)
+	{
+		next = tmp->next;
+		free(tmp->name);
+		free(tmp->links);
+		free(tmp);
+		tmp = tmp->next;
+	}
+	free(var);
+	free(var->room_end);
+	free(var->room_start);
+	return (i);
+}
+
+int		free_all(t_var *var, int i)
 {
 	t_vertex	*current;
 	t_vertex	*next;
@@ -76,9 +91,10 @@ void	free_all(t_var *var)
 	var->vertex = (t_vertex *)0;
 	free(var->room_end);
 	free(var->room_start);
-	free_matrix(var);
+	free(var->matrix);
 	free(var);
 	var = (t_var *)0;
+	return (i);
 }
 
 int		free_tab(char **tab, int ret)

@@ -6,7 +6,7 @@
 #    By: hasni <hasni@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/13 19:43:10 by wahasni           #+#    #+#              #
-#    Updated: 2019/12/31 18:48:42 by hasni            ###   ########.fr        #
+#    Updated: 2020/01/08 18:46:44 by hasni            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,6 +48,7 @@ SRC_NAME 	=	ft_atoi_base.c										\
 				ft_isprint.c										\
 				ft_sizeofint.c										\
 				ft_isint.c											\
+				ft_isnumber.c										\
 				ft_islower.c										\
 				ft_isupper.c										\
 				ft_isblank.c										\

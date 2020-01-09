@@ -3,22 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoll.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yabecret <yabecret@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hasni <hasni@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/03 16:04:41 by yabecret          #+#    #+#             */
-/*   Updated: 2019/04/03 16:05:09 by yabecret         ###   ########.fr       */
+/*   Updated: 2020/01/08 21:08:47 by hasni            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-intmax_t	ft_atoll(char *s)
+long long	ft_atoll(char *s)
 {
-	intmax_t	res;
+	long long	res;
+	int			sign;
 	int			i;
 
 	i = 0;
 	res = 0;
+	sign = 1;
+	if (s[0] == '-')
+	{
+		sign = -1;
+		i++;
+	}
 	while (s[i] && ft_isdigit(s[i]))
 	{
 		res += s[i] - 48;
@@ -26,5 +33,5 @@ intmax_t	ft_atoll(char *s)
 			res *= 10;
 		i++;
 	}
-	return (res);
+	return (res * sign);
 }

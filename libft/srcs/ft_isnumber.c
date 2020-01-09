@@ -3,14 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isnumber.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
+/*   By: hasni <hasni@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/13 16:55:07 by wahasni           #+#    #+#             */
-/*   Updated: 2019/06/26 01:46:19 by wahasni          ###   ########.fr       */
+/*   Updated: 2020/01/08 21:22:53 by hasni            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+
+static int	inside_int(long long n)
+{
+	return (n <= -2147483648 || n >= 2147483647);
+}
 
 int			ft_isnumber(char *s)
 {
@@ -25,5 +31,8 @@ int			ft_isnumber(char *s)
 			break ;
 		i++;
 	}
-	return (i == ft_strlen(s));
+	if (i == ft_strlen(s))
+		return (inside_int((long long)ft_atoll(s)));
+	else
+		return (1);
 }

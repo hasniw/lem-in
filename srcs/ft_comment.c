@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_comment.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
+/*   By: hasni <hasni@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/26 00:34:20 by wahasni           #+#    #+#             */
-/*   Updated: 2019/10/12 13:28:32 by wahasni          ###   ########.fr       */
+/*   Updated: 2020/01/08 01:55:19 by hasni            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	is_comment(char *str, t_var *var)
 		return (1);
 	if ((!ft_strcmp("##start", str) && var->have_start == 1)
 		|| (!ft_strcmp("##end", str) && var->have_end == 1))
-		return (1);
+		return (-1);
 	if (str[1] == '#')
 	{
 		if (!ft_strcmp("start", str + 2))

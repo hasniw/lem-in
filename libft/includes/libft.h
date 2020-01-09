@@ -6,7 +6,7 @@
 /*   By: hasni <hasni@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/07 16:20:26 by wahasni           #+#    #+#             */
-/*   Updated: 2019/12/31 18:48:24 by hasni            ###   ########.fr       */
+/*   Updated: 2020/01/08 21:02:59 by hasni            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int						ft_minint(int a, int b);
 int						ft_isalnum(int c);
 int						ft_isalpha(int c);
 int						ft_isdigit(int c);
-int						is_number(char *str);
+int						ft_isnumber(char *s);
 int						ft_isascii(int c);
 int						ft_isprint(int c);
 int						ft_islower(int c);
@@ -61,7 +61,7 @@ int						ft_str_is_alpha(char *str);
 int						ft_str_is_lowercase(char *str);
 int						ft_str_is_uppercase(char *str);
 int						ft_recursive_factorial(int nb);
-intmax_t				ft_atoll(char *s);
+long long				ft_atoll(char *s);
 int						ft_atoi_base(char *str, char *base);
 char					*ft_lltoa_base(uintmax_t n, intmax_t base);
 int						ft_sizeofint(int n);

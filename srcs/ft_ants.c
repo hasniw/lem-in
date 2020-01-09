@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_ants.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
+/*   By: hasni <hasni@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/26 01:30:44 by wahasni           #+#    #+#             */
-/*   Updated: 2019/10/14 17:05:28 by wahasni          ###   ########.fr       */
+/*   Updated: 2020/01/09 03:28:15 by hasni            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@ int			ft_ants(t_var *var)
 
 	while ((ret = get_next_line(var->fd, &line)) > 0)
 	{
-		if ((ft_atoi(line) > 0 && !is_number(line)) || !is_comment(line, var))
+		write(1, line, ft_strlen(line));
+		write(1, "\n", 1);
+		if ((ft_atoi(line) > 0 && !ft_isnumber(line)) || !is_comment(line, var))
 		{
 			if (!is_comment(line, var))
 				ft_strdel(&line);

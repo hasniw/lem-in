@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_parse_room.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
+/*   By: hasni <hasni@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/25 18:40:31 by wahasni           #+#    #+#             */
-/*   Updated: 2019/10/14 16:05:17 by wahasni          ###   ########.fr       */
+/*   Updated: 2020/01/09 03:28:23 by hasni            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static void	ft_assign_room(t_var *var, char *str)
 	int		i;
 
 	i = 0;
-	tab = ft_strsplit(str, ' '); // FREE TAB
+	tab = ft_strsplit(str, ' ');
 	if (var->type == other && var->have_start == 0)
 		ft_list_push_front(&var->vertex, (void *)tab[0]);
 	else if (var->type == other && var->have_start == 1)
@@ -55,7 +55,7 @@ static int	ft_check_room(t_var *var, char *str)
 	tab = ft_strsplit(str, ' ');
 	if (!tab[1] || !tab[2])
 		return (free_tab(tab, 0));
-	if (!is_number(tab[1]) && !is_number(tab[2]) && tab[0][0] != 'L')
+	if (!ft_isnumber(tab[1]) && !ft_isnumber(tab[2]) && tab[0][0] != 'L')
 		return (free_tab(tab, 1));
 	return (free_tab(tab, 0));
 }
@@ -67,7 +67,9 @@ int			ft_room(t_var *var)
 
 	while ((ret = get_next_line(var->fd, &line)) > 0)
 	{
-		if (ft_count_word(line, ' ') == 2 || is_comment(line, var) != 1)
+		write(1, line, ft_strlen(line));
+		write(1, "\n", 1);
+		if (ft_count_word(line, ' ') == 2 || (is_comment(line, var) != 1 && is_comment(line, var) != -1))
 		{
 			if (get_comment(var, line) != 1)
 				ft_strdel(&line);
@@ -80,6 +82,8 @@ int			ft_room(t_var *var)
 			}
 		}
 		else if (ft_room_exist(var))
+			return (free_line(&line, 1));
+		else if (is_comment(line, var) == -1)
 			return (free_line(&line, 1));
 		else
 		{
