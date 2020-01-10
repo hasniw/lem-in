@@ -6,7 +6,7 @@
 /*   By: hasni <hasni@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/29 01:47:10 by wahasni           #+#    #+#             */
-/*   Updated: 2020/01/10 18:09:52 by hasni            ###   ########.fr       */
+/*   Updated: 2020/01/10 20:57:12 by hasni            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,8 @@ t_vertex		*ft_create_elem(void *name)
 
 void			ft_list_push_second(t_vertex **begin_list, void *name)
 {
-	t_vertex *new;
-	t_vertex *list;
+	t_vertex	*new;
+	t_vertex	*list;
 
 	new = ft_create_elem(name);
 	list = (t_vertex *)*begin_list;

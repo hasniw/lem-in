@@ -6,7 +6,7 @@
 /*   By: hasni <hasni@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 00:55:47 by wahasni           #+#    #+#             */
-/*   Updated: 2020/01/09 19:50:23 by hasni            ###   ########.fr       */
+/*   Updated: 2020/01/10 19:33:13 by hasni            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,6 @@ int	main(int ac, char **av)
 			return (-1);
 		}
 	}
-	// ft_printf("{yellow}<--------------BEGIN PARSE--------------->{reset}\n");	
 	ft_init(var);
 	if (ft_parsing(var))
 	{
