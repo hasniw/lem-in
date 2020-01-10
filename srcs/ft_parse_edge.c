@@ -6,11 +6,11 @@
 /*   By: hasni <hasni@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/02 23:35:32 by wahasni           #+#    #+#             */
-/*   Updated: 2019/12/29 23:03:48 by hasni            ###   ########.fr       */
+/*   Updated: 2020/01/10 18:09:52 by hasni            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/lem_in.h"
+#include "lem_in.h"
 
 static void		add_one_start(t_var *var)
 {

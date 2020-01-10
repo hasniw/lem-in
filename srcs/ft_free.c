@@ -6,39 +6,11 @@
 /*   By: hasni <hasni@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/26 03:16:46 by wahasni           #+#    #+#             */
-/*   Updated: 2020/01/09 03:21:26 by hasni            ###   ########.fr       */
+/*   Updated: 2020/01/10 18:04:39 by hasni            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/lem_in.h"
-
-// void	free_start_end(t_var *var)
-// {
-// 	t_vertex	*current;
-// 	t_links		*current_links;
-// 	t_links		*current_links_next;
-
-// 	current = var->room_start;
-// 	current_links = current->links;
-// 	while (current_links)
-// 	{
-// 		current_links_next = current_links->next;
-// 		free(current_links);
-// 		current_links = current_links_next;
-// 	}
-// 	free(current->name);
-// 	free(current);
-// 	current = var->room_end;
-// 	current_links = current->links;
-// 	while (current_links)
-// 	{
-// 		current_links_next = current_links->next;
-// 		free(current_links);
-// 		current_links = current_links_next;
-// 	}
-// 	free(current->name);
-// 	free(current);
-// }
+#include "lem_in.h"
 
 int		free_var(t_var *var, int i)
 {

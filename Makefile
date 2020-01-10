@@ -6,7 +6,7 @@
 #    By: hasni <hasni@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/13 01:37:54 by wahasni           #+#    #+#              #
-#    Updated: 2019/12/31 18:51:33 by hasni            ###   ########.fr        #
+#    Updated: 2020/01/10 18:07:39 by hasni            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ SRC_PATH	= srcs
 
 OBJ_PATH	= objs
 
-INC_PATH	= includes
+INC_PATH	= include
 
 LIB			= ./libft/
 LDFLAGS		= -Llibft
@@ -38,8 +38,6 @@ SRC_NAME 	=	algo.c\
 				free_algo.c\
 				ft_ants.c\
 				ft_comment.c\
-				ft_edmond_karp.c\
-				ft_error.c\
 				ft_free.c\
 				ft_list_links.c\
 				ft_list_vertex.c\

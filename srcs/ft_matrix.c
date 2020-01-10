@@ -6,11 +6,11 @@
 /*   By: hasni <hasni@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/02 04:41:16 by wahasni           #+#    #+#             */
-/*   Updated: 2020/01/09 19:52:41 by hasni            ###   ########.fr       */
+/*   Updated: 2020/01/10 18:09:52 by hasni            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/lem_in.h"
+#include "lem_in.h"
 
 // static void		ft_print_matrix(t_var *var)
 // {

@@ -6,11 +6,11 @@
 /*   By: hasni <hasni@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/26 01:30:44 by wahasni           #+#    #+#             */
-/*   Updated: 2020/01/09 03:28:15 by hasni            ###   ########.fr       */
+/*   Updated: 2020/01/10 18:09:52 by hasni            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/lem_in.h"
+#include "lem_in.h"
 
 int			ft_ants(t_var *var)
 {

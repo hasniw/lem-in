@@ -6,11 +6,11 @@
 /*   By: hasni <hasni@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/25 18:40:31 by wahasni           #+#    #+#             */
-/*   Updated: 2020/01/09 03:28:23 by hasni            ###   ########.fr       */
+/*   Updated: 2020/01/10 18:09:52 by hasni            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/lem_in.h"
+#include "lem_in.h"
 
 static int	ft_room_exist(t_var *var) // Tcheck si on a au moins une room et que start et end existe
 {

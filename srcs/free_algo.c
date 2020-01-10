@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hasni <hasni@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/15 19:29:14 by jdescler          #+#    #+#             */
-/*   Updated: 2019/12/31 19:05:16 by hasni            ###   ########.fr       */
+/*   Created: 2019/09/15 19:29:14 by wahasni           #+#    #+#             */
+/*   Updated: 2020/01/10 18:09:52 by hasni            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/lem_in.h"
+#include "lem_in.h"
 
 int				free_split(char **split, int ret)
 {

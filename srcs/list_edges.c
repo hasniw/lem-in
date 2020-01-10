@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hasni <hasni@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/15 19:28:53 by jdescler          #+#    #+#             */
-/*   Updated: 2020/01/06 17:30:02 by hasni            ###   ########.fr       */
+/*   Created: 2019/09/15 19:28:53 by wahasni           #+#    #+#             */
+/*   Updated: 2020/01/10 18:09:52 by hasni            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/lem_in.h"
+#include "lem_in.h"
 
 int				check_existing_edges(t_edges *head, char *from, char *to)
 {

@@ -6,11 +6,11 @@
 /*   By: hasni <hasni@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/26 00:34:20 by wahasni           #+#    #+#             */
-/*   Updated: 2020/01/08 01:55:19 by hasni            ###   ########.fr       */
+/*   Updated: 2020/01/10 18:09:52 by hasni            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/lem_in.h"
+#include "lem_in.h"
 
 int	is_comment(char *str, t_var *var)
 {
@@ -31,7 +31,7 @@ int	is_comment(char *str, t_var *var)
 
 int	get_comment(t_var *var, char *str)
 {
-	if (is_comment(str, var) == 1 || (var->type == start || var->type == end)) // Si avant ##START ou ##END 
+	if (is_comment(str, var) == 1 || (var->type == start || var->type == end))
 		return (1);
 	if (!is_comment(str, var))
 		var->type = other;

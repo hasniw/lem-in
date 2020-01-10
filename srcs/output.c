@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hasni <hasni@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/15 19:28:25 by jdescler          #+#    #+#             */
-/*   Updated: 2020/01/06 23:24:36 by hasni            ###   ########.fr       */
+/*   Created: 2019/09/15 19:28:25 by wahasni           #+#    #+#             */
+/*   Updated: 2020/01/10 18:09:52 by hasni            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/lem_in.h"
+#include "lem_in.h"
 
 void		done_single_path(int ants, char *sink)
 {

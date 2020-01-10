@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_list_links.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
+/*   By: hasni <hasni@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/29 19:32:46 by wahasni           #+#    #+#             */
-/*   Updated: 2019/10/04 16:55:58 by wahasni          ###   ########.fr       */
+/*   Updated: 2020/01/10 18:09:52 by hasni            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/lem_in.h"
+#include "lem_in.h"
 
 t_links	*ft_create_elem_link(t_vertex *vertex)
 {

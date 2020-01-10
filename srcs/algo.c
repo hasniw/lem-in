@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hasni <hasni@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/15 19:29:47 by jdescler          #+#    #+#             */
-/*   Updated: 2020/01/06 16:16:07 by hasni            ###   ########.fr       */
+/*   Created: 2019/09/15 19:29:47 by wahasni           #+#    #+#             */
+/*   Updated: 2020/01/10 18:09:52 by hasni            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/lem_in.h"
+#include "lem_in.h"
 
 static t_args	*init_args(int nb_vert, char **edges, int max_bfs, int nb_ant)
 {
@@ -58,7 +58,8 @@ int				algo(char **edges, int size, int max_bfs, int nb_ant)
 		return (1);
 	max = max_bfs;
 	count = max_bfs;
-	args = init_args(size, edges, max_bfs, nb_ant);
+	if (!(args = init_args(size, edges, max_bfs, nb_ant)))
+		return (1);
 	while (count > 0)
 	{
 		if (!bfs(args))

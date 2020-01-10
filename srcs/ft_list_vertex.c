@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_list_vertex.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
+/*   By: hasni <hasni@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/29 01:47:10 by wahasni           #+#    #+#             */
-/*   Updated: 2019/10/10 16:27:05 by wahasni          ###   ########.fr       */
+/*   Updated: 2020/01/10 18:09:52 by hasni            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/lem_in.h"
+#include "lem_in.h"
 
 int				ft_list_size(t_vertex *begin_list)
 {
