@@ -3,18 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_parse_room.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hasni <hasni@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/25 18:40:31 by wahasni           #+#    #+#             */
-/*   Updated: 2020/01/11 01:24:45 by hasni            ###   ########.fr       */
+/*   Updated: 2020/01/11 17:13:55 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-static int	ft_room_exist(t_var *var) // Tcheck si on a au moins une room et que start et end existe
+static int	assign_line(t_var *var, char *line)
 {
-	return (!var->vertex || !var->vertex->name || !var->have_start || !var->have_end);
+	var->line = ft_strdup(line);
+	return (free_line(&line, 0));
 }
 
 static void	ft_assign_room(t_var *var, char *str)
@@ -45,21 +46,6 @@ static void	ft_assign_room(t_var *var, char *str)
 	free_tab(tab, 0);
 }
 
-static int	ft_check_room(t_var *var, char *str)
-{
-	char	**tab;
-
-	if ((var->type == start && var->have_start == 1)
-		|| (var->type == end && var->have_end == 1))
-		return (0);
-	tab = ft_strsplit(str, ' ');
-	if (!tab[1] || !tab[2])
-		return (free_tab(tab, 0));
-	if (!ft_isnumber(tab[1]) && !ft_isnumber(tab[2]) && tab[0][0] != 'L')
-		return (free_tab(tab, 1));
-	return (free_tab(tab, 0));
-}
-
 int			ft_room(t_var *var)
 {
 	char	*line;
@@ -67,7 +53,7 @@ int			ft_room(t_var *var)
 	while (get_next_line(var->fd, &line) > 0)
 	{
 		ft_putendl(line);
-		if (ft_count_word(line, ' ') == 2 || (is_comment(line, var) != 1 && is_comment(line, var) != -1))
+		if (ft_check_condition(var, line))
 		{
 			if (get_comment(var, line) != 1)
 				ft_strdel(&line);
@@ -79,15 +65,12 @@ int			ft_room(t_var *var)
 				ft_strdel(&line);
 			}
 		}
-		else if (ft_room_exist(var))
+		else if (ft_vertex_exist(var))
 			return (free_line(&line, 1));
 		else if (is_comment(line, var) == -1)
 			return (free_line(&line, 1));
 		else
-		{
-			var->line = ft_strdup(line);
-			return (free_line(&line, 0));
-		}
+			return (assign_line(var, line));
 	}
 	return (0);
 }

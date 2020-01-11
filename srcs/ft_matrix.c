@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_matrix.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hasni <hasni@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/02 04:41:16 by wahasni           #+#    #+#             */
-/*   Updated: 2020/01/10 19:31:27 by hasni            ###   ########.fr       */
+/*   Updated: 2020/01/11 17:45:49 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,14 +49,15 @@ static void		ft_set_matrix(t_var *var)
 	}
 }
 
-static int	ft_create_matrix(t_var *var)
+static int		ft_create_matrix(t_var *var)
 {
 	size_t		i;
 	t_vertex	*vertex;
 
 	vertex = (t_vertex *)var->vertex;
 	i = -1;
-	if (!(var->matrix_name = (char **)ft_memalloc(sizeof(char *) * (var->nbr_vertex + 1))))
+	if (!(var->matrix_name =
+		(char **)ft_memalloc(sizeof(char *) * (var->nbr_vertex + 1))))
 		return (0);
 	while (++i < var->nbr_vertex)
 	{
@@ -64,13 +65,14 @@ static int	ft_create_matrix(t_var *var)
 			return (0);
 		vertex = vertex->next;
 	}
-	if (!(var->matrix = ft_strnew(sizeof(char) * (var->nbr_vertex * var->nbr_vertex))))
+	if (!(var->matrix =
+		ft_strnew(sizeof(char) * (var->nbr_vertex * var->nbr_vertex))))
 		return (0);
 	ft_memset(var->matrix, '0', var->nbr_vertex * var->nbr_vertex);
 	return (1);
 }
 
-int			ft_matrix(t_var *var)
+int				ft_matrix(t_var *var)
 {
 	if (!ft_create_matrix(var))
 		return (1);

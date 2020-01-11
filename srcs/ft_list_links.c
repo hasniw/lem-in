@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_list_links.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hasni <hasni@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/29 19:32:46 by wahasni           #+#    #+#             */
-/*   Updated: 2020/01/10 18:09:52 by hasni            ###   ########.fr       */
+/*   Updated: 2020/01/11 17:52:45 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ t_links	*ft_create_elem_link(t_vertex *vertex)
 	return (list);
 }
 
-void	ft_list_push_back_link(t_links **begin_list, t_vertex *vertex) // Met un vertex a la fin d'une liste
+void	ft_list_push_back_link(t_links **begin_list, t_vertex *vertex)
 {
 	t_links	*list;
 

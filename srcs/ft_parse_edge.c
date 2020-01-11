@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_parse_edge.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hasni <hasni@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/02 23:35:32 by wahasni           #+#    #+#             */
-/*   Updated: 2020/01/10 18:09:52 by hasni            ###   ########.fr       */
+/*   Updated: 2020/01/11 17:36:23 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static int		ft_check_edges(t_var *var, char *line)
 
 	if (ft_count_word(line, '-') != 1)
 		return (1);
-	tab = ft_strsplit(line, '-'); // FREE TAB // Can check if rooms are kifkif
+	tab = ft_strsplit(line, '-');
 	if (!tab[0] || !tab[1])
 		return (free_tab(tab, 1));
 	if (!(room1 = ft_room_exist(var, tab[0])))
@@ -76,10 +76,10 @@ int				ft_edge(t_var *var, char *line)
 	else if (ft_count_word(line, '-') > 0)
 	{
 		if (ft_check_edges(var, line))
-			return (free_line(&line, 1)); // FREE LINKED LIST
+			return (free_line(&line, 1));
 		free_line(&line, 0);
 	}
 	else
-		return (free_line(&line, 1)); // Pour handle ligne invalid -> vide
+		return (free_line(&line, 1));
 	return (0);
 }

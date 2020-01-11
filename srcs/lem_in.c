@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lem_in.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hasni <hasni@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 00:55:47 by wahasni           #+#    #+#             */
-/*   Updated: 2020/01/11 01:26:54 by hasni            ###   ########.fr       */
+/*   Updated: 2020/01/11 18:01:08 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,13 @@ static int	print_error(int i)
 	return (i);
 }
 
-static void	ft_init(t_var	*var)
+int			free_var(t_var *var, int i)
+{
+	free(var);
+	return (i);
+}
+
+static void	ft_init(t_var *var)
 {
 	var->linked_start = false;
 	var->linked_end = false;
@@ -31,7 +37,7 @@ static void	ft_init(t_var	*var)
 	var->room_start = NULL;
 }
 
-static bool	lem_in(t_var *var)
+static int	lem_in(t_var *var)
 {
 	int		max_bfs;
 
@@ -50,43 +56,15 @@ static bool	lem_in(t_var *var)
 	return (1);
 }
 
-static int	get_flags(t_var *var, char *flag)
-{
-	int i;
-
-	i = 1;
-	if (flag[0] != '-')
-		return (-1);
-	while (flag[i])
-	{
-		if (flag[i] == 'q')
-			var->flag |= QUIET;
-		else if (flag[i] == 'c')
-			var->flag |= COLOR;
-		else if (flag[i] == 'm')
-			var->flag |= MAP;
-		else
-			return (-1);
-		i++;
-	}
-	return (1);
-}
-
-int	main(int ac, char **av)
+int			main(int ac, char **av)
 {
 	t_var	*var;
 	char	*line;
 
 	if (!(var = (t_var*)ft_memalloc(sizeof(t_var))))
-        return (print_error(-1));
-	if (ac > 1) // Maybe create get_flags file
-	{
-		if (get_flags(var, av[1]) < 0 || ac > 2)
-		{
-			write(1, "usage: ./lem-in [-cmq] < a lem_in map\n", 38);
-			return (free_var(var, -1));
-		}
-	}
+		return (print_error(-1));
+	if (check_arg(var, av[1], ac))
+		return (free_var(var, -1));
 	ft_init(var);
 	if (ft_parsing(var))
 	{

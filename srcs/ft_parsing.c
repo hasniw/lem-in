@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_parsing.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hasni <hasni@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/20 21:53:34 by wahasni           #+#    #+#             */
-/*   Updated: 2020/01/11 01:25:45 by hasni            ###   ########.fr       */
+/*   Updated: 2020/01/11 17:40:54 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static int	free_all_wthout_matrix(t_var *var, int i)
 	current = var->vertex;
 	while (current)
 	{
-	    next = current->next;
+		next = current->next;
 		current_links = current->links;
 		while (current_links)
 		{
@@ -32,13 +32,11 @@ static int	free_all_wthout_matrix(t_var *var, int i)
 		}
 		free(current->name);
 		free(current);
-	    current = next;
+		current = next;
 	}
-	var->vertex = (t_vertex *)0;
 	free(var->room_end);
 	free(var->room_start);
 	free(var);
-	var = (t_var *)0;
 	return (i);
 }
 

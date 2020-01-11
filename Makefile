@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hasni <hasni@student.42.fr>                +#+  +:+       +#+         #
+#    By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/13 01:37:54 by wahasni           #+#    #+#              #
-#    Updated: 2020/01/10 18:07:39 by hasni            ###   ########.fr        #
+#    Updated: 2020/01/11 17:12:08 by wahasni          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,9 @@ LDLIBS		= -lft
 SRC_NAME 	=	algo.c\
 				ants.c\
 				bfs.c\
+				check_arg.c\
 				check_path.c\
+				check_room.c\
 				find_path.c\
 				free_algo.c\
 				ft_ants.c\

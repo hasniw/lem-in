@@ -64,14 +64,14 @@ typedef struct 		s_var
 	size_t			nbr_vertex;
 	size_t			nbr_ant;
 	t_type			type;
-	int				have_start : 2; // t_bool plus interessant
+	int				have_start : 2;
 	int				have_end;
 	t_bool			linked_start;
 	t_bool			linked_end;
 	int				pos_vertex_start;
 	char			*line;
-	char			**matrix_name; // Pour matrice
-	char			*matrix; // Pour matrice : y * nbr de ant + x
+	char			**matrix_name;
+	char			*matrix;
 	int				fd;
 	char			*room_start;
 	char			*room_end;
@@ -128,6 +128,13 @@ typedef struct				s_args
 }							t_args;
 
 /*
+** ARG
+*/
+
+int					check_arg(t_var *var, char *av, int ac);
+
+
+/*
 ** PARSING
 */
 
@@ -135,6 +142,14 @@ int					ft_parsing(t_var *var);
 int					ft_ants(t_var *var);
 int					ft_room(t_var *var);
 int					ft_edge(t_var *var, char *line);
+
+/*
+** CHECK-ROOM
+*/
+
+int					ft_check_room(t_var *var, char *str);
+int					ft_vertex_exist(t_var *var);
+int					ft_check_condition(t_var *var, char *line);
 
 /*
 ** FREE
@@ -286,7 +301,6 @@ int							get_one_path(int start,
 
 int							get_ants_per_path(t_flow *flow, int nb_ants,
 												int nb_path);
-
 /*
 ** print functions
 */
@@ -295,7 +309,6 @@ void						print_output(char **vertices,
 										t_flow *flow, int color);
 void						print_map(char *s);
 void						done_single_path(int ants, char *sink);
-
 
 /*
 ** free functions

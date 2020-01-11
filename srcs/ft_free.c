@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_free.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hasni <hasni@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/26 03:16:46 by wahasni           #+#    #+#             */
-/*   Updated: 2020/01/11 00:53:13 by hasni            ###   ########.fr       */
+/*   Updated: 2020/01/11 17:54:05 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,7 @@ void	free_matrix(t_var *var)
 	while (var->matrix_name[i])
 		ft_strdel(&var->matrix_name[i++]);
 	free(var->matrix_name);
-	free(var->matrix); 
-
-}
-
-int		free_var(t_var *var, int i)
-{
-	free(var);
-	return (i);
+	free(var->matrix);
 }
 
 int		free_room(t_var *var, int i)
@@ -60,7 +53,7 @@ int		free_all(t_var *var, int i)
 	current = var->vertex;
 	while (current)
 	{
-	    next = current->next;
+		next = current->next;
 		current_links = current->links;
 		while (current_links)
 		{
@@ -70,14 +63,12 @@ int		free_all(t_var *var, int i)
 		}
 		free(current->name);
 		free(current);
-	    current = next;
+		current = next;
 	}
-	var->vertex = (t_vertex *)0;
 	free(var->room_end);
 	free(var->room_start);
 	free_matrix(var);
 	free(var);
-	var = (t_var *)0;
 	return (i);
 }
 
