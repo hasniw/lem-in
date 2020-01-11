@@ -1,9 +1,0 @@
-map4-33 -> affichage : link between same room & x-y more than int
-INT DEPASSER MAIS NO CRASH => x et y pas enregistre
-VOIR SI END PEUT ETRE LIE
-Proteger free_tab
-Gerer cas d'erreur
-Gerer standart input
-Gerer leaks
-GNL -> 0
-Valgrind --> -fsanitze=address
