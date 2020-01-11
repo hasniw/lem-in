@@ -6,7 +6,7 @@
 /*   By: hasni <hasni@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/25 18:40:31 by wahasni           #+#    #+#             */
-/*   Updated: 2020/01/10 18:09:52 by hasni            ###   ########.fr       */
+/*   Updated: 2020/01/11 01:24:45 by hasni            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,12 +63,10 @@ static int	ft_check_room(t_var *var, char *str)
 int			ft_room(t_var *var)
 {
 	char	*line;
-	int		ret;
 
-	while ((ret = get_next_line(var->fd, &line)) > 0)
+	while (get_next_line(var->fd, &line) > 0)
 	{
-		write(1, line, ft_strlen(line));
-		write(1, "\n", 1);
+		ft_putendl(line);
 		if (ft_count_word(line, ' ') == 2 || (is_comment(line, var) != 1 && is_comment(line, var) != -1))
 		{
 			if (get_comment(var, line) != 1)

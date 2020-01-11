@@ -6,7 +6,7 @@
 /*   By: hasni <hasni@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 00:55:47 by wahasni           #+#    #+#             */
-/*   Updated: 2020/01/11 00:58:59 by hasni            ###   ########.fr       */
+/*   Updated: 2020/01/11 01:26:54 by hasni            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ int	main(int ac, char **av)
 
 	if (!(var = (t_var*)ft_memalloc(sizeof(t_var))))
         return (print_error(-1));
-	if (ac > 1)
+	if (ac > 1) // Maybe create get_flags file
 	{
 		if (get_flags(var, av[1]) < 0 || ac > 2)
 		{
@@ -92,8 +92,7 @@ int	main(int ac, char **av)
 	{
 		while (get_next_line(var->fd, &line) > 0)
 		{
-			write(1, line, ft_strlen(line));
-			write(1, "\n", 1);
+			ft_putendl(line);
 			ft_strdel(&line);
 		}
 		write(1, "\n", 1);

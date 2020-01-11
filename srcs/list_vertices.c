@@ -6,7 +6,7 @@
 /*   By: hasni <hasni@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/15 19:28:37 by wahasni           #+#    #+#             */
-/*   Updated: 2020/01/10 18:09:52 by hasni            ###   ########.fr       */
+/*   Updated: 2020/01/11 01:30:40 by hasni            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,7 @@ int				check_vertices_name(t_vertices *head, char *name)
 	while (current != NULL)
 	{
 		if (ft_strcmp(current->name, name) == 0)
-		{
 			return (-1);
-		}
 		current = current->next;
 	}
 	return (1);

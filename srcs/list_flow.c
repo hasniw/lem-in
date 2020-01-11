@@ -6,7 +6,7 @@
 /*   By: hasni <hasni@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/15 19:28:43 by wahasni           #+#    #+#             */
-/*   Updated: 2020/01/10 18:09:52 by hasni            ###   ########.fr       */
+/*   Updated: 2020/01/11 01:30:21 by hasni            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,7 @@ int			add_flow(t_flow **head, t_flow *new)
 		current = *head;
 		while (current->next &&
 				current->next->size < new->size)
-		{
 			current = current->next;
-		}
 		new->next = current->next;
 		current->next = new;
 	}

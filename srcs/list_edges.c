@@ -6,7 +6,7 @@
 /*   By: hasni <hasni@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/15 19:28:53 by wahasni           #+#    #+#             */
-/*   Updated: 2020/01/10 18:09:52 by hasni            ###   ########.fr       */
+/*   Updated: 2020/01/11 01:29:21 by hasni            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,10 @@ int				check_existing_edges(t_edges *head, char *from, char *to)
 	{
 		if (ft_strcmp(current->from, from) == 0
 				&& ft_strcmp(current->to, to) == 0)
-		{
 			return (-1);
-		}
 		if (ft_strcmp(current->from, to) == 0
 				&& ft_strcmp(current->to, from) == 0)
-		{
 			return (-1);
-		}
 		current = current->next;
 	}
 	return (1);
@@ -45,19 +41,10 @@ int				check_edges_name(t_vertices *head, char *from, char *to)
 	{
 		if (ft_strcmp(current->name, from) == 0
 				|| ft_strcmp(current->name, to) == 0)
-		{
 			ret++;
-		}
 		current = current->next;
 	}
-	if (ret == 2)
-	{
-		return (1);
-	}
-	else
-	{
-		return (-1);
-	}
+	return (ret == 2) ? 1 : -1;
 }
 
 t_edges			*new_edge(char const *from, char const *to)
