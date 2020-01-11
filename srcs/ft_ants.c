@@ -6,7 +6,7 @@
 /*   By: hasni <hasni@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/26 01:30:44 by wahasni           #+#    #+#             */
-/*   Updated: 2020/01/10 18:09:52 by hasni            ###   ########.fr       */
+/*   Updated: 2020/01/11 00:59:04 by hasni            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,8 @@ int			ft_ants(t_var *var)
 		if (var->nbr_ant)
 			return (free_line(&line, 0));
 	}
-	return (0);
+	if (var->nbr_ant)
+			return (0);
+	else
+		return (1);
 }

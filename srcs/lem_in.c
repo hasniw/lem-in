@@ -6,7 +6,7 @@
 /*   By: hasni <hasni@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 00:55:47 by wahasni           #+#    #+#             */
-/*   Updated: 2020/01/10 19:33:13 by hasni            ###   ########.fr       */
+/*   Updated: 2020/01/11 00:58:59 by hasni            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static bool	lem_in(t_var *var)
 {
 	int		max_bfs;
 
-	max_bfs = 0;
+	write(1, "\n", 1);
 	max_bfs = get_max_bfs(var);
 	if (algo(&var->matrix, (int)var->nbr_vertex, max_bfs, var->nbr_ant))
 		done_single_path(var->nbr_ant, var->room_end);
@@ -77,16 +77,14 @@ int	main(int ac, char **av)
 	t_var	*var;
 	char	*line;
 
-	(void)ac;
-	(void)av;
 	if (!(var = (t_var*)ft_memalloc(sizeof(t_var))))
-        return (1); // Protect error in get_flags
+        return (print_error(-1));
 	if (ac > 1)
 	{
 		if (get_flags(var, av[1]) < 0 || ac > 2)
 		{
 			write(1, "usage: ./lem-in [-cmq] < a lem_in map\n", 38);
-			return (-1);
+			return (free_var(var, -1));
 		}
 	}
 	ft_init(var);
@@ -98,18 +96,12 @@ int	main(int ac, char **av)
 			write(1, "\n", 1);
 			ft_strdel(&line);
 		}
-		// write(1, "\n", 1);
+		write(1, "\n", 1);
 		return (print_error(-1));
 	}
-	write(1, "\n", 1);
-	// ft_printf("{yellow}<-------------NBR FOURMI  : %d --------------->{reset}\n", (int)var->nbr_ant);	
-	// ft_printf("{yellow}<----------------------------->{reset}\n");
 	if (ft_matrix(var))
 		return (free_all(var, 0));
-	// ft_printf("{yellow}<----------------------------->{reset}\n");
 	if (!(lem_in(var)))
 		print_error(-1);
-	// ft_printf("{yellow}<----------------------------->{reset}\n");
-	free_all(var, 0);
-	return (0);
+	return (free_all(var, 0));
 }

@@ -6,11 +6,23 @@
 /*   By: hasni <hasni@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/26 03:16:46 by wahasni           #+#    #+#             */
-/*   Updated: 2020/01/10 18:04:39 by hasni            ###   ########.fr       */
+/*   Updated: 2020/01/11 00:53:13 by hasni            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
+
+void	free_matrix(t_var *var)
+{
+	int	i;
+
+	i = 0;
+	while (var->matrix_name[i])
+		ft_strdel(&var->matrix_name[i++]);
+	free(var->matrix_name);
+	free(var->matrix); 
+
+}
 
 int		free_var(t_var *var, int i)
 {
@@ -63,7 +75,7 @@ int		free_all(t_var *var, int i)
 	var->vertex = (t_vertex *)0;
 	free(var->room_end);
 	free(var->room_start);
-	free(var->matrix);
+	free_matrix(var);
 	free(var);
 	var = (t_var *)0;
 	return (i);
