@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_list_vertex.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hasni <hasni@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/29 01:47:10 by wahasni           #+#    #+#             */
-/*   Updated: 2020/01/10 20:57:12 by hasni            ###   ########.fr       */
+/*   Updated: 2020/01/13 17:13:58 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ t_vertex		*ft_create_elem(void *name)
 		return (NULL);
 	if (!(list->name = ft_strdup(name)))
 		return (NULL);
-	list->links = ft_memalloc(sizeof(t_links *));
 	return (list);
 }
 

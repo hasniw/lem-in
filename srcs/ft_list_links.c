@@ -6,7 +6,7 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/29 19:32:46 by wahasni           #+#    #+#             */
-/*   Updated: 2020/01/11 17:52:45 by wahasni          ###   ########.fr       */
+/*   Updated: 2020/01/13 17:13:51 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,9 @@ void	ft_list_push_back_link(t_links **begin_list, t_vertex *vertex)
 	t_links	*list;
 
 	list = *begin_list;
-	if (list->vertex)
+	if (!list)
+		*begin_list = ft_create_elem_link(vertex);
+	else if (list->vertex)
 	{
 		while (list->next)
 			list = list->next;
