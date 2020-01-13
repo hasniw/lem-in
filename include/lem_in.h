@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lem_in.h                                          :+:      :+:    :+:   */
+/*   lem_in.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hasni <hasni@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 06:09:54 by wahasni           #+#    #+#             */
-/*   Updated: 2020/01/09 19:49:30 by hasni            ###   ########.fr       */
+/*   Updated: 2020/01/13 15:25:08 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,65 +18,63 @@
 # define INITIAL 1
 # define WAITING 2
 # define VISITED 3
-# define LINK 1 << 0
-# define TAKEN 1 << 1
-# define QUIET 1 << 0
-# define COLOR 1 << 1
-# define MAP 1 << 2
-# define TAKEN 1 << 1
+# define LINK 1
+# define TAKEN 2
+# define QUIET 1
+# define COLOR 2
+# define MAP 4
+# define TAKEN 2
 
 # define RED  "\x1B[31m"
 # define RST  "\x1B[0m"
 
-# define bool int
-
-typedef enum		e_bool
+typedef enum				e_int
 {
-    false,
-    true
-}					t_bool;
+	false,
+	true
+}							t_int;
 
-typedef enum		e_type
+typedef enum				e_type
 {
 	other,
 	start,
 	end
-}					t_type;
+}							t_type;
 
-typedef struct		s_vertex
+typedef struct				s_vertex
 {
-	char			*name;
-	struct s_links	*links;
-	struct s_vertex	*next;
-}					t_vertex;
+	char					*name;
+	struct s_links			*links;
+	struct s_vertex			*next;
+}							t_vertex;
 
-typedef struct		s_links
+typedef struct				s_links
 {
-	t_vertex		*vertex;
-	struct s_links	*next;
-}					t_links;
+	t_vertex				*vertex;
+	struct s_links			*next;
+}							t_links;
 
-typedef struct 		s_var
+typedef struct				s_var
 {
-	int				flag;
-	int				i_start;
-	int				i_end;
-	size_t			nbr_vertex;
-	size_t			nbr_ant;
-	t_type			type;
-	int				have_start : 2;
-	int				have_end;
-	t_bool			linked_start;
-	t_bool			linked_end;
-	int				pos_vertex_start;
-	char			*line;
-	char			**matrix_name;
-	char			*matrix;
-	int				fd;
-	char			*room_start;
-	char			*room_end;
-	t_vertex		*vertex;
-}					t_var;
+	int						flag;
+	int						i_start;
+	int						i_end;
+	size_t					nbr_vertex;
+	size_t					nbr_ant;
+	t_type					type;
+	int						have_start : 2;
+	int						have_end;
+	t_int					linked_start;
+	t_int					linked_end;
+	int						pos_vertex_start;
+	char					*line;
+	char					**matrix_name;
+	char					*matrix;
+	int						fd;
+	char					*room_start;
+	char					*room_end;
+	t_vertex				*vertex;
+}							t_var;
 
 typedef struct				s_path
 {
@@ -107,8 +105,8 @@ typedef struct				s_vert
 
 typedef struct				s_queue
 {
-	t_vertex_second				*front;
-	t_vertex_second				*rear;
+	t_vertex_second			*front;
+	t_vertex_second			*rear;
 	int						count;
 }							t_queue;
 
@@ -131,72 +129,75 @@ typedef struct				s_args
 ** ARG
 */
 
-int					check_arg(t_var *var, char *av, int ac);
-
+int							check_arg(t_var *var, char *av, int ac);
 
 /*
 ** PARSING
 */
 
-int					ft_parsing(t_var *var);
-int					ft_ants(t_var *var);
-int					ft_room(t_var *var);
-int					ft_edge(t_var *var, char *line);
+int							ft_parsing(t_var *var);
+int							ft_ants(t_var *var);
+int							ft_room(t_var *var);
+int							ft_edge(t_var *var, char *line);
 
 /*
 ** CHECK-ROOM
 */
 
-int					ft_check_room(t_var *var, char *str);
-int					ft_vertex_exist(t_var *var);
-int					ft_check_condition(t_var *var, char *line);
+int							ft_check_room(t_var *var, char *str);
+int							ft_vertex_exist(t_var *var);
+int							ft_check_condition(t_var *var, char *line);
 
 /*
 ** FREE
 */
 
-int					free_line(char **line, int i);
-int					free_tab(char **tab, int ret);
-int					free_all(t_var *var, int i);
-void				free_matrix(t_var *var);
-int					free_room(t_var *var, int i);
-int					free_var(t_var *var, int i);
+int							free_line(char **line, int i);
+int							free_tab(char **tab, int ret);
+int							free_all(t_var *var, int i);
+void						free_matrix(t_var *var);
+int							free_room(t_var *var, int i);
+int							free_var(t_var *var, int i);
 
 /*
 ** COMMENT
 */
 
-int					is_comment(char *str, t_var *var);
-int					get_comment(t_var *var, char *str);
+int							is_comment(char *str, t_var *var);
+int							get_comment(t_var *var, char *str);
 
 /*
 ** LIST-VERTEX
 */
 
-void				ft_list_push_front(t_vertex **begin_list, void *name);
-void				ft_list_push_second(t_vertex **begin_list, void *name);
-void				ft_list_push_back(t_vertex **begin_list, void *name);
-t_vertex			*ft_create_elem(void *name);
-int					ft_list_size(t_vertex *begin_list);
+void						ft_list_push_front(t_vertex **begin_list,
+								void *name);
+void						ft_list_push_second(t_vertex **begin_list,
+								void *name);
+void						ft_list_push_back(t_vertex **begin_list,
+								void *name);
+t_vertex					*ft_create_elem(void *name);
+int							ft_list_size(t_vertex *begin_list);
 
 /*
 ** LIST-LINK
 */
 
-void				ft_list_push_back_link(t_links **begin_list, t_vertex *vertex);
+void						ft_list_push_back_link(t_links **begin_list,
+								t_vertex *vertex);
 
 /*
 ** MATRIX
 */
 
-int					ft_matrix(t_var *var);
+int							ft_matrix(t_var *var);
 
 /*
 ** PRINT
 */
 
-void				ft_print_room(t_var *var);
-void				ft_print_link(t_var *var);
+void						ft_print_room(t_var *var);
+void						ft_print_link(t_var *var);
 
 /*
 ****************************************
@@ -217,7 +218,7 @@ void						reinit_args(t_args *args);
 */
 
 int							get_max_bfs(t_var *var);
-bool						bfs(t_args *args);
+int							bfs(t_args *args);
 int							check_available(char *state, int vertex);
 void						change_state(char **state, int vertex,
 											int new_state);
@@ -225,7 +226,7 @@ void						change_state(char **state, int vertex,
 ** queue functions
 */
 
-bool						is_empty(t_queue *queue);
+int							is_empty(t_queue *queue);
 int							dequeue(t_queue *queue);
 void						enqueue(t_queue *queue, int vertex);
 void						free_queue_vertex(t_queue *queue);
@@ -257,8 +258,8 @@ void						free_args(t_args *args);
 **	path functions
 */
 
-bool						find_path(t_args *args);
-bool						get_path(t_args *args);
+int							find_path(t_args *args);
+int							get_path(t_args *args);
 
 /*
 **	update functions
@@ -270,21 +271,21 @@ void						update_from_path(t_args *args, char *map, int u);
 **	yield functions
 */
 
-bool						check_path_yield(t_args *args, int size);
+int							check_path_yield(t_args *args, int size);
 
 /*
 ** check path functions
 */
 
-bool						check_used_link(t_args *args, int vertex, int i);
-bool						check_link(t_args *args, int vertex, int i);
-bool						check_end(t_args *args, int vertex, int i);
-bool						check_taken(t_args *args, int vertex);
-bool						check_connection(t_args *args, int vertex, int to);
+int							check_used_link(t_args *args, int vertex, int i);
+int							check_link(t_args *args, int vertex, int i);
+int							check_end(t_args *args, int vertex, int i);
+int							check_taken(t_args *args, int vertex);
+int							check_connection(t_args *args, int vertex, int to);
 int							get_previous(int vertex, t_args *args);
 
-int							output(char *map, t_var *data); // t_data to t_var
-size_t						vertices_len(t_vertex *head); // t_vertice to t_vertex
+int							output(char *map, t_var *data);
+size_t						vertices_len(t_vertex *head);
 int							free_split(char **split, int ret);
 
 /*

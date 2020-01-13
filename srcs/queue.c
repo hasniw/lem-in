@@ -6,13 +6,13 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/15 19:27:51 by wahasni           #+#    #+#             */
-/*   Updated: 2020/01/11 16:28:08 by wahasni          ###   ########.fr       */
+/*   Updated: 2020/01/13 15:27:41 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-bool		is_empty(t_queue *queue)
+int			is_empty(t_queue *queue)
 {
 	return (queue->count == 0);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_yield.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hasni <hasni@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/15 19:28:57 by wahasni           #+#    #+#             */
-/*   Updated: 2020/01/10 18:09:52 by hasni            ###   ########.fr       */
+/*   Updated: 2020/01/13 15:27:14 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ static int		count_move(char *map, int size, int ants)
 	return (ret);
 }
 
-bool			check_path_yield(t_args *args, int size)
+int				check_path_yield(t_args *args, int size)
 {
 	char		*map_tmp;
 	int			u;

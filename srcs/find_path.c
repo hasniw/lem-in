@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   find_path.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hasni <hasni@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/15 19:29:20 by wahasni           #+#    #+#             */
-/*   Updated: 2020/01/10 18:09:52 by hasni            ###   ########.fr       */
+/*   Updated: 2020/01/13 15:21:54 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	next_vertex(t_args *args, int vertex, int to, int *back)
 	*back = 0;
 }
 
-bool	handle_available(t_args *args, int vertex, int to)
+int	handle_available(t_args *args, int vertex, int to)
 {
 	static int stage = 0;
 
@@ -40,7 +40,7 @@ bool	handle_available(t_args *args, int vertex, int to)
 	return (1);
 }
 
-bool	handle_taken(t_args *args, int vertex, int to)
+int	handle_taken(t_args *args, int vertex, int to)
 {
 	int rev;
 	int i;
@@ -94,7 +94,7 @@ int		go_to_next(t_args *args, int vertex)
 	return (0);
 }
 
-bool	find_path(t_args *args)
+int	find_path(t_args *args)
 {
 	int vertex;
 

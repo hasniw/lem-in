@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_path.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hasni <hasni@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/15 19:29:06 by wahasni           #+#    #+#             */
-/*   Updated: 2020/01/10 18:09:52 by hasni            ###   ########.fr       */
+/*   Updated: 2020/01/13 15:26:39 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void			update_from_path(t_args *args, char *map, int u)
 	}
 }
 
-bool			get_path(t_args *args)
+int				get_path(t_args *args)
 {
 	int				u;
 	static int		count = 10;
