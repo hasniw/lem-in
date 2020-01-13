@@ -6,10 +6,11 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/08/28 17:27:34 by wahasni           #+#    #+#             */
-/*   Updated: 2019/06/28 03:25:24 by wahasni          ###   ########.fr       */
+/*   Updated: 2020/01/13 14:10:33 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
 void	ft_list_foreach(t_list *begin_list, void (*f)(void *))
 {

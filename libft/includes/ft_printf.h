@@ -6,7 +6,7 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/23 11:50:32 by wahasni           #+#    #+#             */
-/*   Updated: 2019/06/27 04:17:38 by wahasni          ###   ########.fr       */
+/*   Updated: 2020/01/13 15:08:03 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@
 
 # define BUFF_SIZE 64
 
-# define PRINTFRET __attribute__ ((__format__(printf, 1, 2))) int
+/*
+** # define PRINTFRET __attribute__ ((__format__(printf, 1, 2))) int
+*/
 
 /*
 **-------------------------------- FLAGS & SPEC ----------------------------
@@ -38,46 +40,61 @@
 ** S_LLONG (1 << 11) -->  'll'	0000 0100 0000 00000
 */
 
-# define F_MINUS (1 << 0)
-# define F_PLUS (1 << 1)
-# define F_ZERO (1 << 2)
-# define F_SPACE (1 << 3)
-# define F_HASH (1 << 4)
-# define S_SHORT (1 << 5)
-# define S_LONG (1 << 6)
-# define S_DOUBLE (1 << 7)
-# define S_INTMAX (1 << 8)
-# define S_SIZE_T (1 << 9)
-# define S_CHAR (1 << 10)
-# define S_LLONG (1 << 11)
+/*
+** # define F_MINUS (1 << 0)
+** # define F_PLUS (1 << 1)
+** # define F_ZERO (1 << 2)
+** # define F_SPACE (1 << 3)
+** # define F_HASH (1 << 4)
+** # define S_SHORT (1 << 5)
+** # define S_LONG (1 << 6)
+** # define S_DOUBLE (1 << 7)
+** # define S_INTMAX (1 << 8)
+** # define S_SIZE_T (1 << 9)
+** # define S_CHAR (1 << 10)
+** # define S_LLONG (1 << 11)
+*/
+
+# define F_MINUS 1
+# define F_PLUS 2
+# define F_ZERO 4
+# define F_SPACE 8
+# define F_HASH 16
+# define S_SHORT 32
+# define S_LONG 64
+# define S_DOUBLE 128
+# define S_INTMAX 256
+# define S_SIZE_T 512
+# define S_CHAR 1024
+# define S_LLONG 2048
 
 /*
 **----------------------------------- BASES -------------------------------
 */
 
 # define B_DEC 10
-# define B_BIN (1 << 1)
-# define B_OCT (1 << 3)
-# define B_HEX (1 << 4)
+# define B_BIN 2
+# define B_OCT 8
+# define B_HEX 16
 
 /*
 **----------------------------------- COLORS -------------------------------
 */
 
-# define C_CLEAR		(\033[2K)
-# define C_UP			(\033[A)
-# define C_NOCOLOR		(\033[0m)
-# define C_BOLD			(\033[1m)
-# define C_UNDERLINE	(\033[4m)
-# define C_BLINKING		(\033[5m)
-# define C_BLACK		(\033[1;30m)
-# define C_RED			(\033[1;31m)
-# define C_GREEN		(\033[1;32m)
-# define C_YELLOW		(\033[1;33m)
-# define C_BLUE			(\033[1;34m)
-# define C_VIOLET		(\033[1;35m)
-# define C_CYAN			(\033[1;36m)
-# define C_WHITE		(\033[1;37m)
+# define C_CLEAR		"\033[2K"
+# define C_UP			"\033[A"
+# define C_NOCOLOR		"\033[0m"
+# define C_BOLD			"\033[1m"
+# define C_UNDERLINE	"\033[4m"
+# define C_BLINKING		"\033[5m"
+# define C_BLACK		"\033[1;30m"
+# define C_RED			"\033[1;31m"
+# define C_GREEN		"\033[1;32m"
+# define C_YELLOW		"\033[1;33m"
+# define C_BLUE			"\033[1;34m"
+# define C_VIOLET		"\033[1;35m"
+# define C_CYAN			"\033[1;36m"
+# define C_WHITE		"\033[1;37m"
 
 /*
 **----------------------------------- STRUCT -------------------------------
@@ -117,7 +134,7 @@ typedef struct	s_color
 	t_f_color	funct;
 }				t_color;
 
-PRINTFRET		ft_printf(const char *format, ...);
+int				ft_printf(const char *format, ...);
 int				ft_dprintf(int fd, const char *format, ...);
 
 int				color_to_fct(t_printf *pf);
@@ -202,6 +219,5 @@ int				ft_nbrlen(uintmax_t nb, intmax_t base);
 char			*ft_lltoa_base(uintmax_t nb, intmax_t base);
 long double		ft_round(t_printf *pf, long double nb, int prec);
 int				ws_conv(t_printf *pf, wchar_t *str);
-
 
 #endif

@@ -6,12 +6,13 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/08/28 15:28:29 by wahasni           #+#    #+#             */
-/*   Updated: 2019/06/28 03:33:45 by wahasni          ###   ########.fr       */
+/*   Updated: 2020/01/13 14:23:19 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
-t_list *ft_list_at(t_list *begin_list, unsigned int nbr)
+t_list	*ft_list_at(t_list *begin_list, unsigned int nbr)
 {
 	t_list			*list;
 	unsigned int	i;

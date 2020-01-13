@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hasni <hasni@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/07 16:20:26 by wahasni           #+#    #+#             */
-/*   Updated: 2020/01/08 21:02:59 by hasni            ###   ########.fr       */
+/*   Updated: 2020/01/13 14:28:20 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,6 @@
 # include "ft_printf.h"
 # include "get_next_line.h"
 
-# define ABS(x) (((x) < 0) ? -(x) : (x))
-
 typedef struct			s_list
 {
 	void				*content;
@@ -41,8 +39,6 @@ int						ft_abs(intmax_t nb);
 int						ft_max(intmax_t a, intmax_t b);
 int						ft_min(intmax_t a, intmax_t b);
 int						ft_minint(int a, int b);
-
-
 int						ft_isalnum(int c);
 int						ft_isalpha(int c);
 int						ft_isdigit(int c);
