@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lem_in.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
+/*   By: hasni <hasni@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 00:55:47 by wahasni           #+#    #+#             */
-/*   Updated: 2020/01/11 18:01:08 by wahasni          ###   ########.fr       */
+/*   Updated: 2020/01/14 02:10:05 by hasni            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ static void	ft_init(t_var *var)
 	var->have_start = 0;
 	var->have_end = 0;
 	var->fd = 0;
-	var->flag = 0;
 	var->room_end = NULL;
 	var->room_start = NULL;
 }
