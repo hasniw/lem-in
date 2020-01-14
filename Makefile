@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+         #
+#    By: hasni <hasni@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/13 01:37:54 by wahasni           #+#    #+#              #
-#    Updated: 2020/01/11 17:12:08 by wahasni          ###   ########.fr        #
+#    Updated: 2020/01/14 02:31:03 by hasni            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,7 +54,7 @@ SRC_NAME 	=	algo.c\
 				list_path.c\
 				output.c\
 				path.c\
-				print_map.c\
+				print_bonus.c\
 				print_output.c\
 				queue.c\
 				reverse.c\

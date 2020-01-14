@@ -6,7 +6,7 @@
 /*   By: hasni <hasni@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 00:55:47 by wahasni           #+#    #+#             */
-/*   Updated: 2020/01/14 02:10:05 by hasni            ###   ########.fr       */
+/*   Updated: 2020/01/14 02:31:20 by hasni            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,10 @@ static int	lem_in(t_var *var)
 		ft_strdel(&var->matrix);
 		return (0);
 	}
+	if (var->flag & LINKED)
+		ft_print_link(var);
 	if (var->flag & MAP)
-		print_map(var->matrix);
+		print_matrix(var->matrix);
 	ft_strdel(&var->matrix);
 	return (1);
 }

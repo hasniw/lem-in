@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lem_in.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
+/*   By: hasni <hasni@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 06:09:54 by wahasni           #+#    #+#             */
-/*   Updated: 2020/01/13 15:25:08 by wahasni          ###   ########.fr       */
+/*   Updated: 2020/01/14 02:34:03 by hasni            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@
 # define VISITED 3
 # define LINK 1
 # define TAKEN 2
-# define QUIET 1
 # define COLOR 2
 # define MAP 4
+# define LINKED 1
 # define TAKEN 2
 
 # define RED  "\x1B[31m"
@@ -308,7 +308,7 @@ int							get_ants_per_path(t_flow *flow, int nb_ants,
 
 void						print_output(char **vertices,
 										t_flow *flow, int color);
-void						print_map(char *s);
+void						print_matrix(char *s);
 void						done_single_path(int ants, char *sink);
 
 /*

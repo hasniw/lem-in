@@ -3,42 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   print_parser.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
+/*   By: hasni <hasni@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/10 19:30:34 by hasni             #+#    #+#             */
-/*   Updated: 2020/01/11 18:05:16 by wahasni          ###   ########.fr       */
+/*   Updated: 2020/01/14 02:34:49 by hasni            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
-
-/*
-**void		ft_print_link(t_var *var)
-**{
-**	t_vertex	*tmp;
-**	t_links		*tmp_links;
-**	int			i;
-**
-**	i = 1;
-**	tmp = (t_vertex *)var->vertex;
-**	ft_printf("{yellow}ALL LINK{reset}\n");
-**  while (tmp)
-**	{
-**		ft_printf("{blue}ROOM OF WHO IS LINKED : %s{reset}\n", tmp->name);
-**		tmp_links = tmp->links;
-**		while (tmp_links)
-**		{
-**			if (!tmp->links->vertex)
-**				return ;
-**	ft_printf("{black}ROOM[%d] : %s{reset}\n", i, tmp_links->vertex->name);
-**			tmp_links = tmp_links->next;
-**			i++;
-**		}
-**		tmp = tmp->next;
-**		i = 1;
-**	}
-**}
-*/
 
 void	ft_print_room(t_var *var)
 {
