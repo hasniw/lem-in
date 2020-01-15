@@ -1,0 +1,17 @@
+main = //
+    lemin = essaie de trouver un/des chemins, display si trouve
+        get_max_bfs = retourne le max de chemins possibles
+        algo =  essaie de trouver des chemins en lancant des bfs, si chemin direct on arrete
+            init_args = met tout au propre
+            bfs = lance la recherche
+                reinit = remet au propre
+                enqueue = met un vertex dans la queue
+                change_state = change l'etat du vertex
+                find_path = trouve le chemin
+                    dequeue = recupere le vertex courant dans la queue
+                    change_state = le met en visité
+                    go_to_next = enqueue 1 connection //toute ses connections disponibles
+                        check_connection = regarde s'il y a un connection
+                        handle taken = si le lien a deja ete emprunté, si c'est par le chemin actuel, return 1, sinon on enqueue
+                            get_previous = renvoie -1 si pas de rev, 0 si le lien va vers l'arrivee, 1 si vers la source
+                            next_vertex = enqueue le vertex rev
