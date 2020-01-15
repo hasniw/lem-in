@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hasni <hasni@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/15 19:29:47 by wahasni           #+#    #+#             */
-/*   Updated: 2020/01/10 18:09:52 by hasni            ###   ########.fr       */
+/*   Updated: 2020/01/15 16:28:07 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,21 +50,19 @@ void			reinit_args(t_args *args)
 
 int				algo(char **edges, int size, int max_bfs, int nb_ant)
 {
-	int		count;
 	t_args	*args;
 	int		max;
 
 	if ((*edges)[size - 1] == '1')
 		return (1);
 	max = max_bfs;
-	count = max_bfs;
 	if (!(args = init_args(size, edges, max_bfs, nb_ant)))
 		return (1);
-	while (count > 0)
+	while (max_bfs > 0)
 	{
 		if (!bfs(args))
 			break ;
-		count--;
+		max_bfs--;
 		free_queue_vertex(args->queue);
 	}
 	ft_memcpy(*edges, args->saved_map, size * size);
