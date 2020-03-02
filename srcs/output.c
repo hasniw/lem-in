@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   output.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hasni <hasni@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/15 19:28:25 by wahasni           #+#    #+#             */
-/*   Updated: 2020/01/10 18:09:52 by hasni            ###   ########.fr       */
+/*   Updated: 2020/03/03 00:25:28 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-void		done_single_path(int ants, char *sink)
+void		single_path(int ants, char *sink)
 {
 	int i;
 	int len;
@@ -68,7 +68,7 @@ char		**split_vertices(t_vertex *head)
 	return (split);
 }
 
-static void	parse_map(char *map, int size, t_flow **flow)
+static void	parsemap(char *map, int size, t_flow **flow)
 {
 	int		i;
 	int		count;
@@ -96,7 +96,7 @@ int			output(char *map, t_var *var)
 	nb_path = number_of_path(map, size);
 	if (!(split = split_vertices(var->vertex)))
 		return (0);
-	parse_map(map, size, &flow);
+	parsemap(map, size, &flow);
 	if (!flow)
 		return (free_split(split, 0));
 	if (get_ants_per_path(flow, var->nbr_ant, nb_path) == -1)

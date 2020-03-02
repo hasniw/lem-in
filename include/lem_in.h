@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lem_in.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hasni <hasni@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 06:09:54 by wahasni           #+#    #+#             */
-/*   Updated: 2020/01/14 02:34:03 by hasni            ###   ########.fr       */
+/*   Updated: 2020/03/03 00:24:32 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -309,7 +309,7 @@ int							get_ants_per_path(t_flow *flow, int nb_ants,
 void						print_output(char **vertices,
 										t_flow *flow, int color);
 void						print_matrix(char *s);
-void						done_single_path(int ants, char *sink);
+void						single_path(int ants, char *sink);
 
 /*
 ** free functions
