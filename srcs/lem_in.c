@@ -6,7 +6,7 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 00:55:47 by wahasni           #+#    #+#             */
-/*   Updated: 2020/03/03 00:24:39 by wahasni          ###   ########.fr       */
+/*   Updated: 2020/03/03 00:28:54 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ static int	lem_in(t_var *var)
 
 	write(1, "\n", 1);
 	max_bfs = get_max_bfs(var);
-	if (algo(&var->matrix, (int)var->nbr_vertex, max_bfs, var->nbr_ant))
+	if (ft_algo(&var->matrix, (int)var->nbr_vertex, max_bfs, var->nbr_ant))
 		single_path(var->nbr_ant, var->room_end);
 	else if (!(output(var->matrix, var)))
 	{

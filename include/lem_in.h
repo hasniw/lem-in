@@ -6,7 +6,7 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 06:09:54 by wahasni           #+#    #+#             */
-/*   Updated: 2020/03/03 00:24:32 by wahasni          ###   ########.fr       */
+/*   Updated: 2020/03/03 00:28:41 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -209,7 +209,7 @@ void						ft_print_link(t_var *var);
 **  algo functions
 */
 
-int							algo(char **edges, int nb_vertices,
+int							ft_algo(char **edges, int nb_vertices,
 								int max_bfs, int nb_ant);
 void						reinit_args(t_args *args);
 

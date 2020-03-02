@@ -6,7 +6,7 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/15 19:29:47 by wahasni           #+#    #+#             */
-/*   Updated: 2020/01/15 16:28:07 by wahasni          ###   ########.fr       */
+/*   Updated: 2020/03/03 00:28:49 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void			reinit_args(t_args *args)
 	ft_bzero(args->queue, sizeof(t_queue));
 }
 
-int				algo(char **edges, int size, int max_bfs, int nb_ant)
+int				ft_algo(char **edges, int size, int max_bfs, int nb_ant)
 {
 	t_args	*args;
 	int		max;
