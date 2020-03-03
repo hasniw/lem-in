@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ants.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hasni <hasni@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/15 19:29:41 by wahasni           #+#    #+#             */
-/*   Updated: 2020/01/10 18:09:52 by hasni            ###   ########.fr       */
+/*   Updated: 2020/03/03 01:29:53 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-static void			count_ants_per_path(t_flow *flow)
+static void			ants_per_path(t_flow *flow)
 {
 	int		i;
 	t_flow	*tmp;
@@ -73,7 +73,7 @@ int					get_ants_per_path(t_flow *flow, int nb_ants, int nb_path)
 	int		count;
 
 	count = 0;
-	count_ants_per_path(flow);
+	ants_per_path(flow);
 	if (!(ants = get_ants_tab(flow, nb_path)))
 		return (-1);
 	tmp = flow;

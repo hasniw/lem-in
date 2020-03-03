@@ -6,13 +6,13 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/15 19:29:06 by wahasni           #+#    #+#             */
-/*   Updated: 2020/01/13 15:26:39 by wahasni          ###   ########.fr       */
+/*   Updated: 2020/03/03 00:34:39 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-static void		update_map(char *map, int u, int v, int size)
+static void		updatemap(char *map, int u, int v, int size)
 {
 	map[v * size + u] ^= 3;
 	map[u * size + v] ^= 3;
@@ -22,7 +22,7 @@ void			update_from_path(t_args *args, char *map, int u)
 {
 	while (u > 0)
 	{
-		update_map(map, u, args->path[u], args->nb_vertice);
+		updatemap(map, u, args->path[u], args->nb_vertice);
 		u = args->path[u];
 	}
 }

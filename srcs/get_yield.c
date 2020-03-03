@@ -6,7 +6,7 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/15 19:28:57 by wahasni           #+#    #+#             */
-/*   Updated: 2020/01/13 15:27:14 by wahasni          ###   ########.fr       */
+/*   Updated: 2020/03/03 00:36:35 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int				path_size(char *map, int vertex, int size)
 	return (path_size);
 }
 
-static void		set_ants(int *arr, int n, int ants)
+static void		setants(int *arr, int n, int ants)
 {
 	int i;
 
@@ -88,7 +88,7 @@ static int		count_move(char *map, int size, int ants)
 	if (!(arr = ft_memalloc(n * sizeof(int))))
 		return (0);
 	get_lengths(map, size, arr, n);
-	set_ants(arr, n, ants);
+	setants(arr, n, ants);
 	ret = arr[0];
 	free(arr);
 	return (ret);
