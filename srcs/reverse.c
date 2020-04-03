@@ -6,18 +6,11 @@
 /*   By: wahasni <wahasni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/15 19:27:47 by wahasni           #+#    #+#             */
-/*   Updated: 2020/01/13 15:28:02 by wahasni          ###   ########.fr       */
+/*   Updated: 2020/04/03 17:26:05 by wahasni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
-
-/*
-** from two vertex
-** function goes back to the source
-** it returns 1 if the direction of the vertex is going to the source
-** 0 if it goes to the sink
-*/
 
 static int		find_source(char *map, int u, int v, int size)
 {
@@ -36,11 +29,6 @@ static int		find_source(char *map, int u, int v, int size)
 	}
 	return (0);
 }
-
-/*
-** given the address of two ints
-** it gives them the values of the two adjacent vertex of the one you give him
-*/
 
 static int		get_adj_vertice(char *map, int v, int size, int *val1)
 {
@@ -66,11 +54,6 @@ static int		get_adj_vertice(char *map, int v, int size, int *val1)
 	return (val2);
 }
 
-/*
-** return the vertex preceding the one  you give him as an
-**	arg in a path already used
-*/
-
 static int		find_previous(char *map, int v, int size)
 {
 	int val1;
@@ -83,10 +66,6 @@ static int		find_previous(char *map, int v, int size)
 	}
 	return (find_source(map, val1, v, size) ? val1 : val2);
 }
-
-/*
-** check que le vertex ne soit pas TAKEN
-*/
 
 int				check_taken(t_args *args, int vertex)
 {
